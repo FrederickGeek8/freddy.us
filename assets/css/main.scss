@@ -1,0 +1,139 @@
+---
+---
+html, body {
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url(../img/background.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.navigation {
+    width:100%;
+    height: 50px;
+    background:white;
+    padding:10px 0 10px 0;
+    z-index: 10;
+}
+
+#title {
+    position:absolute;
+    top:12.5px;
+    width:100%;
+    text-align: center;
+    font-size:25px;
+    font-weight: 800;
+    z-index:100;
+}
+
+.navigation a, #title a {
+  text-decoration: none;
+  color:black;
+}
+
+.spacer {
+    display:table;
+    color:white;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size:4em;
+    font-weight: 800;
+    height: 400px;
+}
+
+.spacer a {
+    display:table-cell;
+    vertical-align: middle;
+  text-align: center;
+    text-shadow: 2px 2px rgba(0,0,0,0.1);
+}
+
+#avalink {
+  display:block;
+  position:relative;
+  width: 45px;
+  height: 45px;
+  z-index: 9999;
+  border-radius: 50%;
+  border: 3px solid #eee;
+  box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+  background: url({{ site.baseurl }}/assets/img/avatar_2.jpg);
+  background-size: cover;
+  margin-left:15px;
+}
+
+.container {
+  min-height:100%;
+  margin-bottom: -142px;
+    margin: 0 auto;
+    max-width: 800px;
+    background: white;
+  padding: 2em 2em 0 2em;
+}
+
+.container:after {
+  content: "";
+  display: block;
+}
+.footer, .container:after {
+  color:white;
+  height: 142px;
+}
+
+.container h1, .container h2, .container h3, .container h4, .container h5, .container h6 {
+    color: #222;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.container h2 {
+    margin-top: 1.3em;
+}
+
+.container a {
+    color: #0083e8;
+}
+
+.container b, .container strong {
+    font-weight: 600;
+}
+
+.container samp {
+    display: none;
+}
+
+.container img {
+    animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
+    background: transparent;
+    border: 10px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    display: block;
+    margin: 1.3em auto;
+    max-width: 95%;
+}
+
+@keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
