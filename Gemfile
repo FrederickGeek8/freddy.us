@@ -25,3 +25,5 @@ end
 
 gem 'kramdown', '1.13.1'
 gem 'rouge', '1.11.1'
+
+gem 'jekyll-sitemap', '0.13.0'
