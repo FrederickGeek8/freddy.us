@@ -15,7 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: Frederick Morlock
 email: FrederickGeek8@gmail.com
-description: ># Frederick Morlock's personal blog and portfolio.Honors Mathematics
+description: >#
+ Frederick Morlock's personal blog and portfolio. Honors Mathematics
  major at NYU Shanghai. Avid programmer for over 11 years. Versed in Web, Mobile,
  and Desktop Software Development. Devote tinkerer and social activist.
 baseurl: "" # the subpath of your site, e.g. /blog
