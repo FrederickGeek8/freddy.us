@@ -43,6 +43,7 @@ You can find both downloads [here](https://www.raspberrypi.org/downloads/raspbia
 It is important that the drive name is in all capitalized letters, has the format FAT, and the scheme is set to Master Boot Record, otherwise it will not format correctly.
 3. Click Erase. Know that depending on the size of the drive and the speed of your microSD and card reader, it may take a couple seconds to a couple minutes. <sup>1</sup>
 4. Make a note of the drive number (found in the *Device* field in Disk Utility). In the image above, the *Device* field contains "disk2".
+5. Eject but **do not** remove your device.
 
 #### Installing Raspbian
 
