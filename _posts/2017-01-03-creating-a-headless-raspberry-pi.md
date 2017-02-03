@@ -86,19 +86,24 @@ Additionally, for this section of the article, I am going to assume that you hav
 
 1. Open up the file `etc/network/interfaces` for editing. I prefer the `nano` editor, so I will run `nano etc/network/interfaces`.
 2. Find the part of the file containing the text:
+
 ```
 allow-hotplug wlan0
 iface wlan0 inet manual
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
+
 If you want to use DHCP to allocate yourself an IP address, replace the above block of text with:
+
 ```
 auto wlan0
 allow-hotplug wlan0
 iface wlan0 inet dhcp
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
+
 Otherwise, if you want to use a static IP address, replace the above block of text with:
+
 ```
 auto wlan0
 allow-hotplug wlan0
@@ -108,12 +113,14 @@ iface wlan0 inet static
     gateway 192.168.1.1 # IP for your router
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
-**Note: If you're Raspberry Pi *does not* have an onboard Wifi module and your *interfaces* file contains references to wlan1, remove all lines containing said references.**
+
+  **Note: If you're Raspberry Pi *does not* have an onboard Wifi module and your *interfaces* file contains references to wlan1, remove all lines containing said references.**
 
 #### Setting up WPA Credentials
 
 1. Open the file `etc/wpa_supplicant/wpa_supplicant.conf` for editing.
 2. Under the line `update_config=1`, we will place our configuration. Unless you are not using WPA2, it should be relatively simple. You can add the following lines, replace <netname> with the name of your network, and <pass> with the password to your network, in plain text.
+
 ```
 network={
   ssid="<netname>"
@@ -126,8 +133,10 @@ Your Raspberry Pi should now be configured to connect to your network. Unfortuna
 ## Step 5 – Configuring the SSH Server
 
 Both Raspbian Jessie and Jessie Lite come preinstalled with an SSH server. Unfortunately this is not a service that starts by default, and instead must be initially configured to start on boot.
+
 1. Open the file `etc/rc.local` for editing.
 2. Before the line consisting of `exit 0`, add the line
+
 ```
 /etc/init.d/ssh start
 ```
@@ -138,6 +147,7 @@ This should ensure that the SSH server launches on boot. After the completion of
 **Note:** This step may not be necessary depending on your intranet connection. You might be able to just SSH into your Raspberry Pi by running `ssh pi@raspberrypi` or `ssh pi@raspberrypi.local`. Alternately, if you have access to the administration panel of your router, typically you can figure out on which IP your Raspberry Pi sits.
 
 For this step, we will use the command `nmap` to discover which devices on the network have port 22 open. We will conduct a simple process of eliminations. In the upcoming commands, I am assuming that your network runs on the 192.168.X.X space. If your network runs on the 10.0.X.X space, then simply replace 192.168.0.0 with 10.0.0.0. Not sure? Check what your IP address is.
+
 1. Before plugging in your Raspberry Pi to a power source run `sudo nmap -p22 -sV 192.168.0.0/24` to see which devices on the network have the port 22 (ssh) open.
 2. Subsequently, plug the Raspberry Pi in again and run `sudo nmap -p22 -sV 192.168.0.0/24`. The set of devices from the first test minus the set of devices from the second test should yield the IP address for the Raspberry Pi. For me, using the HomeSpot WiFi USB, my device appeared as follows:<sup>3</sup>
 ![nmap scan report]({{ site.baseurl }}/assets/img/2017-01-03-5.png)
@@ -145,14 +155,17 @@ For this step, we will use the command `nmap` to discover which devices on the n
 ## Step 7 – Enabling SSH
 
 Through the tool `raspi-config`, Raspbian has native functionality that allows for the SSH daemon to be started at system boot. This functionality was previously locked to us because we had not had a shell into the Raspberry Pi, however now that we do, we can enable it.
+
 1. Start an ssh session with your Raspberry Pi.
 2. Enter the command `sudo raspi-config`. After the full-screen menu appears, select Advanced Options, using the arrow keys to navigate, and TAB to select "Select" and "Finish". You should be prompted with:
 ![raspi-config dialog]({{ site.baseurl }}/assets/img/2017-01-03-6.png)
 By selecting SSH you should be prompted with the option to enable/disable it – you want to enable it.
 3. Now we have to undo the changes we made to rc.local. Using `nano` or any other of your favorite command-line editors, open `/etc/rc.local` i.e.
+
 ```
 sudo nano /etc/rc.local
 ```
+
 4. Delete the line we created (`/etc/init.d/ssh start`) from `/etc/rc.local`, then save and exit.
 
 ## (Optional) Step 8 – Enabling VNC
@@ -160,15 +173,19 @@ sudo nano /etc/rc.local
 #### Note for Raspbian Jessie Lite
 
 This is not recommended for people who want to "remain" using Jessie Lite. In order to run a VNC server, you must install a windowing system which is the bulk difference between Raspbian Jessie and Jessie Lite. If you want to continue, please do, but this will likely take up to 500MB of additional storage. My preferred GUI for the Raspberry Pi is PIXEL, as it is the official windowing system of the Raspberry Pi Foundation. That being said *any* windowing system should work. A good guide for installing lightweight windowing system can be found [here](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691), though I will walk you through installing PIXEL.
+
 1. To install PIXEL and the default VNC server, run the command:
+
 ```
 sudo apt-get install raspberrypi-ui-mods tightvncserver
 ```
+
 2. You may now continue with the **General Case** instructions.
 
 #### General Case
 
 In a similar method to enabling SSH, enabling VNC is simple on Jessie. If you want to have a temporary VNC server run, you may run the command `vncserver :port`, where "port" is the port you want it to be on (default port 5900 and 5800). Temporary server users may skip this step entirely.
+
 1. From the command-line or SSH, run the command `sudo raspi-config`.
 2. Again, enter Advanced options and select VNC, selecting the option to enable the service.
 Now you should see upon reboot, the VNC server starts using the default ports.
