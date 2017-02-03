@@ -49,9 +49,11 @@ It is important that the drive name is in all capitalized letters, has the forma
 
 1. Open up Terminal, remembering where you stored your uncompressed image file (with the extension .img).
 2. From Terminal run the following command:
+
 ```bash
 sudo dd bs=1m if=/path/to/raspbian.img of=/dev/rdisk2
 ```
+
 Replacing `/path/to/raspbian` with the path to your Raspbian Image, and `disk2` with the disk number you collected in Disk Utility – yielding a string similar to `rdisk2`.
 This command may take several minutes depending on the factors outlined in the *Preparing the microSD* section.
 3. After running the command, Raspbian should be installed! **You should now eject your microSD through Finder or Disk Utility, though do not remove it.**
@@ -67,10 +69,13 @@ Once the microSD card has been mounted we can really get to work.
 Your microSD card should have to entries, which share the same device name e.g. `/dev/sdb`. We want to focus on the partition with the larger mount point address, `/media/fred/0aed834e-8c8f-412d-a276-a265dc676112`.
 2. Become the superuser by running `sudo su`
 3. `cd` to the directory described above i.e.
+
 ```bash
 cd /media/fred/0aed834e-8c8f-412d-a276-a265dc676112
 ```
+
 You should now be about to run `ls` and get approximately the same output as this:
+
 ```bash
 bin   dev home  lost+found  mnt proc  run   srv tmp var
 boot  etc lib   media       opt root  sbin  sys usr
@@ -140,6 +145,7 @@ Both Raspbian Jessie and Jessie Lite come preinstalled with an SSH server. Unfor
 ```
 /etc/init.d/ssh start
 ```
+
 This should ensure that the SSH server launches on boot. After the completion of this step, you are free to eject and remove the microSD card from your computer and shut down your virtual machine. The rest of this tutorial will take place in the macOS. If you plug in your Raspberry Pi and wait a minute, you should be able to SSH into it! If you only had the IP address...
 
 ## Step 6 – Finding our Lost Device
