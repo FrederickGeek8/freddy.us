@@ -2,45 +2,95 @@
 ---
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Frederick Morlock</title>
-    {% seo %}
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=0.75">
-  </head>
-  <body>
-    <div class="container">
+
+<head>
+  <title>Frederick Morlock</title>
+  {% seo %}
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Pacifico|Oswald" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+</head>
+
+<body>
+  <div class="navigation">
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div id="videosection" class="section">
+    <div class="floater">
       <img src="assets/img/avatar_2.jpg" alt="Avatar" title="Frederick Morlock" class="avatar" />
-      <div class="background">
-        <h1>Frederick Morlock</h1>
-        <p class="desc">Honors Mathematics major at NYU Shanghai. Avid programmer for over 11 years. Versed in Web, Mobile, and Desktop Software Development. Devote tinkerer and social activist.</p>
-        <br>
-        <h4 id="blog"><a href="Resume.pdf">CV <i class="fa fa-download"></i></a></h4>
-        <h4 id="blog"><a href="blog.html">My Blog ➔</a></h4>
-        <p>
-          <h3>Social Outlets:</h3>
-          <a href="//github.com/FrederickGeek8" target="_blank"><i class="fa fa-github-square"></i></i></a>
-          <a href="//facebook.com/TheFredMorlock" target="_blank"><i class="fa fa-facebook-square"></i></i></a>
-          <a href="//twitter.com/FrederickGeek8" target="_blank"><i class="fa fa-twitter-square"></i></i></a>
-          <a href="//plus.google.com/u/0/+FredMorlock" target="_blank"><i class="fa fa-google-plus-square"></i></a>
-          <a href="//yesimhome.tumblr.com" target="_blank"><i class="fa fa-tumblr-square"></i></a>
-        </p>
+      <h1>Frederick Morlock</h1>
+      <p class="desc">Honors Mathematics &amp; Computer Science major at NYU Shanghai. Avid programmer for over 11 years. Versed in Web, Mobile, and Desktop Software Development. Devote tinkerer and social activist.</p>
+    </div>
+  </div>
+  <div class="section" id="projects" style="background: url(assets/img/shazia-mirza-222594.jpg); background-size:cover;">
+    <h1>Projects</h1>
+    <div class="project">
+      <img src="assets/img/sprint.png" alt="Sprint! Logo" />
+      <h2>Sprint!</h2>
+      <p>A Windows spiritual successor to CodeRunner. <a href="https://frederickgeek8.github.io/Sprint/" target="_blank">Website</a> <a href="https://github.com/FrederickGeek8/Sprint" target="_blank">Github</a></p>
+    </div>
+    <div class="project">
+      <h2>Monolith</h2>
+      <p>A Homebrewed jQuery alternative. Includes DOM manipulation, ajax, and event handling. <a href="https://github.com/FrederickGeek8/Monolith" target="_blank">Github</a></p>
+    </div>
+    <div class="project">
+      <h2>LYQL</h2>
+      <p>Truly realtime stock data. Streamed straight from Yahoo. <a href="https://github.com/FrederickGeek8/LYQL" target="_blank">Github</a></p>
+    </div>
+  </div>
+  <div class="section" id="cv" style="display:table;min-height:250px;background: url(assets/img/ryan-winterbotham-236255.jpg); background-size:cover;">
+    <div style="display:table-cell;vertical-align: middle;">
+      <h1>CV</h1>
+      <button id="btn-dl" onclick="location.href='Resume.pdf'">Download</button>
+      <br />
+    </div>
+  </div>
+  <div class="section" id="contact" style="background: url(assets/img/andrew-preble-199410.jpg); background-size:cover;min-height:50%;background-position:bottom;">
+    <div class="floater">
+      <h1>Contact Information</h1>
+      <p>To protect against bots, I have placed my contact information in my
+        <a href="Resume.pdf">CV</a>. You can also find me on these various social networks.</p>
+      <div class="social">
+        <a href="//github.com/FrederickGeek8" target="_blank"><i class="fa fa-github-square"></i></i></a>
+        <a href="//facebook.com/TheFredMorlock" target="_blank"><i class="fa fa-facebook-square"></i></i></a>
+        <a href="//twitter.com/FrederickGeek8" target="_blank"><i class="fa fa-twitter-square"></i></i></a>
+        <a href="//plus.google.com/u/0/+FredMorlock" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+        <a href="//yesimhome.tumblr.com" target="_blank"><i class="fa fa-tumblr-square"></i></a>
       </div>
     </div>
-    <div class="footer" style="text-align:center;">
-        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Frederick Morlock. All rights reserved.</p>
-		</div>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  </div>
+  <div class="footer" style="text-align:center;">
+    <p>Copyright &copy;
+      <script>
+        document.write(new Date().getFullYear())
+      </script> Frederick Morlock. All rights reserved.</p>
+  </div>
+  <script src="assets/js/jquery.min.js" charset="utf-8"></script>
+  <script src="assets/js/jquery.tubular.js" charset="utf-8"></script>
+  <script src="assets/js/index.js" charset="utf-8"></script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-43675987-2', 'auto');
-      ga('send', 'pageview');
+    ga('create', 'UA-43675987-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
 
-    </script>
-  </body>
 </html>
