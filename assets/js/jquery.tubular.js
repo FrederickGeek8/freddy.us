@@ -22,7 +22,7 @@
     videoId: 'ZCAnLxRvNNc', // toy robot in space is a good default, no?
     mute: true,
     repeat: true,
-    width: $(window).width(),
+    width: $('body').width(),
     wrapperZIndex: 99,
     playButtonClass: 'tubular-play',
     pauseButtonClass: 'tubular-pause',
@@ -41,8 +41,8 @@
     $node = $(node); // cache wrapper node
 
     // load yt iframe js api
-    if ($("script[src='//www.youtube.com/iframe_api']").length == 0) {
-      $("<script src='//www.youtube.com/iframe_api'></script>").insertBefore($("script")[0]);
+    if ($("script[src='https://www.youtube.com/iframe_api']").length == 0) {
+      $("<script src='https://www.youtube.com/iframe_api'></script>").insertBefore($("script")[0]);
     }
 
     // build container
@@ -115,9 +115,7 @@
 
     window.onPlayerStateChange = function(state) {
       if(state.data === 1) {
-        $('#tubular-player').animate({
-          'opacity': 1
-        });
+        $('#tubular-player').fadeIn();
       }
       if (state.data === 0 && options.repeat) { // video ended and repeat option is set true
         player.seekTo(options.start); // restart
@@ -197,4 +195,4 @@
     }
   };
 
-})(jQuery, window);
+})(Monolith, window);
