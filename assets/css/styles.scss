@@ -83,7 +83,7 @@ body {
   min-height: 100%;
   width: 100%;
   margin:0;
-  padding-bottom:15px;
+
   text-align: center;
 
   h1 {
@@ -165,7 +165,7 @@ body {
   margin-top: 15px;
   margin-right: 1px;
   background: rgba(255,255,255,0.7);
-  height: 200px;
+  height: 185px;
   padding: 15px;
   font-size: 13px;
   overflow: hidden;
@@ -173,7 +173,7 @@ body {
   max-width: 400px;
   img {
     float: left;
-    margin-top: 25px;
+    margin-top: 15px;
     height: 150px;
     width: 150px;
     border-radius: 50%;
@@ -182,7 +182,6 @@ body {
   h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 2em;
-    vertical-align: middle;
   }
   p {
     color: black;
@@ -190,7 +189,6 @@ body {
     font-family: 'Raleway', sans-serif;
     text-shadow: none;
     text-indent: 0;
-    vertical-align: middle;
   }
 }
 
