@@ -1,0 +1,93 @@
+body {
+  background: url(dot-grid.png);
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  /* font-weight: bold; */
+}
+
+td {
+  padding-right: 0.5em;
+}
+
+a[href] {
+  color: #85144b;
+}
+
+.link::after {
+  font-family: "Courier New", Courier, monospace;
+  content: "\2009\21D2";
+}
+
+#nav {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+  font-weight: bolder;
+}
+
+#nav > li {
+  display: inline;
+  padding: 15px;
+}
+
+#container {
+  width: 75%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bolder;
+}
+
+img {
+  display: block;
+  width: 350px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px black solid;
+}
+
+@media (max-width: 500px) {
+  #container {
+    width: 90%;
+  }
+  img {
+    width: 250px;
+  }
+  #nav > li {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  #container {
+    width: 100%;
+  }
+  img {
+    width: 150px;
+  }
+  #nav > li {
+    padding: 5px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background: url(dot-grid_inv.png);
+  }
+  img {
+    border: 2px white solid;
+  }
+  a[href] {
+    color: #f012be;
+  }
+}
