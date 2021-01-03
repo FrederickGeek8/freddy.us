@@ -9,11 +9,25 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      />
+    </noscript>
     <link rel="stylesheet" href="style.css" />
     {% seo %}
     <title>{{ site.title }}</title>
@@ -29,7 +43,19 @@
     </ul>
     <div id="container">
       <h1>{{ site.title }}</h1>
-      <img src="avatar.jpg" alt="Photo" />
+      <img
+        sizes="(max-width: 500px) 100vw, 700px"
+        srcset="
+          avatar_200.jpg 200w,
+          avatar_458.jpg 458w,
+          avatar_616.jpg 616w,
+          avatar.jpg     700w
+        "
+        src="avatar.jpg"
+        alt="Photo"
+        width="350"
+        height="350"
+      />
       <h2 id="about">About</h2>
       <p>
         Avid programmer and machine learning researcher for over 13 years.
@@ -61,7 +87,11 @@
       <p>
         Until GitHub provides a better API for showcasing repositories, you can
         find my recent and pinned repositories on
-        <a href="https://github.com/FrederickGeek8" class="link" target="_blank"
+        <a
+          href="https://github.com/FrederickGeek8"
+          rel="noreferrer"
+          class="link"
+          target="_blank"
           >my GitHub</a
         >.
       </p>
@@ -70,12 +100,16 @@
         Morlock, Frederick, and Dingsu Wang. "MAD-VAE: Manifold Awareness
         Defense Variational Autoencoder."
         <i>arXiv preprint arXiv:2011.01755</i> (2020).
-        <a href="https://arxiv.org/abs/2011.01755" class="link"
+        <a href="https://arxiv.org/abs/2011.01755" rel="noreferrer" class="link"
           >Available Here</a
         >.
       </p>
       <h2 id="resume">
-        <a href="Resume_Frederick-Morlock.pdf" class="link" target="_blank"
+        <a
+          href="Resume_Frederick-Morlock.pdf"
+          rel="noreferrer"
+          class="link"
+          target="_blank"
           >Resume</a
         >
       </h2>
@@ -85,10 +119,11 @@
         Additionally, you can find my email in my
         <a href="Resume_Frederick-Morlock.pdf">resume</a>.
       </p>
-      <ul>
+      <ul id="links">
         <li>
           <a
             href="https://www.linkedin.com/in/frederickmorlock"
+            rel="noreferrer"
             class="link"
             target="_blank"
             >LinkedIn</a
@@ -97,6 +132,7 @@
         <li>
           <a
             href="https://github.com/FrederickGeek8"
+            rel="noreferrer"
             class="link"
             target="_blank"
             >GitHub</a
@@ -105,6 +141,7 @@
         <li>
           <a
             href="https://twitter.com/FrederickGeek8"
+            rel="noreferrer"
             class="link"
             target="_blank"
             >Twitter</a
@@ -113,6 +150,7 @@
         <li>
           <a
             href="https://www.facebook.com/Morlock.Frederick/"
+            rel="noreferrer"
             class="link"
             target="_blank"
             >Facebook</a
@@ -120,14 +158,14 @@
         </li>
       </ul>
     </div>
-    <div class="footer" style="text-align: center">
-      <p>
-        &copy;
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Frederick Morlock. All rights reserved.
-      </p>
+    <div id="footer">
+      <p></p>
     </div>
+    <script>
+      document.getElementById("footer").innerHTML =
+        "&copy;" +
+        new Date().getFullYear() +
+        "Frederick Morlock. All rights reserved.";
+    </script>
   </body>
 </html>

@@ -25,11 +25,12 @@ a[href] {
   margin: 0 auto;
   list-style-type: none;
   font-weight: bolder;
+  line-height: 2em;
 }
 
 #nav > li {
   display: inline;
-  padding: 15px;
+  padding: 20px;
 }
 
 #container {
@@ -50,9 +51,14 @@ h3 {
 img {
   display: block;
   width: 350px;
+  height: 350px;
   margin: auto;
   border-radius: 50%;
   border: 2px black solid;
+}
+
+#links {
+  line-height: 2em;
 }
 
 @media (max-width: 500px) {
@@ -61,6 +67,7 @@ img {
   }
   img {
     width: 250px;
+    height: 250px;
   }
   #nav > li {
     padding: 10px;
@@ -73,6 +80,7 @@ img {
   }
   img {
     width: 150px;
+    height: 150px;
   }
   #nav > li {
     padding: 5px;
