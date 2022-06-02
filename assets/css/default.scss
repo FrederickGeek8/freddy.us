@@ -1,13 +1,14 @@
 ---
 ---
-
+pre,
 .hightlight,
 .highlighter-rouge {
-  word-break: break-word;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
   background: #f7f7f7;
   border-radius: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .highlight .hll {
   background-color: #ffffcc;
@@ -219,14 +220,10 @@
 } /* Literal.Number.Integer.Long */
 
 @media (prefers-color-scheme: dark) {
-    .hightlight,
-    .highlighter-rouge {
-    word-break: break-word;
+  .hightlight,
+  .highlighter-rouge {
     background: #212121;
-    border-radius: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    }
+  }
   .highlight table td {
     padding: 5px;
   }

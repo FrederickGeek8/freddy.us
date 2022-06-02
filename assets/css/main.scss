@@ -13,6 +13,7 @@ body {
 body {
   // box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
   // color: #545454;
+  background-color: white;
   background: url(../../dot-grid.png);
   font-family: "Fira Code", ui-monospace, monospace;
   font-size: 16px;
@@ -146,6 +147,7 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
+    background-color: black;
     background: url(../../dot-grid_inv.png);
   }
 
