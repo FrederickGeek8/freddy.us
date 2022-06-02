@@ -9,11 +9,11 @@ description: I recently switched from Google Colab to Paperspace Gradient. I had
 # {{ page.title }}
 
 I recently switched from Google Colab to Paperspace Gradient. I had some trouble
-getting used to the environment. With a Jupyter implementation that isn't great,
-JupyterLab - while being an improvement on Jupyter Notebook - lacks proper
-support for code completion. They have support for launching a remote VS Code
-Jupyter kernel, however, this doesn't allow me to interact with the remote 
-filesystem the way JupyterLab does.
+getting used to the environment. With a homebrewed Jupyter implementation that
+isn't great, JupyterLab - while being an improvement on Jupyter Notebook - lacks proper
+support for code completion, and VS Code remote Jupyter session. While they have
+support for launching a remote VS Code Jupyter kernel, this doesn't allow me to
+interact with the remote filesystem the way JupyterLab does.
 
 When I was using Google Colab, I played around with the package
 [`colab_ssh`](https://github.com/WassimBenzarti/colab-ssh) which is a useful
@@ -70,3 +70,5 @@ One thing that this could be expanded into is automatically mounting cloud
 storage using [`rclone`](https://rclone.org/). That is, if they don't follow
 Google Colab's new restrictions on using [`rclone`](https://rclone.org/) (or so
 I've heard... I can't find the source).
+
+*See you space cowfolk...*
