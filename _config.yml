@@ -25,6 +25,9 @@ repository:  FrederickGeek8/freddy.us
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
