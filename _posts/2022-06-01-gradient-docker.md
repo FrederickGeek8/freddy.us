@@ -6,7 +6,9 @@ category: Tutorials
 description: I recently switched from Google Colab to Paperspace Gradient. I had
     some trouble getting into the workflow, but here are some useful things I found.
 ---
-# {{ page.title }}
+# Updated: {{ page.title }}
+
+**UPDATE: Don't do this. My Paperspace account got terminated. Whoops.**
 
 I recently switched from Google Colab to Paperspace Gradient. I had some trouble
 getting used to the environment. With a homebrewed Jupyter implementation that
