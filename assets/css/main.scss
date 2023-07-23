@@ -16,21 +16,19 @@ body {
   background-color: white;
   background: url(../../dot-grid.png);
   font-family: "Fira Code", ui-monospace, monospace;
-  font-size: 16px;
+  // font-size: 16px;
   line-height: 1.5;
 }
 
 .navigation {
   width: 100%;
-  height: 50px;
   padding: 10px 0;
-  z-index: 10;
 }
 
 #title {
-  position: absolute;
-  top: 25px;
-  width: 100%;
+  position: relative;
+  margin-top: 25px;
+  max-width: 100%;
   text-align: center;
   font-size: 2em;
   font-weight: 800;
@@ -44,13 +42,14 @@ body {
 }
 
 .spacer {
-  display: table;
+  // display: table;
+  display: block;
   text-align: center;
   margin: 0 auto;
   max-width: 800px;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 15px;
   // font-size: 2em;
   // font-weight: 200;
@@ -58,11 +57,11 @@ body {
   // height: 100px;
 }
 
-.spacer a {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: justify;
-}
+// .spacer a {
+//   // display: table-cell;
+//   vertical-align: middle;
+//   text-align: justify;
+// }
 
 #avalink {
   display: block;
@@ -79,22 +78,16 @@ body {
 }
 
 .container,
-.footer {
-  margin: 0 auto;
-  max-width: 800px;
+#footer {
+  width: 75%;
+  margin: auto;
   // background: white;
-  padding: 2em 2em 0;
+  // padding: 2em 2em 0;
 }
 
-.container:after {
-  content: "";
-  display: block;
-}
-
-.container:after,
-.footer {
-  color: white;
-  height: 142px;
+#footer {
+  margin-top: 50px;
+  border-top: black 1px solid;
 }
 
 .container h1,
@@ -137,6 +130,32 @@ body {
 
 .bumpn {
   margin-left: 1em;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 85%;
+  }
+  img {
+    width: 250px;
+    height: 250px;
+  }
+  #nav > li {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    width: 90%;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+  }
+  #nav > li {
+    padding: 5px;
+  }
 }
 
 @keyframes colorize {

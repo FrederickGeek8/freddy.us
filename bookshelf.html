@@ -83,7 +83,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer" style="text-align: center">
+    <div id="footer" style="text-align: center">
       <p>
         <sup>[1]</sup> Funnily enough, most of my favorite books I learned from
         during my undergrad. Calculus by Spivak is a great book, even to look
@@ -93,13 +93,13 @@
         reason I had the urge recently to make my way through the "Rudin family",
         tackling Principals, Real & Complex, and Functional Analysis.
       </p>
-      <p>
-        Copyright &copy;
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Frederick Morlock. All rights reserved.
-      </p>
+      <p id="copyright"></p>
     </div>
+    <script>
+      document.getElementById("copyright").innerHTML =
+        "&copy;" +
+        new Date().getFullYear() +
+        " Frederick Morlock. All rights reserved.";
+    </script>
   </body>
 </html>

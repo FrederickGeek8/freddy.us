@@ -37,7 +37,7 @@ a[href] {
   padding: 20px;
 }
 
-#container {
+#container, #footer {
   width: 75%;
   margin: auto;
 }
@@ -54,11 +54,16 @@ h3 {
 
 img {
   display: block;
-  width: 350px;
-  height: 350px;
+  width: 320px;
+  height: auto;
   margin: auto;
   border-radius: 50%;
   border: 2px black solid;
+}
+
+#footer {
+  margin-top: 50px;
+  border-top: black 1px solid;
 }
 
 .exp_desc {
@@ -70,8 +75,8 @@ img {
 }
 
 @media (max-width: 500px) {
-  #container {
-    width: 90%;
+  #container, #footer {
+    width: 85%;
   }
   img {
     width: 250px;
@@ -83,8 +88,8 @@ img {
 }
 
 @media (max-width: 360px) {
-  #container {
-    width: 100%;
+  #container, #footer {
+    width: 90%;
   }
   img {
     width: 150px;
