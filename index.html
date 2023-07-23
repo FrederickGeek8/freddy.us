@@ -11,22 +11,25 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <link href="fira_code.css" rel="preload" as="style" />
+
     <link
-      rel="stylesheet"
-      href="fira_code.css"
-      media="print"
-      onload="this.media='all'"
+      rel="preload"
+      as="style"
+      href="{{ site.baseurl }}/assets/css/fira_code.css"
     />
-    <noscript>
-      <link rel="stylesheet" href="fira_code.css" />
-    </noscript>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/fira_code.css" />
+
+    <link
+      rel="preload"
+      as="style"
+      href="{{ site.baseurl }}/assets/css/main.css"
+    />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
     {% seo %}
   </head>
 
   <body>
-    <ul id="nav">
+    <ul id="navigation">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
@@ -37,9 +40,21 @@
       <li><a href="bookshelf.html" class="link">My Bookshelf</a></li>
       <li><a href="blog.html" class="link">Blog</a></li>
     </ul>
-    <div id="container">
-      <h1>{{ site.title }}</h1>
-      <img src="avatar.jpg" alt="Photo" width="350" height="350" />
+    <div class="container">
+      <h1 id="title">{{ site.title }}</h1>
+      <img
+        id="avatar"
+        srcset="
+          {{ site.baseurl }}/assets/img/avatar_320x320.jpg 320w,
+          {{ site.baseurl }}/assets/img/avatar_256x256.jpg 256w,
+          {{ site.baseurl }}/assets/img/avatar_128x128.jpg 128w
+        "
+        sizes="(max-width: 500px) 256px, (max-width: 360px) 160px, 320px"
+        src="{{ site.baseurl }}/assets/img/avatar_320x320.jpg"
+        alt="Photo of me"
+        width="350"
+        height="350"
+      />
       <h2 id="about">About</h2>
       <p>
         Computer Scientist, Mathematician, and Software Engineer interested in
@@ -51,11 +66,11 @@
         Hinalea Imaging working with sensing on hyperspectral imagery.
       </p>
       <h2 id="experience">Experience</h2>
-      <h4>
+      <h3>
         Software & Machine Learning Engineer – Hinalea Imaging (<i
           >Apr 2022 - Present</i
         >)
-      </h4>
+      </h3>
       <div class="exp_desc">
         <p>
           I currently work as a Software & Machine Learning Engineer at HinaLea
@@ -84,9 +99,9 @@
           </li>
         </ol>
       </div>
-      <h4>
+      <h3>
         Full Stack Engineer – Simeon Cloud LLC (<i>Mar 2021 - Dec 2021</i>)
-      </h4>
+      </h3>
       <div class="exp_desc">
         <p>
           Built out a bi-directional sync engine for configuration as code in
@@ -95,11 +110,11 @@
           on the web in Vue, Typescript, and SASS.
         </p>
       </div>
-      <h4>
+      <h3>
         Machine Learning Research Assistant – NYU Shanghai (<i
           >Dec 2019 - Dec 2020</i
         >)
-      </h4>
+      </h3>
       <div class="exp_desc">
         <p>
           Researching the mathematical aspects of theoretical machine learning
@@ -116,11 +131,11 @@
           in PyTorch and Numpy.
         </p>
       </div>
-      <h4>
+      <h3>
         Cryptography Research Assistant – NYU Shanghai (<i
           >Aug 2019 - Dec 2019</i
         >)
-      </h4>
+      </h3>
       <div class="exp_desc">
         <p>
           Researched emerging post-quantum, lattice-based cryptography schemes

@@ -1,0 +1,67 @@
+@import "_colors";
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  // box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+  // color: #545454;
+  background-color: white;
+  background: url(../../assets/img/dot-grid.png);
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  // font-size: 16px;
+}
+
+a[href] {
+  color: $link-color;
+}
+
+.link::after {
+  //   font-family: "Courier New", Courier, monospace;
+  content: " >>";
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 3px;
+  /* line-height: normal; */
+}
+
+#navigation {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+  margin-top: 10px;
+  list-style-type: none;
+  font-weight: 600;
+  line-height: 2em;
+
+  li {
+    display: inline;
+    margin: 20px;
+    border-bottom: 1px solid $link-color;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#footer {
+  margin-top: 50px;
+  border-top: black 1px solid;
+}
+
+.container,
+#footer {
+  width: 75%;
+  margin: auto;
+  // background: white;
+  // padding: 2em 2em 0;
+}

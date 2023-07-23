@@ -1,0 +1,54 @@
+@media (max-width: 500px) {
+  .container,
+  #footer {
+    width: 85%;
+  }
+
+  #avatar {
+    width: 256px;
+    height: 256px;
+  }
+
+  #nav > li {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container,
+  #footer {
+    width: 90%;
+  }
+
+  #avatar {
+    width: 160px;
+    height: 160px;
+  }
+
+  #nav > li {
+    padding: 5px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: black;
+    background: url(../../assets/img/dot-grid_inv.png);
+  }
+  img {
+    border: 2px white solid;
+  }
+  a[href] {
+    color: #f012be;
+  }
+
+  .container h1,
+  .container h2,
+  .container h3,
+  .container h4,
+  .container h5,
+  .container h6 {
+    color: white;
+  }
+}

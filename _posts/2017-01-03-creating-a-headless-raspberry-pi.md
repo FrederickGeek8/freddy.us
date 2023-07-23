@@ -1,22 +1,24 @@
 ---
 layout: post
-title:  "Creating a Headless Raspberry Pi"
-date:   2017-01-03 12:32:04 -0500
+title: "Creating a Headless Raspberry Pi"
+date: 2017-01-03 12:32:04 -0500
 category: Tutorials
 description: After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. This guide aims to address and walk you through setting up your Raspberry Pi. All that is needed is a working internet connection and a microSD card reader!
-image: /assets/img/2017-01-03-7.png
+image: /assets/img/2017-01-03/2017-01-03-7.png
 ---
+
 # {{ page.title }}
 
 After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. **The Raspberry Pi Zero I am using has [this](http://a.co/j22ab4k) Wi-Fi dongle, though I highly recommend [this one](http://a.co/9D3edky)**. The assumption of this article is that you have some experience using macOS Terminal, though minimal knowledge is required.
 
 A good guide for configuring a headless Raspberry Pi Zero is [this article](https://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/) written by David Maitland. Unfortunately, his method did not work for me, something I hope to amend through this article. I will be building off much of what David said so that others running macOS may see greater successes.
 
-This was a difficult process for myself because I lacked any of the tools necessary to normally set up a Raspberry Pi. I did not have any displays, cables,  keyboard, mice, access to the router – the only items at my disposable were my *MacBook Pro* and a *microSD card reader*.
+This was a difficult process for myself because I lacked any of the tools necessary to normally set up a Raspberry Pi. I did not have any displays, cables, keyboard, mice, access to the router – the only items at my disposable were my _MacBook Pro_ and a _microSD card reader_.
 
 ## Table of Contents
-* This will become a table of contents (this text will be scraped).
-{:toc}
+
+- This will become a table of contents (this text will be scraped).
+  {:toc}
 
 ## Step Zero – Setting up
 
@@ -25,6 +27,7 @@ Firstly, it is advisable that you install [Homebrew](http://brew.sh/). Although 
 Secondly, if you are running macOS and do not have a Linux VM or partition, then you should download [VirtualBox](https://www.virtualbox.org/wiki/Downloads) – a free VM engine. After downloading (I won't provide instructions for this part), you should create a Linux VM (Ubuntu is my choice) as macOS does not support the partition types found on a Raspberry Pi microSD.
 
 ## Step One – Pick Your Poison
+
 At the moment, the Raspberry Pi Foundation carries two flavors of their distribution – Raspbian Jessie with Pixel, and Raspbian Jessie Lite – both of which I will discuss in this article.
 
 If you are planning on running VNC on your device, I would recommend investing Raspbian Jessie with Pixel. VNC requires that you have an installed windowing system, and most widely available "lightweight" windowing systems create a net storage impact equivalent to Raspbian Jessie with Pixel.
@@ -37,10 +40,10 @@ You can find both downloads [here](https://www.raspberrypi.org/downloads/raspbia
 
 1. Open Disk Utility and find the microSD card you want to format.
 2. After selecting the microSD, click Erase in the toolbar, making sure the information is as follow:
-![Formatting the microSD]({{ site.baseurl }}/assets/img/2017-01-03-1.png)
-It is important that the drive name is in all capitalized letters, has the format FAT, and the scheme is set to Master Boot Record, otherwise it will not format correctly.
+   ![Formatting the microSD]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-1.png)
+   It is important that the drive name is in all capitalized letters, has the format FAT, and the scheme is set to Master Boot Record, otherwise it will not format correctly.
 3. Click Erase. Know that depending on the size of the drive and the speed of your microSD and card reader, it may take a couple seconds to a couple minutes. <sup>1</sup>
-4. Make a note of the drive number (found in the *Device* field in Disk Utility). In the image above, the *Device* field contains "disk2".
+4. Make a note of the drive number (found in the _Device_ field in Disk Utility). In the image above, the _Device_ field contains "disk2".
 5. Eject but **do not** remove your device.
 
 #### Installing Raspbian
@@ -53,18 +56,17 @@ sudo dd bs=1m if=/path/to/raspbian.img of=/dev/rdisk2
 ```
 
 Replacing `/path/to/raspbian` with the path to your Raspbian Image, and `disk2` with the disk number you collected in Disk Utility – yielding a string similar to `rdisk2`.
-This command may take several minutes depending on the factors outlined in the *Preparing the microSD* section.
-3. After running the command, Raspbian should be installed! **You should now eject your microSD through Finder or Disk Utility, though do not remove it.**
+This command may take several minutes depending on the factors outlined in the _Preparing the microSD_ section. 3. After running the command, Raspbian should be installed! **You should now eject your microSD through Finder or Disk Utility, though do not remove it.**
 
 ## Step 3 – Accessing Rasbian Filesystem
 
 Assuming that your microSD card has been ejected and not removed, in VirtualBox you should be able to see your device under Devices ➔ USB. By clicking it, you should be able to mount it in your VM.<sup>2</sup>
-![microSD card in VirtualBox Menu]({{ site.baseurl }}/assets/img/2017-01-03-2.png)
+![microSD card in VirtualBox Menu]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-2.png)
 Once the microSD card has been mounted we can really get to work.
 
 1. Open a command line inside your VM. By running the command `df -h`, you should be able to the storage devices attached to your VM and their mount points.
-![Available storage devices]({{ site.baseurl }}/assets/img/2017-01-03-3.png)
-Your microSD card should have to entries, which share the same device name e.g. `/dev/sdb`. We want to focus on the partition with the larger mount point address, `/media/fred/0aed834e-8c8f-412d-a276-a265dc676112`.
+   ![Available storage devices]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-3.png)
+   Your microSD card should have to entries, which share the same device name e.g. `/dev/sdb`. We want to focus on the partition with the larger mount point address, `/media/fred/0aed834e-8c8f-412d-a276-a265dc676112`.
 2. Become the superuser by running `sudo su`
 3. `cd` to the directory described above i.e.
 
@@ -117,7 +119,7 @@ iface wlan0 inet static
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
-  **Note: If you're Raspberry Pi *does not* have an onboard Wifi module and your *interfaces* file contains references to wlan1, remove all lines containing said references.**
+**Note: If you're Raspberry Pi _does not_ have an onboard Wifi module and your _interfaces_ file contains references to wlan1, remove all lines containing said references.**
 
 #### Setting up WPA Credentials
 
@@ -154,7 +156,7 @@ For this step, we will use the command `nmap` to discover which devices on the n
 
 1. Before plugging in your Raspberry Pi to a power source run `sudo nmap -p22 -sV 192.168.0.0/24` to see which devices on the network have the port 22 (ssh) open.
 2. Subsequently, plug the Raspberry Pi in again and run `sudo nmap -p22 -sV 192.168.0.0/24`. The set of devices from the first test minus the set of devices from the second test should yield the IP address for the Raspberry Pi. For me, using the HomeSpot WiFi USB, my device appeared as follows:<sup>3</sup>
-![nmap scan report]({{ site.baseurl }}/assets/img/2017-01-03-5.png)
+   ![nmap scan report]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-5.png)
 
 ## Step 7 – Enabling SSH
 
@@ -162,8 +164,8 @@ Through the tool `raspi-config`, Raspbian has native functionality that allows f
 
 1. Start an ssh session with your Raspberry Pi.
 2. Enter the command `sudo raspi-config`. After the full-screen menu appears, select Advanced Options, using the arrow keys to navigate, and TAB to select "Select" and "Finish". You should be prompted with:
-![raspi-config dialog]({{ site.baseurl }}/assets/img/2017-01-03-6.png)
-By selecting SSH you should be prompted with the option to enable/disable it – you want to enable it.
+   ![raspi-config dialog]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-6.png)
+   By selecting SSH you should be prompted with the option to enable/disable it – you want to enable it.
 3. Now we have to undo the changes we made to rc.local. Using `nano` or any other of your favorite command-line editors, open `/etc/rc.local` i.e.
 
 ```
@@ -176,7 +178,7 @@ sudo nano /etc/rc.local
 
 #### Note for Raspbian Jessie Lite
 
-This is not recommended for people who want to "remain" using Jessie Lite. In order to run a VNC server, you must install a windowing system which is the bulk difference between Raspbian Jessie and Jessie Lite. If you want to continue, please do, but this will likely take up to 500MB of additional storage. My preferred GUI for the Raspberry Pi is PIXEL, as it is the official windowing system of the Raspberry Pi Foundation. That being said *any* windowing system should work. A good guide for installing lightweight windowing system can be found [here](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691), though I will walk you through installing PIXEL.
+This is not recommended for people who want to "remain" using Jessie Lite. In order to run a VNC server, you must install a windowing system which is the bulk difference between Raspbian Jessie and Jessie Lite. If you want to continue, please do, but this will likely take up to 500MB of additional storage. My preferred GUI for the Raspberry Pi is PIXEL, as it is the official windowing system of the Raspberry Pi Foundation. That being said _any_ windowing system should work. A good guide for installing lightweight windowing system can be found [here](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691), though I will walk you through installing PIXEL.
 
 1. To install PIXEL and the default VNC server, run the command:
 
@@ -192,11 +194,12 @@ In a similar method to enabling SSH, enabling VNC is simple on Jessie. If you wa
 
 1. From the command-line or SSH, run the command `sudo raspi-config`.
 2. Again, enter Advanced options and select VNC, selecting the option to enable the service.
-Now you should see upon reboot, the VNC server starts using the default ports.
+   Now you should see upon reboot, the VNC server starts using the default ports.
 3. You can connect to your device by using [VNC® Viewer from RealVNC®](https://www.realvnc.com/download/viewer/), and entering the IP address when connecting.
-![VNC Connection]({{ site.baseurl }}/assets/img/2017-01-03-7.png)
+   ![VNC Connection]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-7.png)
 
 # Troubleshooting
+
 <sup>1</sup> If erasing failed, check that the new device name is in all capital letters. Also check that the type is set
 <sup>2</sup> If the device appears grayed out, that means it is still in use by your system. You need to eject (but not remove) the microSD card before it can be mounted in your VM.
 <sup>3</sup> If you do not see your device listed in nmap, that likely means that it is unable to connect to the Internet. If so, first check that it is nearby a router. Otherwise, you need to plug your microSD back into your VM and check that you modified the files correctly.
