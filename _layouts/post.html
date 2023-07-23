@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ page.title }}</title>
+    {% seo %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/fira_code.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/default.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ page.title }}</title>
-  {% seo %}
-  <link rel="stylesheet" href="{{ site.baseurl }}/fira_code.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/default.css">
-</head>
-
-<body>
-  <div class="navigation">
-    <div id="title"><a href="/blog.html">Frederick's Ramblings</a></div>
-  </div>
-  <div class="spacer">Abstract:&nbsp;<a>{{ page.description }}</a></div>
-  <div class="container">
-    {{ content }}
-  </div>
-  <div class="footer" style="text-align:center;">
-      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Frederick Morlock. All rights reserved.</p>
-  </div>
-</body>
-
+  <body>
+    <div class="navigation">
+      <div id="title"><a href="/">Frederick's Ramblings</a></div>
+    </div>
+    <div class="spacer">Abstract:&nbsp;<a>{{ page.description }}</a></div>
+    <div class="container">{{ content }}</div>
+    <div class="footer" style="text-align: center">
+      <p>
+        Copyright &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Frederick Morlock. All rights reserved.
+      </p>
+    </div>
+  </body>
 </html>

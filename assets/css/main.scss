@@ -78,7 +78,8 @@ body {
   margin-left: 15px;
 }
 
-.container {
+.container,
+.footer {
   margin: 0 auto;
   max-width: 800px;
   // background: white;
@@ -133,6 +134,11 @@ body {
   margin: 1.3em auto;
   max-width: 95%;
 }
+
+.bumpn {
+  margin-left: 1em;
+}
+
 @keyframes colorize {
   0% {
     -webkit-filter: grayscale(100%);
