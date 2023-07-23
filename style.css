@@ -14,7 +14,11 @@ a[href] {
 
 .link::after {
   font-family: "Courier New", Courier, monospace;
-  content: "\2009\21D2";
+  content: " >>";
+  vertical-align: middle;
+  display: inline-block;
+  margin-left:3px;
+  /* line-height: normal; */
 }
 
 #nav {
@@ -55,6 +59,10 @@ img {
   margin: auto;
   border-radius: 50%;
   border: 2px black solid;
+}
+
+.exp_desc {
+  margin-left: 1em;
 }
 
 #links {

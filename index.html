@@ -3,159 +3,249 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- Welcome to my website source code. This is all handwritten with love :) -->
-<head>
-  <title>{{ site.title }}</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <link href="fira_code.css" rel="preload" as="style" />
-  <link rel="stylesheet" href="fira_code.css" media="print" onload="this.media='all'" />
-  <noscript>
-    <link rel="stylesheet" href="fira_code.css" />
-  </noscript>
-  <link rel="stylesheet" href="style.css" />
-  {% seo %}
-</head>
+  <!-- Welcome to my website source code. This is all handwritten with love :) -->
+  <head>
+    <title>{{ site.title }}</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link href="fira_code.css" rel="preload" as="style" />
+    <link
+      rel="stylesheet"
+      href="fira_code.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="fira_code.css" />
+    </noscript>
+    <link rel="stylesheet" href="style.css" />
+    {% seo %}
+  </head>
 
-<body>
-  <ul id="nav">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#recent">Recent Work</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#resume">Resume</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="blog.html" target="_blank">Blog</a></li>
-  </ul>
-  <div id="container">
-    <h1>{{ site.title }}</h1>
-    <img src="avatar.jpg" alt="Photo" width="350" height="350" />
-    <h2 id="about">About</h2>
-    <p>
-      Experienced Software Engineer and Computer Scientist interested in
-      Machine Learning and pushing the boundaries of Computer Science. I am
-      still exploring the field, but I find extreme interest in all the areas
-      I visit. My current research interests lie in solidying the theoretical
-      underpinnings of neural networks and hyperspectral machine learning.
-    </p>
-    <h2 id="experience">Experience</h2>
-    <h4>
-      Software & Machine Learning Engineer – TruTag Technologies (<i>Apr 2022 - Present</i>)
-    </h4>
-    <p>
-      I currently work as a Software & Machine Learning Engineer at HinaLea
-      Imaging, a TruTag Technologies subsidiary focused on the development 
-      of hyperspectral imaging and sensing. I lead the effort into developing 
-      state-of-the-art hyperspectral machine learning algorithms for sensing on
-      our HYSI data.
-    </p>
-    <h4>
-      Full Stack Engineer – Simeon Cloud LLC (<i>Mar 2021 - Dec 2021</i>)
-    </h4>
-    <p>
-      Built out a bi-directional sync engine for configuration as code in .NET
-      C# for the Microsoft 365 platform that runs on serverless architecture.
-      Was also responsible for building out a user interface on the web in
-      Vue, Typescript, and SASS.
-    </p>
-    <h4>
-      Machine Learning Research Assistant – NYU Shanghai (<i>Dec 2019 - Dec 2020</i>)
-    </h4>
-    <p>
-      Researching the mathematical aspects of theoretical machine learning
-      under Professor Shuyang Ling of NYU Shanghai. Currently focusing on
-      graph embedding, sparsification, and coarsening, the goal of which is to
-      allow large-scale graph networks to be computed on with a greatly
-      reduced computational footprint and minimal deviations from computations
-      on the original.
-      <br />
-      Conducted research under Professor Ling for a senior thesis in
-      specifying the limits of popular dimensional reduction techniques and
-      visualization techniques, such as t-SNE, all of which were implemented
-      in PyTorch and Numpy.
-    </p>
-    <h4>
-      Cryptography Research Assistant – NYU Shanghai (<i>Aug 2019 - Dec 2019</i>)
-    </h4>
-    <p>
-      Researched emerging post-quantum, lattice-based cryptography schemes
-      under the guidance of Professor Siyao Guo of NYU Shanghai, as well as
-      delved into the inner workings of quantum computing theory. The goal of
-      the research was to investigate some of the many open questions in
-      post-quantum cryptography and work towards answering them.
-      <br />
-      Gained experience in writing proofs for proving the security of
-      cryptographic protocols, which are critical in ensuring the security of
-      existing and emerging schemes.
-    </p>
-    <h2 id="education">Education</h2>
-    <table>
-      <tr>
-        <th>Institution</th>
-        <th>Degree</th>
-        <th>Dates Attended</th>
-      </tr>
-      <tr>
-        <td>NYU Shanghai</td>
-        <td>B.S. Computer Science</td>
-        <td>Sept 2016 - Dec 2020</td>
-      </tr>
-      <tr>
-        <td>NYU Shanghai</td>
-        <td>B.S. Mathematics</td>
-        <td>Sept 2016 - Dec 2020</td>
-      </tr>
-    </table>
-    <h2 id="recent">Recent Work</h2>
-    <p>
-      Until GitHub provides a better API for showcasing repositories, you can
-      find my recent and pinned repositories on
-      <a href="https://github.com/FrederickGeek8" rel="noreferrer" class="link" target="_blank">my GitHub</a>.
-    </p>
-    <h2 id="publications">Publications</h2>
-    <p>
-      Morlock, Frederick, and Dingsu Wang. "MAD-VAE: Manifold Awareness
-      Defense Variational Autoencoder."
-      <i>arXiv preprint arXiv:2011.01755</i> (2020).
-      <a href="https://arxiv.org/abs/2011.01755" rel="noreferrer" class="link">Available Here</a>.
-    </p>
-    <h2 id="resume">
-      <a href="https://drive.google.com/file/d/1-48KszWyfQwlYqa85PczeCEJWmpZ5QjP/view" rel="noreferrer" class="link" target="_blank">Resume</a>
-    </h2>
-    <h2 id="contact">Contact</h2>
-    <p>
-      You can reach me on any of the following social media platforms.
-      Additionally, you can find my email in my
-      <a href="#resume">resume</a>.
-    </p>
-    <ul id="links">
-      <li>
-        <a href="https://www.linkedin.com/in/frederickmorlock" rel="noreferrer me" class="link" target="_blank">LinkedIn</a>
-      </li>
-      <li>
-        <a href="https://github.com/FrederickGeek8" rel="noreferrer me" class="link" target="_blank">GitHub</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/FrederickGeek8" rel="noreferrer me" class="link" target="_blank">Twitter</a>
-      </li>
-      <li>
-        <a href="https://letterboxd.com/frederickgeek8/" rel="noreferrer me" class="link" target="_blank">Letterboxd</a>
-      </li>
-      <li>
-        <a href="https://social.nerd.net/@fooderick" rel="noreferrer me" class="link" target="_blank">Mastodon</a>
-      </li>
+  <body>
+    <ul id="nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#recent">Recent Work</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="bookshelf.html" class="link">My Bookshelf</a></li>
+      <li><a href="blog.html" class="link">Blog</a></li>
     </ul>
-  </div>
-  <div id="footer" style="text-align: center">
-    <p></p>
-  </div>
-  <script>
-  document.getElementById("footer").innerHTML =
-    "&copy;" +
-    new Date().getFullYear() +
-    " Frederick Morlock. All rights reserved.";
-  </script>
-</body>
-
+    <div id="container">
+      <h1>{{ site.title }}</h1>
+      <img src="avatar.jpg" alt="Photo" width="350" height="350" />
+      <h2 id="about">About</h2>
+      <p>
+        Computer Scientist, Mathematician, and Software Engineer interested in
+        Machine Learning and pushing the boundaries of understanding in Computer
+        Science. I am still exploring the fields, but I find the intersection of
+        Computer Science and Mathematics to be facinating. My current research
+        interests lie in solidying the theoretical underpinnings of neural
+        networks. I currently work as a Data Scientist & Software Engineer at
+        Hinalea Imaging working with sensing on hyperspectral imagery.
+      </p>
+      <h2 id="experience">Experience</h2>
+      <h4>
+        Software & Machine Learning Engineer – Hinalea Imaging (<i
+          >Apr 2022 - Present</i
+        >)
+      </h4>
+      <div class="exp_desc">
+        <p>
+          I currently work as a Software & Machine Learning Engineer at HinaLea
+          Imaging, a TruTag Technologies subsidiary focused on the development
+          of hyperspectral imaging and sensing. I lead the effort into
+          developing state-of-the-art hyperspectral machine learning algorithms
+          for sensing on our HYSI data.
+        </p>
+        Contributions:
+        <ol>
+          <li>
+            Designed and developed deep learning-based macroscopic bacterial
+            segmentation network for hyperspectral images.
+          </li>
+          <li>
+            Designed and developed Siamese network-based object tracking and
+            homography deep networks.
+          </li>
+          <li>
+            Employed self-supervised pretraining to improve generalization power
+            of models in low-data environments.
+          </li>
+          <li>
+            Developed deep regression network for predicting fruit acidity,
+            firmness, and shelf-life from a hyperspectral image.
+          </li>
+        </ol>
+      </div>
+      <h4>
+        Full Stack Engineer – Simeon Cloud LLC (<i>Mar 2021 - Dec 2021</i>)
+      </h4>
+      <div class="exp_desc">
+        <p>
+          Built out a bi-directional sync engine for configuration as code in
+          .NET C# for the Microsoft 365 platform that runs on serverless
+          architecture. Was also responsible for building out a user interface
+          on the web in Vue, Typescript, and SASS.
+        </p>
+      </div>
+      <h4>
+        Machine Learning Research Assistant – NYU Shanghai (<i
+          >Dec 2019 - Dec 2020</i
+        >)
+      </h4>
+      <div class="exp_desc">
+        <p>
+          Researching the mathematical aspects of theoretical machine learning
+          under Professor Shuyang Ling of NYU Shanghai. Currently focusing on
+          graph embedding, sparsification, and coarsening, the goal of which is
+          to allow large-scale graph networks to be computed on with a greatly
+          reduced computational footprint and minimal deviations from
+          computations on the original.
+        </p>
+        <p>
+          Conducted research under Professor Ling for a senior thesis in finding
+          edge cases (both good and bad!) of popular dimensional reduction and
+          visualization techniques, such as t-SNE, all of which were implemented
+          in PyTorch and Numpy.
+        </p>
+      </div>
+      <h4>
+        Cryptography Research Assistant – NYU Shanghai (<i
+          >Aug 2019 - Dec 2019</i
+        >)
+      </h4>
+      <div class="exp_desc">
+        <p>
+          Researched emerging post-quantum, lattice-based cryptography schemes
+          under the guidance of Professor Siyao Guo of NYU Shanghai, as well as
+          delved into the inner workings of quantum computing theory. The goal
+          of the research was to investigate some of the many open questions in
+          post-quantum cryptography and work towards answering them.
+        </p>
+        <p>
+          Gained experience in writing proofs for proving the security of
+          cryptographic protocols, which are critical in ensuring the security
+          of existing and emerging schemes. Left to resume pursuing interests in
+          Machine Learning.
+        </p>
+      </div>
+      <h2 id="education">Education</h2>
+      <table>
+        <tr>
+          <th>Institution</th>
+          <th>Degree</th>
+          <th>Dates Attended</th>
+        </tr>
+        <tr>
+          <td>NYU Shanghai</td>
+          <td>B.S. Computer Science</td>
+          <td>Sept 2016 - Dec 2020</td>
+        </tr>
+        <tr>
+          <td>NYU Shanghai</td>
+          <td>B.S. Mathematics</td>
+          <td>Sept 2016 - Dec 2020</td>
+        </tr>
+      </table>
+      <h2 id="recent">Recent Work</h2>
+      <p>
+        Until GitHub provides a better API for showcasing repositories, you can
+        find my recent and pinned repositories on
+        <a
+          href="https://github.com/FrederickGeek8"
+          rel="noreferrer"
+          class="link"
+          target="_blank"
+          >my GitHub</a
+        >.
+      </p>
+      <h2 id="publications">Publications</h2>
+      <p>
+        Morlock, Frederick, and Dingsu Wang. "MAD-VAE: Manifold Awareness
+        Defense Variational Autoencoder."
+        <i>arXiv preprint arXiv:2011.01755</i> (2020).
+        <a href="https://arxiv.org/abs/2011.01755" rel="noreferrer" class="link"
+          >Available Here</a
+        >.
+      </p>
+      <h2 id="resume">
+        <a
+          href="https://drive.google.com/file/d/1-48KszWyfQwlYqa85PczeCEJWmpZ5QjP/view"
+          rel="noreferrer"
+          class="link"
+          target="_blank"
+          >Resume</a
+        >
+      </h2>
+      <h2 id="contact">Contact</h2>
+      <p>
+        You can reach me on any of the following social media platforms.
+        Additionally, you can find my email in my
+        <a href="#resume">resume</a>.
+      </p>
+      <ul id="links">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/frederickmorlock"
+            rel="noreferrer me"
+            class="link"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/FrederickGeek8"
+            rel="noreferrer me"
+            class="link"
+            target="_blank"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/FrederickGeek8"
+            rel="noreferrer me"
+            class="link"
+            target="_blank"
+            >Twitter</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://letterboxd.com/frederickgeek8/"
+            rel="noreferrer me"
+            class="link"
+            target="_blank"
+            >Letterboxd</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://social.nerd.net/@fooderick"
+            rel="noreferrer me"
+            class="link"
+            target="_blank"
+            >Mastodon</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div id="footer" style="text-align: center">
+      <p></p>
+    </div>
+    <script>
+      document.getElementById("footer").innerHTML =
+        "&copy;" +
+        new Date().getFullYear() +
+        " Frederick Morlock. All rights reserved.";
+    </script>
+  </body>
 </html>
