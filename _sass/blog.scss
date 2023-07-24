@@ -1,26 +1,12 @@
-#title {
-  position: relative;
-  max-width: 100%;
-  text-align: center;
-  font-size: 2em;
-}
-
-// #title a {
-//   color: purple;
-//   text-decoration: underline;
-//   font-weight: 800;
-// }
-
 .spacer {
   // display: table;
   display: block;
   text-align: center;
-  margin: 0 auto;
+  margin: 35px auto;
+  width: 75%;
   max-width: 900px;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  margin-top: 15px;
-  margin-bottom: 15px;
   text-align: justify;
   // font-size: 2em;
   // font-weight: 200;
@@ -58,7 +44,8 @@
 }
 
 .container .post a {
-  color: #0083e8;
+  color: $link-color;
+  border-bottom: 0.1em dotted $link-color;
 }
 
 .container .post b,
@@ -79,7 +66,13 @@
   max-width: 95%;
 }
 
-.container.tight {
+.container .post {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.container.tight,
+#footer.tight {
   max-width: 900px;
 }
 

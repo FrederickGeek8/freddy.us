@@ -9,7 +9,7 @@
     height: 256px;
   }
 
-  #nav > li {
+  #navigation > li {
     padding: 10px;
   }
 }
@@ -25,7 +25,7 @@
     height: 160px;
   }
 
-  #nav > li {
+  #navigation > li {
     padding: 5px;
   }
 }
@@ -39,8 +39,21 @@
   img {
     border: 2px white solid;
   }
+
   a[href] {
-    color: #f012be;
+    color: $dark-link-color;
+    border-bottom: 0.1em dotted $dark-link-color;
+  }
+
+  #title a {
+    font-size: 2em;
+    color: $dark-link-color;
+    border-bottom: 1px solid $dark-link-color;
+  }
+
+  .container .post a {
+    color: $dark-link-color;
+    border-bottom: 0.1em dotted $dark-link-color;
   }
 
   .container h1,

@@ -20,6 +20,12 @@ body {
 
 a[href] {
   color: $link-color;
+  text-decoration: none;
+  border-bottom: 0.1em dotted $link-color;
+}
+
+.link {
+  white-space: nowrap;
 }
 
 .link::after {
@@ -31,21 +37,34 @@ a[href] {
   /* line-height: normal; */
 }
 
+#title {
+  position: relative;
+  text-align: center;
+}
+
+#title a {
+  font-size: 2em;
+  border-bottom: 1px solid $link-color;
+}
+
 #navigation {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 10px 0;
   margin: 0 auto;
-  margin-top: 10px;
-  list-style-type: none;
+  margin-top: 20px;
   font-weight: 600;
-  line-height: 2em;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
 
   li {
     display: inline;
     margin: 20px;
-    border-bottom: 1px solid $link-color;
+    line-height: 2;
   }
 
   a {
@@ -54,14 +73,28 @@ a[href] {
 }
 
 #footer {
-  margin-top: 50px;
+  margin: 0 auto;
+  padding: 15px;
   border-top: black 1px solid;
+  text-align: center;
+  line-height: 1.5;
+
+  p {
+    text-align: justify;
+  }
+
+  #copyright {
+    text-align: center;
+  }
+}
+
+.container {
+  margin: 0 auto;
 }
 
 .container,
 #footer {
   width: 75%;
-  margin: auto;
   // background: white;
   // padding: 2em 2em 0;
 }
