@@ -20,17 +20,14 @@ body {
 
 a[href] {
   color: $link-color;
-  text-decoration: none;
-  border-bottom: 0.1em dotted $link-color;
-}
-
-.link {
-  white-space: nowrap;
+  // text-decoration: none;
+  text-decoration: underline dotted $link-color 0.1em;
+  // border-bottom: 0.1em dotted $link-color;
 }
 
 .link::after {
   //   font-family: "Courier New", Courier, monospace;
-  content: " >>";
+  content: ">>";
   vertical-align: middle;
   display: inline-block;
   margin-left: 3px;
@@ -44,7 +41,8 @@ a[href] {
 
 #title a {
   font-size: 2em;
-  border-bottom: 1px solid $link-color;
+  // border-bottom: 1px solid $link-color;
+  text-decoration: underline solid $link-color 1px;
 }
 
 #navigation {
@@ -67,8 +65,9 @@ a[href] {
     line-height: 2;
   }
 
-  a {
-    text-decoration: none;
+  .link {
+    // Prevent text-wrapping
+    display: inline-block;
   }
 }
 

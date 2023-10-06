@@ -42,18 +42,20 @@
 
   a[href] {
     color: $dark-link-color;
-    border-bottom: 0.1em dotted $dark-link-color;
+    // border-bottom: 0.1em dotted $dark-link-color;
+    text-decoration: underline dotted $dark-link-color 0.1em;
   }
 
   #title a {
     font-size: 2em;
     color: $dark-link-color;
-    border-bottom: 1px solid $dark-link-color;
+    // border-bottom: 1px solid $dark-link-color;
+    text-decoration: underline solid $dark-link-color 1px;
   }
 
   .container .post a {
     color: $dark-link-color;
-    border-bottom: 0.1em dotted $dark-link-color;
+    text-decoration: underline dotted $dark-link-color 0.1em;
   }
 
   .container h1,
