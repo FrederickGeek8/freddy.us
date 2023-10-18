@@ -14,8 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Frederick Morlock
-email: FrederickGeek8@gmail.com
-description: Frederick Morlock's website. CS & Math. Studying Deep Learning.
+email: fm1391@nyu.edu
+description: Frederick Morlock's website. CS & Math. Researching Deep Learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://freddy.us" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: FrederickGeek8
@@ -26,10 +26,12 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   # - jekyll-github-metadata
+
 exclude:
   - Gemfile
   - Gemfile.lock
