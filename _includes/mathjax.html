@@ -1,0 +1,22 @@
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      processEscapes: true,
+    },
+    svg: {
+      fontCache: "global",
+    },
+    chtml: {
+      // this is necessary due to loading external web-fonts it seems.
+      matchFontHeight: false,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  src="/assets/js/MathJax/es5/tex-mml-chtml.js"
+></script>
