@@ -35,12 +35,9 @@
     </div>
     <div class="container tight">{{ content }}</div>
     <div id="footer" class="tight" style="text-align: center">
-      <p>
-        Copyright &copy;
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Frederick Morlock. All rights reserved.
+      <p id="copyright">
+        &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights
+        reserved.
       </p>
     </div>
   </body>

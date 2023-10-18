@@ -287,13 +287,10 @@
       </ul>
     </div>
     <div id="footer" style="text-align: center">
-      <p id="copyright"></p>
+      <p id="copyright">
+        &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights
+        reserved.
+      </p>
     </div>
-    <script>
-      document.getElementById("copyright").innerHTML =
-        "&copy;" +
-        new Date().getFullYear() +
-        " Frederick Morlock. All rights reserved.";
-    </script>
   </body>
 </html>
