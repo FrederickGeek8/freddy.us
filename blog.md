@@ -12,10 +12,10 @@ backlink: "/"
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </h3>
     <p>
-      <small><strong>Posted {{ post.date | date: "%B %e, %Y" }}</strong> in {{ post.category }}.</small>
+      <strong>Posted {{ post.date | date: "%B %e, %Y" }}</strong> in {{ post.category }}.
     </p>
     <p>
-      <small>{{ post.description }}</small>
+      {{ post.description }}
     </p>
   </div>
 

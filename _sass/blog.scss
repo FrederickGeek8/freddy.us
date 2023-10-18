@@ -48,6 +48,10 @@
   // border-bottom: 0.1em dotted $link-color;
 }
 
+.container .post p {
+  font-size: 0.9em;
+}
+
 .container .post b,
 .container .post strong {
   font-weight: 600;
@@ -78,4 +82,17 @@
 
 .bumpn {
   margin-left: 1em;
+}
+
+.MathJax {
+  overflow-x: scroll;
+  // a small tweak because we have `matchFontHeight: false`
+  font-size: 1.1em;
+}
+
+details > div {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 15px;
+  background-color: rgba(238, 238, 238, 0.5);
 }
