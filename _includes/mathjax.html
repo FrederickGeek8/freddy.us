@@ -1,14 +1,14 @@
 <script>
   MathJax = {
+    loader: {
+      load: ["input/tex", "output/chtml"],
+    },
     tex: {
       inlineMath: [
         ["$", "$"],
         ["\\(", "\\)"],
       ],
       processEscapes: true,
-    },
-    svg: {
-      fontCache: "global",
     },
     chtml: {
       // this is necessary due to loading external web-fonts it seems.
@@ -18,5 +18,6 @@
 </script>
 <script
   type="text/javascript"
-  src="/assets/js/MathJax/es5/tex-mml-chtml.js"
+  defer
+  src="/assets/js/MathJax/es5/startup.js"
 ></script>

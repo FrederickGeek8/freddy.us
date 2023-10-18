@@ -8,13 +8,19 @@ backlink: "/"
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
     {% seo %}
+
+    <link
+      rel="preload"
+      as="style"
+      href="{{ site.baseurl }}/assets/css/main.css"
+    />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
   </head>
 
@@ -80,17 +86,18 @@ backlink: "/"
                 Pattern Recognition. 2023.
               </i>
             </a>
+            <details>
+              <summary>Some Notes</summary>
+              <div class="note">
+                This paper builds off of the above "Mad Max" paper by
+                visualizing the geometry that is explored in that paper. I had
+                an idea after reading "Mad Max" that motivated me to start
+                implementing a similar visualization. Once I got stuck and was
+                doing some research online to help my problems, I discovered
+                this paper!
+              </div>
+            </details>
           </li>
-          <details>
-            <summary>Some Notes</summary>
-            <div class="note">
-              This paper builds off of the above "Mad Max" paper by visualizing
-              the geometry that is explored in that paper. I had an idea after
-              reading "Mad Max" that motivated me to start implementing a
-              similar visualization. Once I got stuck and was doing some
-              research online to help my problems, I discovered this paper!
-            </div>
-          </details>
 
           <li>
             <a
@@ -116,30 +123,30 @@ backlink: "/"
               Attention Sinks."
               <i>arXiv preprint arXiv:2309.17453</i> (2023).
             </a>
+            <details>
+              <summary>Some Notes</summary>
+              <div class="note">
+                This paper builds off of
+                <a
+                  href="https://www.evanmiller.org/attention-is-off-by-one.html"
+                  class="link"
+                  target="_blank"
+                  >Evan Miller's <b>Attention is Off By One</b> blog post
+                </a>
+                which I think is a great (dare I say mathematically "morally
+                correct") interpretation of the deficiencies of using Softmax in
+                Attention. I ended up having some questions about Table 3. in
+                that paper, which benchmarks Evan Miller's Softmax variant, and
+                so I posted an issue
+                <a
+                  href="https://github.com/mit-han-lab/streaming-llm/issues/44"
+                  class="link"
+                  target="_blank"
+                  >on the Github page for their paper</a
+                >.
+              </div>
+            </details>
           </li>
-          <details>
-            <summary>Some Notes</summary>
-            <div class="note">
-              This paper builds off of
-              <a
-                href="https://www.evanmiller.org/attention-is-off-by-one.html"
-                class="link"
-                target="_blank"
-                >Evan Miller's <b>Attention is Off By One</b> blog post
-              </a>
-              which I think is a great (dare I say mathematically "morally
-              correct") interpretation of the deficiencies of using Softmax in
-              Attention. I ended up having some questions about Table 3. in that
-              paper, which benchmarks Evan Miller's Softmax variant, and so I
-              posted an issue
-              <a
-                href="https://github.com/mit-han-lab/streaming-llm/issues/44"
-                class="link"
-                target="_blank"
-                >on the Github page for their paper</a
-              >.
-            </div>
-          </details>
         </ul>
 
         <h2>Papers I Want to Read</h2>

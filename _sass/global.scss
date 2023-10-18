@@ -30,7 +30,9 @@ a[href] {
   content: ">>";
   vertical-align: middle;
   display: inline-block;
+  margin: 0;
   margin-left: 3px;
+  line-height: 1;
   /* line-height: normal; */
 }
 
@@ -65,9 +67,10 @@ a[href] {
     line-height: 2;
   }
 
-  .link {
+  a {
     // Prevent text-wrapping
     display: inline-block;
+    line-height: 1;
   }
 }
 
