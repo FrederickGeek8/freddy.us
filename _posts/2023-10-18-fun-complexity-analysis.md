@@ -56,8 +56,8 @@ criteria:
 2. $\mathcal{O}(\alpha) > 1$: go left -- decrease our guess $\alpha$
 3. $\mathcal{O}(\alpha) = 0$: go right -- increase our guess $\alpha$
 
-At each element counted, we can then check $\mathcal{O}(2^k) = 0$ to ensure
-that the set has been exhausted and we have found the correct size $n$.
+After each element that's counted, we can then check $\mathcal{O}(2^k) = 0$ to
+ensure that the set has been exhausted and we have found the correct size $n$.
 
 We can calculate the time complexity of this algorithm based on our knowledge
 of binary search. Recall that the time complexity of finding a single element
@@ -79,7 +79,9 @@ notation.
 
 I do not have an answer to "Can you improve this bound?" question at this
 moment. I will not be working on this problem going forward, but if you have an
-improved algorithm &amp; bound I'll gladly post it here!
+improved algorithm &amp; bound I'll gladly post it here! I think there
+other properties that could be exploited for a more efficient algorithm if
+you're feeling up to the challenge of pondering it more.
 
 </div>
 </details>
