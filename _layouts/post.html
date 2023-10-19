@@ -24,11 +24,14 @@
         </a>
       </div>
     </div>
-    <div class="spacer">
-      <b>Abstract:</b>
-      <p>{{ page.description }}</p>
+    <div class="container tight">
+      <div class="spacer">
+        <b>Abstract:</b>
+        <p>{{ page.description }}</p>
+      </div>
+
+      <div class="postcontent">{{ content }}</div>
     </div>
-    <div class="container tight">{{ content }}</div>
     <div id="footer" class="tight" style="text-align: center">
       <p id="copyright">
         &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights
