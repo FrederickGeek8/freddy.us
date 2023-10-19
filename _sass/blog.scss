@@ -4,13 +4,16 @@
   text-align: center;
   margin: 35px auto;
   max-width: 900px;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
   text-align: justify;
   // font-size: 2em;
   // font-weight: 200;
   font-style: italic;
   // height: 100px;
+
+  p {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
 }
 
 #avalink {
@@ -72,6 +75,14 @@
 .container .post {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.container .postcontent {
+  h1 {
+    // personally I think that 2em (default) seems a bit large for the h1 tag
+    // that isn't the #title
+    font-size: 1.75em;
+  }
 }
 
 .container.tight,
