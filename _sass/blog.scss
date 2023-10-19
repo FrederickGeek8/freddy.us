@@ -95,7 +95,7 @@
 }
 
 .MathJax {
-  overflow-x: scroll;
+  overflow-x: auto;
   // a small tweak because we have `matchFontHeight: false`
   font-size: 1.1em;
 }
