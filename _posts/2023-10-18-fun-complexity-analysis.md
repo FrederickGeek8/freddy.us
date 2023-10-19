@@ -6,8 +6,8 @@ category: CS
 description:
   Back in 2020 a question was posed to me about deriving a bound for the
   computational complexity of querying an O(1) oracle to determine the size of
-  an unknown set of bounded non-negative integers. I thought I'd share the
-  problem and my solution with the internet.
+  an unknown set of bounded non-negative integers. I thought perhaps the
+  internet would get some enjoyment out of this exercise.
 usemathjax: true
 ---
 
