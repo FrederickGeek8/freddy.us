@@ -5,8 +5,8 @@ date: 2023-10-18 19:00:00 -0400
 category: CS
 description:
   Back in 2020 a question was posed to me about deriving a bound for the
-  time complexity of querying an O(1) oracle to determine the size of an
-  unknown set of bounded non-negative integers. I thought I'd share the
+  computational complexity of querying an O(1) oracle to determine the size of
+  an unknown set of bounded non-negative integers. I thought I'd share the
   problem and my solution with the internet.
 usemathjax: true
 ---
@@ -26,7 +26,7 @@ problem came from.
 Suppose you have an ordered set of **unknown** size $n$ consisting of
 **unknown** non-negative integers less that $2^k$ for a **known** $k$. Your
 only acceptable query operation is to query a given $O(1)$ oracle $\mathcal{O}$
-which will, upon integer input $\alpha$ return
+which will, upon integer input $\alpha$ return one of three values:
 
 $$
     \mathcal{O}(\alpha) =
