@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Fun Complexity Analysis Problem
-date: 2023-10-18 9:00:00 -0400
+title: A Fun Complexity Analysis Problem
+date: 2023-10-18 20:00:00 -0400
 category: CS
 description:
   Back in 2020 a question was posed to me about deriving a bound for the
@@ -10,6 +10,8 @@ description:
   problem and my solution with the internet.
 usemathjax: true
 ---
+
+# {{ page.title }}
 
 A while ago a friend (although I do not know who) posed to me a time complexity
 analysis problem that I found very interesting. Back then I wrote up a LaTeX
