@@ -36,5 +36,11 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
+defaults:
+  - scope:
+      path: "assets/**"
+    values:
+      sitemap: false
+
 sass:
   style: compressed
