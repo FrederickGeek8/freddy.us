@@ -20,6 +20,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://freddy.us" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: FrederickGeek8
 repository: FrederickGeek8/freddy.us
+author: Frederick Morlock
 
 # Build settings
 markdown: kramdown
@@ -30,6 +31,7 @@ kramdown:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed
   # - jekyll-github-metadata
 
 exclude:
@@ -41,6 +43,9 @@ defaults:
       path: "assets/**"
     values:
       sitemap: false
+
+feed:
+  excerpt_only: true
 
 sass:
   style: compressed
