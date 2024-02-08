@@ -75,7 +75,7 @@
           I am looking to apply for Computer Science Ph.D. or Mathematics
           MS/Ph.D. programs for the 2024 academic year. If you are interested in
           the pursuit of mathematical understanding of deep learning and you're
-          looking for students or collaborators, please reach out to be at my
+          looking for students or collaborators, please reach out to me at my
           email <code>fm1391&lt;at&gt;nyu.edu</code> or on any of the platforms
           <a href="#contact">below</a>.
         </b>
@@ -88,15 +88,15 @@
       </h3>
       <div class="exp_desc">
         <p>
-          I lead the effort into developing state-of-the-art hyperspectral
-          machine learning algorithms at HinaLea Imaging, a TruTag Technologies
+          I lead the effort to develop state-of-the-art hyperspectral machine
+          learning algorithms at HinaLea Imaging, a TruTag Technologies
           subsidiary focused on the development of hyperspectral imaging and
           sensing.
         </p>
         Contributions:
         <ol>
           <li>
-            Designed and developed deep learning-based macroscopic bacterial
+            Designed and developed a deep learning-based macroscopic bacterial
             segmentation network for hyperspectral images.
           </li>
           <li>
@@ -105,12 +105,12 @@
             objects to improve spectral stability under motion.
           </li>
           <li>
-            Employed self-supervised pretraining of convolutional and
-            attention-based model to improve generalization power of models in
-            low-data environments.
+            Employed self-supervised pretraining of convolution and
+            attention-based model to improve the generalization power of models
+            in low-data environments.
           </li>
           <li>
-            Developed deep learning-based regression network for predicting
+            Developed a deep learning-based regression network for predicting
             fruit acidity, firmness, and shelf-life from a hyperspectral image.
           </li>
         </ol>
@@ -133,7 +133,7 @@
       </h3>
       <div class="exp_desc">
         <p>
-          Researching the mathematical aspects of theoretical machine learning
+          Researched the mathematical aspects of theoretical machine learning
           under Professor Shuyang Ling of NYU Shanghai. Currently focusing on
           graph embedding, sparsification, and coarsening, the goal of which is
           to allow large-scale graph networks to be computed on with a greatly
@@ -156,9 +156,9 @@
         <p>
           Researched emerging post-quantum, lattice-based cryptography schemes
           under the guidance of Professor Siyao Guo of NYU Shanghai, as well as
-          delved into the inner workings of quantum computing theory. The goal
+          delving into the inner workings of quantum computing theory. The goal
           of the research was to investigate some of the many open questions in
-          post-quantum cryptography and work towards answering them.
+          post-quantum cryptography and work toward answering them.
         </p>
         <p>
           Gained experience in writing proofs for proving the security of
@@ -197,7 +197,73 @@
           >my GitHub</a
         >.
       </p>
-      <h2 id="publications">Publications</h2>
+      <h2 id="publications">Papers</h2>
+      <h3>Unpublished Manuscripts</h3>
+      <p class="note grey tight" style="border: 1px black solid">
+        <i
+          >Unfortunately, all I have to show here right now are papers I wrote
+          in my naive undergraduate research phase.</i
+        >
+      </p>
+      <div class="pub">
+        <p>
+          Morlock, Frederick. "Exploring the Limitations of t-SNE"
+          <i>NYU Shanghai Senior Capstone Thesis</i> (2020).
+          <a
+            href="https://drive.google.com/file/d/12C-xS0Q8_QXlKUVdpexMhyEIyhmMwXgU/view?usp=sharing"
+            rel="noreferrer"
+            class="link">
+            Available Here </a
+          >.
+        </p>
+        <p class="note">
+          I wrote my undergraduate Senior Thesis paper "Exploring the
+          Limitations of t-SNE" under the supervision of Professor Shuyang Ling
+          of NYU Shanghai. The paper experimentally analyzed 3 problems using
+          the t-SNE algorithm to test both its limitations and possible novel
+          applications. The paper explored the effects of the "crowding problem"
+          when embedding high-dimensional data in 2D, the preservation of latent
+          geometric structure in embeddings, and the application of unscrambling
+          the "Scrambled Radon Transform" in tomography data. As much as I
+          regret it, while the paper was theoretically motivated, there was not
+          a rigious analysis of the phenomenon, but rather just empirical
+          studies.
+        </p>
+      </div>
+
+      <div class="pub">
+        <p>
+          Morlock, Frederick. "Graph Embedding and Visualization Using t-SNE"
+          <i>Deans’ Undergraduate Research Fund -- NYU Shanghai</i> (2020).
+          <a
+            href="https://drive.google.com/file/d/12GawzvvX-YWl45SsYs7lx663cWwOt3co/view?usp=drive_link"
+            rel="noreferrer"
+            class="link"
+            >Available Here</a
+          >.
+        </p>
+        <p class="note">
+          I received funding through the Deans' Undergraduate Research Fund at
+          NYU Shanghai, where I conducted research under the supervision of
+          Shuyang Ling. In the manuscript "Graph Embedding and Visualization
+          Using t-SNE", I furthered some of the research I did as part of my
+          Thesis and explored the application of t-SNE to graph embedding and
+          visualization. In the paper, I studied applying t-SNE for use in graph
+          embeddings. I primarily looked at 3 datasets: Facebook's "Egonet"
+          dataset, the "JAGMESH" mesh network dataset, and a simple "Stochastic
+          Block Model" network. While t-SNE possesses the ability to be able to
+          perform graph embeddings, one of its limitations is the computational
+          complexity required to compute it. There were 3 approaches that were
+          taken to overcome this limitation: graph sparsification via "effective
+          resistance" approximations, geodesic distance approximations via the
+          Nystrom Approximation, and graph coarsening via Kron Reduction. While
+          Kron Reduction was viable in some sense for reducing the computational
+          complexity of the problem, given that we wanted to preserve all of the
+          nodes in the original data in our embedding, I did not include results
+          using the Kron Reduction as graph coarsening (removing/combining graph
+          nodes) was not in the spirit of the paper's objective.
+        </p>
+      </div>
       <div class="pub">
         <p>
           Morlock, Frederick, and Dingsu Wang. "MAD-VAE: Manifold Awareness
@@ -212,7 +278,7 @@
         </p>
         <p class="note">
           Personally, I'm not sure that anyone should read this paper. It was
-          from an period of my life where I was naive about research, and it was
+          from a period of my life when I was naive about research, and it was
           published long after it was written. Not only was I a naive young
           aspiring researcher, but the study of adversarial examples was young
           at the time as well. While I haven't studied this area for a while, if

@@ -106,6 +106,17 @@ a[href] {
   margin-left: 1em;
 }
 
+.note.grey {
+  padding: 5px;
+  background-color: $spoiler-color;
+}
+
+.note.grey.tight {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 // this is used by bookshelf.html
 ul .note {
   font-size: 0.9em;

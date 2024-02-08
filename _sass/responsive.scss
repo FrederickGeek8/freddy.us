@@ -67,7 +67,8 @@
     color: white;
   }
 
-  details > div {
-    background-color: rgba(238, 238, 238, 0.2);
+  details > div,
+  .note.grey {
+    background-color: $dark-spoiler-color;
   }
 }
