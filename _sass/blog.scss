@@ -107,3 +107,12 @@ details > div {
   background-color: $spoiler-color;
 }
 
+@supports not (-ms-ime-align: auto) {
+  details summary {
+    cursor: pointer;
+  }
+
+  details summary > * {
+    display: inline;
+  }
+}

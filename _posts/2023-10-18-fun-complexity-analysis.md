@@ -45,7 +45,7 @@ $O(nk)$. Can you improve this bound?
 <br><br>
 
 <details>
-<summary>Answer Key (Try to solve the problem first!)</summary>
+<summary><h3>Answer Key (Try to solve the problem first!)</h3></summary>
 <div markdown=1>
 We can frame this problem as trying to find $n$ elements in a sorted list of
 size $2^k$. We can use the oracle $\mathcal{O}$ to find each of the $n$ elements
