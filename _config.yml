@@ -23,6 +23,7 @@ repository: FrederickGeek8/freddy.us
 author: Frederick Morlock
 
 # Build settings
+highligher: rouge
 markdown: kramdown
 kramdown:
   input: GFM
@@ -32,11 +33,18 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
   # - jekyll-github-metadata
 
 exclude:
   - Gemfile
   - Gemfile.lock
+  - TODO.md
+  - .prettierrc
+  - .gitignore
+  - .gitmodules
 
 defaults:
   - scope:

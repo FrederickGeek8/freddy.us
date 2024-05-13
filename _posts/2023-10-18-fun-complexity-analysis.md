@@ -8,7 +8,7 @@ description:
   computational complexity of querying an O(1) oracle to determine the size of
   an unknown set of bounded non-negative integers. I thought perhaps the
   internet would get some enjoyment out of this exercise.
-usemathjax: true
+usemath: true
 ---
 
 # {{ page.title }}

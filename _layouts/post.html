@@ -9,17 +9,15 @@
     <link
       rel="preload"
       as="style"
-      href="{{ site.baseurl }}/assets/css/fira_code.css"
-    />
+      href="{{ site.baseurl }}/assets/css/fira_code.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/fira_code.css" />
 
     <link
       rel="preload"
       as="style"
-      href="{{ site.baseurl }}/assets/css/main.css"
-    />
+      href="{{ site.baseurl }}/assets/css/main.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-    {% if page.usemathjax %} {% include mathjax.html %} {% endif %}
+    {% if page.usemath %} {% include katex.html %} {% endif %}
   </head>
 
   <body>
