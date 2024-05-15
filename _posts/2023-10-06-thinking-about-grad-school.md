@@ -52,4 +52,4 @@ situation.
 ==== MESSAGE ENDS ====
 ```
 
-**If you've made it this far, thanks for reading! If you have any tips (I'm really hoping you have some) _please_ email me at `fm1391<at>nyu.edu` or by following one of the links [on my home page](https://freddy.us/#contact).**
+**If you've made it this far, thanks for reading! If you have any tips (I'm really hoping you have some) _please_ email me at `me<at>freddy.us` or by following one of the links [on my home page](https://freddy.us/#contact).**

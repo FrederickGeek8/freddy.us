@@ -86,4 +86,4 @@ you're feeling up to the challenge of pondering it more.
 </div>
 </details>
 
-_Want to chat? The best ways to reach me are through my [Mastodon](https://social.nerd.net/@fooderick) and through my email `fm1391<at>nyu.edu`. You can also check the ["Contact" section on my homepage](/#contact) for other methods of getting in touch._
+_Want to chat? The best ways to reach me are through my [Mastodon](https://social.nerd.net/@fooderick) and through my email `me<at>freddy.us`. You can also check the ["Contact" section on my homepage](/#contact) for other methods of getting in touch._
