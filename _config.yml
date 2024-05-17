@@ -36,6 +36,7 @@ plugins:
   - jekyll-optional-front-matter
   - jekyll-titles-from-headings
   - jekyll-relative-links
+  - jekyll-redirect-from
   # - jekyll-github-metadata
 
 exclude:

@@ -261,10 +261,11 @@ DEPENDENCIES
   github-pages
   jekyll-feed
   jekyll-optional-front-matter
+  jekyll-redirect-from
   jekyll-relative-links
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-titles-from-headings
 
 BUNDLED WITH
-   1.17.3
+   2.1.4

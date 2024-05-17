@@ -3,6 +3,8 @@ layout: post
 title: A Fun Complexity Analysis Problem
 date: 2023-10-18 19:00:00 -0400
 category: CS
+permalink: /posts/2023/10/18/fun-complexity-analysis/
+redirect_from: /cs/2023/10/18/fun-complexity-analysis.html
 description:
   Back in 2020 a question was posed to me about deriving a bound for the
   computational complexity of querying an O(1) oracle to determine the size of
