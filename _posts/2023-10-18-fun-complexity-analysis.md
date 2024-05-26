@@ -11,6 +11,7 @@ description:
   an unknown set of bounded non-negative integers. I thought perhaps the
   internet would get some enjoyment out of this exercise.
 usemath: true
+tags: [cs, math]
 ---
 
 # {{ page.title }}
