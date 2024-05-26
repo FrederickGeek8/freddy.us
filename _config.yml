@@ -46,6 +46,7 @@ exclude:
   - .prettierrc
   - .gitignore
   - .gitmodules
+  - .sass-cache
 
 defaults:
   - scope:
