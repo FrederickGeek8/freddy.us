@@ -35,8 +35,7 @@
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
-    background-color: black;
-    background: url(../../assets/img/dot-grid_inv.png);
+    background: black url(/assets/img/dot-grid_inv.png);
   }
   img {
     border: 2px white solid;
