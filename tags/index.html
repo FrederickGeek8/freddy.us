@@ -1,20 +1,19 @@
 ---
 layout: blog.default
-backlink: "/blog"
 permalink: "/tags/"
 ---
 
-<div id="navigation">
-  <div id="title">
-    <a href="{{ page.backlink | default: '/' }}">Frederick's Ramblings</a>
-  </div>
-</div>
+{% include ext-navigation.html %}
+
 <div class="container tight">
+  <h1 id="title">Frederick's Blog</h1>
+
+  <h2>Post by Tag:</h2>
+
   <div class="spacer">
     <b>Abstract:</b>
     <p>All posts by all tags.</p>
   </div>
-  <h1>Post by Tag:</h1>
 
   {% capture tags %}
     {% for tag in site.tags %}
@@ -31,4 +30,10 @@ permalink: "/tags/"
   {% endfor %}
   </ul>
 {% endfor %}
+</div>
+
+<div id="footer" class="tight">
+  <p id="copyright">
+    &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights reserved.
+  </p>
 </div>

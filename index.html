@@ -25,19 +25,7 @@
   </head>
 
   <body>
-    <div id="navigation">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#recent">Recent Work</a></li>
-        <li><a href="#publications">Papers</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Links</a></li>
-        <li><a href="bookshelf.html" class="link">My Bookshelf</a></li>
-        <li><a href="blog.html" class="link">Blog</a></li>
-      </ul>
-    </div>
+    {% include navigation.html %}
 
     <div class="container">
       <h1 id="title">{{ site.title }}</h1>
@@ -396,7 +384,7 @@
         </li>
       </ul>
     </div>
-    <div id="footer" style="text-align: center">
+    <div id="footer">
       <p id="copyright">
         &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights
         reserved.

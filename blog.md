@@ -2,7 +2,6 @@
 layout: post
 title: "Posts"
 description: Frederick Morlock's personal blog.
-backlink: "/"
 ---
 
 {% for post in site.posts %}

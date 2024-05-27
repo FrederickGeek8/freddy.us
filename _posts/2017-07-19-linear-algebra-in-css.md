@@ -10,6 +10,5 @@ description: >
 image: /assets/img/2017-01-03-7.png
 tags: [js, cs, math]
 ---
-# {{ page.title }}
 
 Maybe someday I'll write this. It was a wild ride. asdf

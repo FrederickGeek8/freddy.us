@@ -20,8 +20,6 @@ description:
 tags: [academia, personal, thoughts]
 ---
 
-# {{ page.title }}
-
 I have discovered that finding grad schools to apply to is an incredible hard
 and confusing process -- especially if you've been out of academia for several
 years and don't have people to advise you on how to best pursue your interests.

@@ -48,9 +48,9 @@
   // border-bottom: 0.1em dotted $link-color;
 }
 
-.container .post p {
-  font-size: 0.9em;
-}
+// .container .post p {
+//   font-size: 0.9em;
+// }
 
 .container .post b,
 .container .post strong {
@@ -76,7 +76,7 @@
 }
 
 .container .postcontent {
-  h1 {
+  h2 {
     // personally I think that 2em (default) seems a bit large for the h1 tag
     // that isn't the #title
     font-size: 1.75em;

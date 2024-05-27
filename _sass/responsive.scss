@@ -43,15 +43,34 @@
 
   a[href] {
     color: $dark-link-color;
-    // border-bottom: 0.1em dotted $dark-link-color;
     text-decoration: underline dotted $dark-link-color 0.1em;
-  }
 
-  #title a {
-    font-size: 2em;
-    color: $dark-link-color;
-    // border-bottom: 1px solid $dark-link-color;
-    text-decoration: underline solid $dark-link-color 1px;
+    // &:visited {
+    //   color: $dark-link-color-visited;
+    //   text-decoration: underline dotted $dark-link-color-visited 0.1em;
+    // }
+
+    &:hover {
+      color: $dark-link-color-hover;
+      text-decoration: underline dotted $dark-link-color-hover 0.1em;
+    }
+
+    &:active {
+      color: $dark-link-color-active;
+      text-decoration: underline dotted $dark-link-color-active 0.1em;
+    }
+
+    &.default {
+      color: $text-color-dark;
+      text-decoration: underline solid $text-color-dark 0.1em;
+    }
+
+    &.current {
+      color: $text-color-dark;
+      text-decoration: underline dotted $text-color-dark 0.1em;
+
+      font-weight: 400;
+    }
   }
 
   .container .post a {

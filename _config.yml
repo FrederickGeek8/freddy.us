@@ -59,3 +59,12 @@ feed:
 
 sass:
   style: compressed
+
+# Custom stuff
+navigation: 
+  - title: Home
+    url: /index.html
+  - title: My Bookshelf
+    url: /bookshelf.html
+  - title: Blog
+    url: /blog.html

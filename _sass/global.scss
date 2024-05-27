@@ -20,9 +20,34 @@ body {
 
 a[href] {
   color: $link-color;
-  // text-decoration: none;
   text-decoration: underline dotted $link-color 0.1em;
-  // border-bottom: 0.1em dotted $link-color;
+
+  // &:visited {
+  //   color: $link-color-visited;
+  //   text-decoration: underline dotted $link-color-visited 0.1em;
+  // }
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline dotted $link-color-hover 0.1em;
+  }
+
+  &:active {
+    color: $link-color-active;
+    text-decoration: underline dotted $link-color-active 0.1em;
+  }
+
+  &.default {
+    color: $text-color;
+    text-decoration: underline solid $text-color 0.1em;
+  }
+
+  &.current {
+    color: $text-color;
+    text-decoration: underline dotted $text-color 0.1em;
+
+    font-weight: 400;
+  }
 }
 
 .link::after {
@@ -33,18 +58,33 @@ a[href] {
   margin: 0;
   margin-left: 3px;
   line-height: 1;
+  font-size: 0.9em;
   /* line-height: normal; */
 }
 
 #title {
   position: relative;
   text-align: center;
+  margin: 1em auto;
+
+  // .uplink::after {
+  //   content: "⇑";
+  //   vertical-align: middle;
+  //   display: inline;
+  //   margin: 0;
+  //   // margin-left: 3px;
+  //   line-height: 1;
+  //   font-size:2em;
+  // }
 }
 
-#title a {
-  font-size: 2em;
-  // border-bottom: 1px solid $link-color;
-  text-decoration: underline solid $link-color 1px;
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  // vertical-align: text-bottom;
+  vertical-align: middle;
 }
 
 #navigation {
@@ -77,8 +117,7 @@ a[href] {
 
 #footer {
   margin: 0 auto;
-  margin-top: 15px;
-  padding: 15px;
+  margin-top: 30px;
   border-top: black 1px solid;
   text-align: center;
   line-height: 1.5;
@@ -89,6 +128,7 @@ a[href] {
 
   #copyright {
     text-align: center;
+    margin: 20px 0;
   }
 }
 
@@ -99,7 +139,7 @@ a[href] {
 .container,
 #footer {
   width: 75%;
-  max-width: 1440px;
+  max-width: 1280px;
   // background: white;
   // padding: 2em 2em 0;
 }
