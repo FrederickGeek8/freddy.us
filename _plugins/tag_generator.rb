@@ -1,5 +1,5 @@
 Jekyll::Hooks.register :posts, :pre_render do |post|
-    all_existing_tags = Dir.entries("tags")
+    all_existing_tags = Dir.entries("blog/tags")
     .map { |t| t.match(/(.*).md/) }
     .compact.map { |m| m[1] }
 
@@ -11,7 +11,7 @@ end
 
 def generate_tag_file(tag)
     # generate tag file
-    File.open("tags/#{tag}.md", "wb") do |file|
+    File.open("blog/tags/#{tag}.md", "wb") do |file|
     file << "---\nlayout: tagpage\ntag: #{tag}\n---\n"
     end
 end

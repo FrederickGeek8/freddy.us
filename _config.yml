@@ -63,8 +63,8 @@ sass:
 # Custom stuff
 navigation: 
   - title: Home
-    url: /index.html
+    url: /
   - title: My Bookshelf
-    url: /bookshelf.html
+    url: /bookshelf/
   - title: Blog
-    url: /blog.html
+    url: /blog/

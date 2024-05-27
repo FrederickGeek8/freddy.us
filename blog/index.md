@@ -2,6 +2,7 @@
 layout: post
 title: "Posts"
 description: Frederick Morlock's personal blog.
+permalink: '/blog/'
 ---
 
 {% for post in site.posts %}

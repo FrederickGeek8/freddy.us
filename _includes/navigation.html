@@ -7,7 +7,11 @@
     <li><a href="#publications">Papers</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Links</a></li>
-    <li><a href="bookshelf.html" class="link">My Bookshelf</a></li>
-    <li><a href="blog.html" class="link">Blog</a></li>
+
+    {% for item in site.navigation %}
+    {% if item.url != '/' %}
+    <li><a href="{{ item.url }}" class="link">{{ item.title }}</a></li>
+    {% endif %}
+    {% endfor %}
   </ul>
 </div>
