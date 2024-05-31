@@ -53,11 +53,19 @@
     &:hover {
       color: $dark-link-color-hover;
       text-decoration: underline dotted $dark-link-color-hover 0.1em;
+
+      &.taglink {
+        border: 1px solid $dark-link-color-hover;
+      }
     }
 
     &:active {
       color: $dark-link-color-active;
       text-decoration: underline dotted $dark-link-color-active 0.1em;
+
+      &.taglink {
+        border: 1px solid $dark-link-color-active;
+      }
     }
 
     &.default {
@@ -70,6 +78,11 @@
       text-decoration: underline dotted $text-color-dark 0.1em;
 
       font-weight: 400;
+    }
+
+    &.taglink {
+      border: 1px solid $dark-link-color;
+      text-decoration: none;
     }
   }
 

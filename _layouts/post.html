@@ -15,8 +15,16 @@ layout: blog.default
   </div>
 
   <div class="postcontent">{{ content }}</div>
-</div>
 
+  {% if page.tags %}
+  <div id="tags">
+    <b>Tags: </b>
+    {% for tag in page.tags %}
+    <a href="/blog/tags/{{ tag }}" class="taglink">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
 <div id="footer" class="tight">
   <p id="copyright">
     &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights reserved.

@@ -30,11 +30,19 @@ a[href] {
   &:hover {
     color: $link-color-hover;
     text-decoration: underline dotted $link-color-hover 0.1em;
+
+    &.taglink {
+      border: 1px solid $link-color-hover;
+    }
   }
 
   &:active {
     color: $link-color-active;
     text-decoration: underline dotted $link-color-active 0.1em;
+
+    &.taglink {
+      border: 1px solid $link-color-active;
+    }
   }
 
   &.default {
@@ -47,6 +55,14 @@ a[href] {
     text-decoration: underline dotted $text-color 0.1em;
 
     font-weight: 400;
+  }
+
+  &.taglink {
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: 1px solid $link-color;
+    // margin: 5px;
+    text-decoration: none;
   }
 }
 
