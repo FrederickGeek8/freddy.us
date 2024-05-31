@@ -12,11 +12,12 @@ layout: blog.default
   {% if page.date %}
   <div>
     <p>
-      <b>Date Published:</b>
-      <a>{{ page.date | date: "%Y-%m-%d" }}</a>
-      {% if page.last_modified_at %} /
-      <b>Last Updated:</b>
-      <a>{{ page.last_modified_at | date: "%Y-%m-%d" }}</a>
+      <b>Posted:</b> {{ page.date | date: "%B %e, %Y" }} in
+      <a href="/blog/categories/{{ page.category }}">{{ page.category }}</a>. {%
+      if page.last_modified_at %}
+      <i
+        ><b>Last Updated:</b> {{ page.last_modified_at | date: "%B %e, %Y" }}</i
+      >
       {% endif %}
     </p>
   </div>

@@ -1,0 +1,31 @@
+---
+layout: blog.default
+---
+
+{% include ext-navigation.html %}
+
+<div class="container tight">
+  <h1 id="title">Frederick's Blog</h1>
+
+  <h2>Post by Category: "{{ page.category }}"</h2>
+
+  <div class="spacer">
+    <b>Abstract:</b>
+    <p>Posts marked in the "{{ page.category }}" category.</p>
+  </div>
+
+  <ul>
+    {% for post in site.categories[page.category] %}
+    <li>
+      {{ post.date | date: "%B %d, %Y" }}:
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="footer" class="tight">
+  <p id="copyright">
+    &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights reserved.
+  </p>
+</div>
