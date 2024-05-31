@@ -56,15 +56,26 @@ defaults:
 
 feed:
   excerpt_only: true
+  tags: true
+  categories:
+    - CS
+    - Personal
+    - Tutorials
+    - Libraries
 
 sass:
   style: compressed
 
+blog_root: '/blog'
+
 # Custom stuff
-navigation: 
+navigation:
   - title: Home
     url: /
   - title: My Bookshelf
     url: /bookshelf/
   - title: Blog
     url: /blog/
+
+# Post permalink format
+permalink: /blog/:categories/:year/:month/:day/:title:output_ext
