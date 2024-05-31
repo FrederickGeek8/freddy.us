@@ -9,6 +9,19 @@ layout: blog.default
 
   <h2>{{ page.title }}</h2>
 
+  {% if page.date %}
+  <div>
+    <p>
+      <b>Date Published:</b>
+      <a>{{ page.date | date: "%Y-%m-%d" }}</a>
+      {% if page.last_modified_at %} /
+      <b>Last Updated:</b>
+      <a>{{ page.last_modified_at | date: "%Y-%m-%d" }}</a>
+      {% endif %}
+    </p>
+  </div>
+  {% endif %}
+
   <div class="spacer">
     <b>Abstract:</b>
     <p>{{ page.description }}</p>

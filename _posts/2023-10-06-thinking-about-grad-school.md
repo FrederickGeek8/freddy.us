@@ -2,6 +2,7 @@
 layout: post
 title: Thinking About Grad School & Math (Help Wanted)
 date: 2023-10-06 17:15:04 -0400
+last_modified_at: 2024-05-14
 category: Personal
 permalink: /blog/posts/2023/10/06/thinking-about-grad-school/
 redirect_from: 
