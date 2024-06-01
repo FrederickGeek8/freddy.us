@@ -78,4 +78,5 @@ navigation:
     url: /blog/
 
 # Post permalink format
-permalink: /blog/:categories/:year/:month/:day/:title:output_ext
+# permalink: /blog/:categories/:year/:month/:day/:title/
+permalink: /blog/posts/:year/:month/:day/:title/
