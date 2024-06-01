@@ -1,394 +1,355 @@
 ---
+layout: blog.default
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <!-- Welcome to my website source code. This is (mostly) handwritten with love :) -->
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+{% include navigation.html %}
 
-    <link
-      rel="preload"
-      as="style"
-      href="{{ site.baseurl }}/assets/css/fira_code.css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/fira_code.css" />
+<div class="container">
+  <h1 id="title">{{ site.title }}</h1>
+  <img
+    id="avatar"
+    srcset="
+      {{ site.baseurl }}/assets/img/avatar_640x640.jpg 640w,
+      {{ site.baseurl }}/assets/img/avatar_320x320.jpg 320w,
+      {{ site.baseurl }}/assets/img/avatar_256x256.jpg 256w,
+      {{ site.baseurl }}/assets/img/avatar_128x128.jpg 128w
+    "
+    sizes="(max-width: 500px) 256px, (max-width: 360px) 160px, 320px"
+    src="{{ site.baseurl }}/assets/img/avatar_320x320.jpg"
+    alt="Photo of me"
+    width="320"
+    height="320" />
+  <h2 id="about">About</h2>
+  <p>
+    Computer Scientist, Mathematician, and Software Engineer interested in
+    Machine Learning and pushing the boundaries of understanding in Computer
+    Science. I have been programming, tinkering, and constantly curious for over
+    a decade and I consider it to truly be my lifelong passion. I am
+    mathematically obsessed and still exploring the realm of academia &amp;
+    research, but I find the intersection of Computer Science and Mathematics to
+    be fascinating. My primary <i>research</i> interests lie in Deep Learning
+    Theory and its efficient and controlled implementation, especially in the
+    sciences. I have been working over the past 2 years as a Machine Learning
+    Scientist &amp; Software Engineer at Hinalea Imaging developing novel
+    machine learning-based sensing on hyperspectral imagery --
+    <i
+      >a position that I will be leaving in July 2024 in order to pursue Ph.D.
+      applications</i
+    >.
+  </p>
+  <!--I'm still interested, I'm just removing this from view. For now..-->
+  <p>
+    <b>
+      I am looking to apply for an Applied Mathematics Ph.D program this Fall
+      (2024), and I am hoping to start next Fall or sooner.</b
+    >
+    My primary interests lie in the rigorous analysis of Deep Linear Networks
+    (including Attention) and the reliable and efficient application of the
+    "toolbox" endowed by Deep Learning Theory to other scientific disciplines. I
+    am eager to meet collaborators and mentors as I venture forth on this path.
+    <br /><br />
+    If you would like to have a chat, feel free to reach out to me at
+    <code>me&lt;at&gt;freddy.us</code> or on any of the platforms
+    <a href="#contact">below</a>.
+  </p>
+  <h2 id="experience">Experience</h2>
+  <h3>
+    Software Engineer & Machine Learning Scientist – Hinalea Imaging (<i
+      >Apr 2022 - Present</i
+    >)
+  </h3>
+  <div class="exp_desc">
+    <p>
+      I lead the research and development effort of state-of-the-art
+      hyperspectral machine learning algorithms at Hinalea Imaging. Throughout
+      working on customer projects, I have built the foundation code and
+      infrastructure necessary to support the team I hope to grow and mentor.
+    </p>
+    Contributions:
+    <ol>
+      <li>
+        Built the foundational deep learning and data processing libraries
+        necessary for research and development of custom Machine Learning models
+        for use in a collaborative business setting.
+      </li>
+      <li>
+        Conducted literature reviews and research on current methods and theory,
+        and disseminated knowledge to colleagues through internal documentation
+        & "crash courses" on machine learning and optimization theory.
+      </li>
+      <li>
+        Employed self-supervised pretraining of convolution and attention-based
+        model to improve the generalization power of models in low-data
+        environments.
+      </li>
+      <li>
+        Designed and developed Siamese network-based object tracking and
+        homography deep learning models for the real-time co-registration of
+        objects to improve spectral stability under motion.
+      </li>
+      <li>
+        Developed regression and classification Deep Learning-based vision
+        models for agriculture, laboratory, and other settings.
+      </li>
+    </ol>
+  </div>
+  <h3>Full Stack Engineer – Simeon Cloud LLC (<i>Mar 2021 - Dec 2021</i>)</h3>
+  <div class="exp_desc">
+    <p>
+      Built a bi-directional sync engine for "configuration as code" in .NET C#
+      for the Microsoft 365 platform -- running completely on serverless
+      architecture.
+    </p>
+    <p>
+      Developed automatic version control for detection and resolution of state
+      changes detected in users’ Microsoft infrastructure configuration.
+    </p>
+    <p>
+      Was also responsible for building out a user interface on the web in Vue,
+      Typescript, and SASS.
+    </p>
+  </div>
+  <h3>
+    Machine Learning Research Assistant – NYU Shanghai (<i
+      >Dec 2019 - Dec 2020</i
+    >)
+  </h3>
+  <div class="exp_desc">
+    <p>
+      Studied embedding and visualization of high-dimensional and non-Euclidean
+      data using unsupervised and supervised Deep Learning networks under the
+      supervision of Professor Shuyang Ling. Careful consideration was made in
+      understanding the mathematics that underpin these techniques.
+    </p>
+    <p>
+      Authored the Senior Capstone Thesis “Exploring the Limitations of t-SNE”
+      under the supervision of Professor Shuyang Ling. This work aimed to find
+      of the limits of popular dimensional reduction and visualization
+      techniques, such as the t-SNE dimensionality reduction algorithm. The
+      manuscript specifically explored degenerate embeddings of high-dimensional
+      data, applications to latent geometric processes in image sequences, and
+      unscrambling randomized Radon Transform tomography data.
+    </p>
+  </div>
+  <h3>
+    Cryptography Research Assistant – NYU Shanghai (<i>Aug 2019 - Dec 2019</i>)
+  </h3>
+  <div class="exp_desc">
+    <p>
+      Researched emerging post-quantum, lattice-based cryptography schemes under
+      the guidance of Professor Siyao Guo of NYU Shanghai, as well as delving
+      into the inner workings of quantum computing theory. The goal of the
+      research was to investigate some of the many open questions in
+      post-quantum cryptography and work toward answering them.
+    </p>
+    <p>
+      Gained experience in writing proofs for proving the security of
+      cryptographic protocols, which are critical in ensuring the security of
+      existing and emerging schemes. Left to resume pursuing interests in
+      Machine Learning.
+    </p>
+  </div>
+  <h2 id="education">Education</h2>
+  <table>
+    <tr>
+      <th>Institution</th>
+      <th>Degree</th>
+      <th>Dates Attended</th>
+    </tr>
+    <tr>
+      <td>NYU Shanghai</td>
+      <td>B.S. Computer Science</td>
+      <td>Sept 2016 - Dec 2020</td>
+    </tr>
+    <tr>
+      <td>NYU Shanghai</td>
+      <td>B.S. Mathematics</td>
+      <td>Sept 2016 - Dec 2020</td>
+    </tr>
+  </table>
+  <h2 id="recent">Recent Work</h2>
+  <p>
+    Until GitHub provides a better API for showcasing repositories, you can find
+    my recent and pinned repositories on
+    <a
+      href="https://github.com/FrederickGeek8"
+      rel="noreferrer me external"
+      class="link"
+      target="_blank"
+      >my GitHub</a
+    >.
+  </p>
+  <h2 id="publications">Papers</h2>
+  <h3>Unpublished Manuscripts</h3>
+  <p class="note grey tight" style="border: 1px black solid">
+    <i
+      >Unfortunately, all I have to show here right now are papers I wrote in my
+      naive undergraduate research phase.</i
+    >
+  </p>
+  <div class="pub">
+    <p>
+      Morlock, Frederick. "Exploring the Limitations of t-SNE"
+      <i>NYU Shanghai Senior Capstone Thesis</i> (2020).
+      <a
+        href="https://drive.google.com/file/d/12C-xS0Q8_QXlKUVdpexMhyEIyhmMwXgU/view?usp=sharing"
+        rel="noreferrer external author"
+        target="_blank"
+        class="link">
+        Available Here </a
+      >.
+    </p>
+    <p class="note">
+      I wrote my undergraduate Senior Thesis paper "Exploring the Limitations of
+      t-SNE" under the supervision of Professor Shuyang Ling of NYU Shanghai.
+      The paper experimentally analyzed 3 problems using the t-SNE algorithm to
+      test both its limitations and possible novel applications. The paper
+      explored the effects of the "crowding problem" when embedding
+      high-dimensional data in 2D, the preservation of latent geometric
+      structure in embeddings, and the application of unscrambling the
+      "Scrambled Radon Transform" in tomography data. As much as I regret it,
+      while the paper was theoretically motivated, there was not a rigious
+      analysis of the phenomenon, but rather just empirical studies.
+    </p>
+  </div>
 
-    <link
-      rel="preload"
-      as="style"
-      href="{{ site.baseurl }}/assets/css/main.css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-    {% seo %} {% include feed_meta_2.html %}
-  </head>
-
-  <body>
-    {% include navigation.html %}
-
-    <div class="container">
-      <h1 id="title">{{ site.title }}</h1>
-      <img
-        id="avatar"
-        srcset="
-          {{ site.baseurl }}/assets/img/avatar_640x640.jpg 640w,
-          {{ site.baseurl }}/assets/img/avatar_320x320.jpg 320w,
-          {{ site.baseurl }}/assets/img/avatar_256x256.jpg 256w,
-          {{ site.baseurl }}/assets/img/avatar_128x128.jpg 128w
-        "
-        sizes="(max-width: 500px) 256px, (max-width: 360px) 160px, 320px"
-        src="{{ site.baseurl }}/assets/img/avatar_320x320.jpg"
-        alt="Photo of me"
-        width="320"
-        height="320" />
-      <h2 id="about">About</h2>
-      <p>
-        Computer Scientist, Mathematician, and Software Engineer interested in
-        Machine Learning and pushing the boundaries of understanding in Computer
-        Science. I have been programming, tinkering, and constantly curious for
-        over a decade and I consider it to truly be my lifelong passion. I am
-        mathematically obsessed and still exploring the realm of academia &amp;
-        research, but I find the intersection of Computer Science and
-        Mathematics to be fascinating. My primary <i>research</i> interests lie
-        in Deep Learning Theory and its efficient and controlled implementation,
-        especially in the sciences. I have been working over the past 2 years as
-        a Machine Learning Scientist &amp; Software Engineer at Hinalea Imaging
-        developing novel machine learning-based sensing on hyperspectral imagery
-        --
-        <i
-          >a position that I will be leaving in July 2024 in order to pursue
-          Ph.D. applications</i
-        >.
-      </p>
-      <!--I'm still interested, I'm just removing this from view. For now..-->
-      <p>
-        <b>
-          I am looking to apply for an Applied Mathematics Ph.D program this
-          Fall (2024), and I am hoping to start next Fall or sooner.</b
-        >
-        My primary interests lie in the rigorous analysis of Deep Linear
-        Networks (including Attention) and the reliable and efficient
-        application of the "toolbox" endowed by Deep Learning Theory to other
-        scientific disciplines. I am eager to meet collaborators and mentors as
-        I venture forth on this path.
-        <br /><br />
-        If you would like to have a chat, feel free to reach out to me at
-        <code>me&lt;at&gt;freddy.us</code> or on any of the platforms
-        <a href="#contact">below</a>.
-      </p>
-      <h2 id="experience">Experience</h2>
-      <h3>
-        Software Engineer & Machine Learning Scientist – Hinalea Imaging (<i
-          >Apr 2022 - Present</i
-        >)
-      </h3>
-      <div class="exp_desc">
-        <p>
-          I lead the research and development effort of state-of-the-art
-          hyperspectral machine learning algorithms at Hinalea Imaging.
-          Throughout working on customer projects, I have built the foundation
-          code and infrastructure necessary to support the team I hope to grow
-          and mentor.
-        </p>
-        Contributions:
-        <ol>
-          <li>
-            Built the foundational deep learning and data processing libraries
-            necessary for research and development of custom Machine Learning
-            models for use in a collaborative business setting.
-          </li>
-          <li>
-            Conducted literature reviews and research on current methods and
-            theory, and disseminated knowledge to colleagues through internal
-            documentation & "crash courses" on machine learning and optimization
-            theory.
-          </li>
-          <li>
-            Employed self-supervised pretraining of convolution and
-            attention-based model to improve the generalization power of models
-            in low-data environments.
-          </li>
-          <li>
-            Designed and developed Siamese network-based object tracking and
-            homography deep learning models for the real-time co-registration of
-            objects to improve spectral stability under motion.
-          </li>
-          <li>
-            Developed regression and classification Deep Learning-based vision
-            models for agriculture, laboratory, and other settings.
-          </li>
-        </ol>
-      </div>
-      <h3>
-        Full Stack Engineer – Simeon Cloud LLC (<i>Mar 2021 - Dec 2021</i>)
-      </h3>
-      <div class="exp_desc">
-        <p>
-          Built a bi-directional sync engine for "configuration as code" in .NET
-          C# for the Microsoft 365 platform -- running completely on serverless
-          architecture.
-        </p>
-        <p>
-          Developed automatic version control for detection and resolution of
-          state changes detected in users’ Microsoft infrastructure
-          configuration.
-        </p>
-        <p>
-          Was also responsible for building out a user interface on the web in
-          Vue, Typescript, and SASS.
-        </p>
-      </div>
-      <h3>
-        Machine Learning Research Assistant – NYU Shanghai (<i
-          >Dec 2019 - Dec 2020</i
-        >)
-      </h3>
-      <div class="exp_desc">
-        <p>
-          Studied embedding and visualization of high-dimensional and
-          non-Euclidean data using unsupervised and supervised Deep Learning
-          networks under the supervision of Professor Shuyang Ling. Careful
-          consideration was made in understanding the mathematics that underpin
-          these techniques.
-        </p>
-        <p>
-          Authored the Senior Capstone Thesis “Exploring the Limitations of
-          t-SNE” under the supervision of Professor Shuyang Ling. This work
-          aimed to find of the limits of popular dimensional reduction and
-          visualization techniques, such as the t-SNE dimensionality reduction
-          algorithm. The manuscript specifically explored degenerate embeddings
-          of high-dimensional data, applications to latent geometric processes
-          in image sequences, and unscrambling randomized Radon Transform
-          tomography data.
-        </p>
-      </div>
-      <h3>
-        Cryptography Research Assistant – NYU Shanghai (<i
-          >Aug 2019 - Dec 2019</i
-        >)
-      </h3>
-      <div class="exp_desc">
-        <p>
-          Researched emerging post-quantum, lattice-based cryptography schemes
-          under the guidance of Professor Siyao Guo of NYU Shanghai, as well as
-          delving into the inner workings of quantum computing theory. The goal
-          of the research was to investigate some of the many open questions in
-          post-quantum cryptography and work toward answering them.
-        </p>
-        <p>
-          Gained experience in writing proofs for proving the security of
-          cryptographic protocols, which are critical in ensuring the security
-          of existing and emerging schemes. Left to resume pursuing interests in
-          Machine Learning.
-        </p>
-      </div>
-      <h2 id="education">Education</h2>
-      <table>
-        <tr>
-          <th>Institution</th>
-          <th>Degree</th>
-          <th>Dates Attended</th>
-        </tr>
-        <tr>
-          <td>NYU Shanghai</td>
-          <td>B.S. Computer Science</td>
-          <td>Sept 2016 - Dec 2020</td>
-        </tr>
-        <tr>
-          <td>NYU Shanghai</td>
-          <td>B.S. Mathematics</td>
-          <td>Sept 2016 - Dec 2020</td>
-        </tr>
-      </table>
-      <h2 id="recent">Recent Work</h2>
-      <p>
-        Until GitHub provides a better API for showcasing repositories, you can
-        find my recent and pinned repositories on
-        <a
-          href="https://github.com/FrederickGeek8"
-          rel="noreferrer me external"
-          class="link"
-          target="_blank"
-          >my GitHub</a
-        >.
-      </p>
-      <h2 id="publications">Papers</h2>
-      <h3>Unpublished Manuscripts</h3>
-      <p class="note grey tight" style="border: 1px black solid">
-        <i
-          >Unfortunately, all I have to show here right now are papers I wrote
-          in my naive undergraduate research phase.</i
-        >
-      </p>
-      <div class="pub">
-        <p>
-          Morlock, Frederick. "Exploring the Limitations of t-SNE"
-          <i>NYU Shanghai Senior Capstone Thesis</i> (2020).
-          <a
-            href="https://drive.google.com/file/d/12C-xS0Q8_QXlKUVdpexMhyEIyhmMwXgU/view?usp=sharing"
-            rel="noreferrer external author"
-            target="_blank"
-            class="link">
-            Available Here </a
-          >.
-        </p>
-        <p class="note">
-          I wrote my undergraduate Senior Thesis paper "Exploring the
-          Limitations of t-SNE" under the supervision of Professor Shuyang Ling
-          of NYU Shanghai. The paper experimentally analyzed 3 problems using
-          the t-SNE algorithm to test both its limitations and possible novel
-          applications. The paper explored the effects of the "crowding problem"
-          when embedding high-dimensional data in 2D, the preservation of latent
-          geometric structure in embeddings, and the application of unscrambling
-          the "Scrambled Radon Transform" in tomography data. As much as I
-          regret it, while the paper was theoretically motivated, there was not
-          a rigious analysis of the phenomenon, but rather just empirical
-          studies.
-        </p>
-      </div>
-
-      <div class="pub">
-        <p>
-          Morlock, Frederick. "Graph Embedding and Visualization Using t-SNE"
-          <i>Deans’ Undergraduate Research Fund -- NYU Shanghai</i> (2020).
-          <a
-            href="https://drive.google.com/file/d/12GawzvvX-YWl45SsYs7lx663cWwOt3co/view?usp=drive_link"
-            rel="noreferrer external author"
-            target="_blank"
-            class="link"
-            >Available Here</a
-          >.
-        </p>
-        <p class="note">
-          I received funding through the Deans' Undergraduate Research Fund at
-          NYU Shanghai, where I conducted research under the supervision of
-          Shuyang Ling. In the manuscript "Graph Embedding and Visualization
-          Using t-SNE", I furthered some of the research I did as part of my
-          Thesis and explored the application of t-SNE to graph embedding and
-          visualization. In the paper, I studied applying t-SNE for use in graph
-          embeddings. I primarily looked at 3 datasets: Facebook's "Egonet"
-          dataset, the "JAGMESH" mesh network dataset, and a simple "Stochastic
-          Block Model" network. While t-SNE possesses the ability to be able to
-          perform graph embeddings, one of its limitations is the computational
-          complexity required to compute it. There were 3 approaches that were
-          taken to overcome this limitation: graph sparsification via "effective
-          resistance" approximations, geodesic distance approximations via the
-          Nystrom Approximation, and graph coarsening via Kron Reduction. While
-          Kron Reduction was viable in some sense for reducing the computational
-          complexity of the problem, given that we wanted to preserve all of the
-          nodes in the original data in our embedding, I did not include results
-          using the Kron Reduction as graph coarsening (removing/combining graph
-          nodes) as it was not in the spirit of the paper's objective.
-          <br />
-          <br />
-          <i
-            >It may be noted that this paper was written and submitted in 2020,
-            despite the linked paper header reading 2021. The header there
-            contains the date when I compiled that version of the paper since I
-            had my LaTeX heading set to read the current date...</i
-          >
-        </p>
-      </div>
-      <div class="pub">
-        <p>
-          Morlock, Frederick, and Dingsu Wang. "MAD-VAE: Manifold Awareness
-          Defense Variational Autoencoder."
-          <i>arXiv preprint arXiv:2011.01755</i> (2020).
-          <a
-            href="https://arxiv.org/abs/2011.01755"
-            rel="noreferrer external author"
-            target="_blank"
-            class="link"
-            >Available Here</a
-          >.
-        </p>
-        <p class="note">
-          Personally, I'm not sure that anyone should read this paper. It was
-          from a period of my life when I was naive about research, and it was
-          published long after it was written. Not only was I a naive young
-          aspiring researcher, but the study of adversarial examples was young
-          at the time as well. While I haven't studied this area for a while, if
-          you are curious about adversarial examples, then you might want to
-          read the paper
-          <a
-            href="https://arxiv.org/abs/1905.02175"
-            rel="noreferrer external"
-            target="_blank"
-            class="link"
-            >"Adversarial Examples Are Not Bugs, They Are Features" by Ilyas et.
-            al.</a
-          >
-        </p>
-      </div>
-      <h2 id="resume">
-        <a
-          href="https://drive.google.com/file/d/11o0st1t7VJx8rg1RcgJzFW3q0JSlgz3C/view?usp=sharing"
-          rel="noreferrer external author"
-          class="link"
-          target="_blank"
-          >Resume/CV</a
-        >
-      </h2>
-      <h2 id="contact">Contact</h2>
-      <p>
-        You can reach me on any of the following social media platforms.
-        Additionally, you can find my email in my
-        <a href="#resume">resume</a>.
-      </p>
-      <ul id="links">
-        <li>
-          <a
-            href="https://www.linkedin.com/in/frederickmorlock"
-            rel="noreferrer me external author"
-            class="link"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/FrederickGeek8"
-            rel="noreferrer me external author"
-            class="link"
-            target="_blank"
-            >GitHub</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://social.nerd.net/@fooderick"
-            rel="noreferrer me external author"
-            class="link"
-            target="_blank"
-            >Mastodon</a
-          >
-        </li>
-        <!-- <li>
-          <a
-            href="https://twitter.com/FrederickGeek8"
-            rel="noreferrer me"
-            class="link"
-            target="_blank"
-            >Twitter</a
-          >
-        </li> -->
-        <li>
-          <a
-            href="https://letterboxd.com/frederickgeek8/"
-            rel="noreferrer me external author"
-            class="link"
-            target="_blank"
-            >Letterboxd</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div id="footer">
-      <p id="copyright">
-        &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights
-        reserved.
-      </p>
-    </div>
-  </body>
-</html>
+  <div class="pub">
+    <p>
+      Morlock, Frederick. "Graph Embedding and Visualization Using t-SNE"
+      <i>Deans’ Undergraduate Research Fund -- NYU Shanghai</i> (2020).
+      <a
+        href="https://drive.google.com/file/d/12GawzvvX-YWl45SsYs7lx663cWwOt3co/view?usp=drive_link"
+        rel="noreferrer external author"
+        target="_blank"
+        class="link"
+        >Available Here</a
+      >.
+    </p>
+    <p class="note">
+      I received funding through the Deans' Undergraduate Research Fund at NYU
+      Shanghai, where I conducted research under the supervision of Shuyang
+      Ling. In the manuscript "Graph Embedding and Visualization Using t-SNE", I
+      furthered some of the research I did as part of my Thesis and explored the
+      application of t-SNE to graph embedding and visualization. In the paper, I
+      studied applying t-SNE for use in graph embeddings. I primarily looked at
+      3 datasets: Facebook's "Egonet" dataset, the "JAGMESH" mesh network
+      dataset, and a simple "Stochastic Block Model" network. While t-SNE
+      possesses the ability to be able to perform graph embeddings, one of its
+      limitations is the computational complexity required to compute it. There
+      were 3 approaches that were taken to overcome this limitation: graph
+      sparsification via "effective resistance" approximations, geodesic
+      distance approximations via the Nystrom Approximation, and graph
+      coarsening via Kron Reduction. While Kron Reduction was viable in some
+      sense for reducing the computational complexity of the problem, given that
+      we wanted to preserve all of the nodes in the original data in our
+      embedding, I did not include results using the Kron Reduction as graph
+      coarsening (removing/combining graph nodes) as it was not in the spirit of
+      the paper's objective.
+      <br />
+      <br />
+      <i
+        >It may be noted that this paper was written and submitted in 2020,
+        despite the linked paper header reading 2021. The header there contains
+        the date when I compiled that version of the paper since I had my LaTeX
+        heading set to read the current date...</i
+      >
+    </p>
+  </div>
+  <div class="pub">
+    <p>
+      Morlock, Frederick, and Dingsu Wang. "MAD-VAE: Manifold Awareness Defense
+      Variational Autoencoder."
+      <i>arXiv preprint arXiv:2011.01755</i> (2020).
+      <a
+        href="https://arxiv.org/abs/2011.01755"
+        rel="noreferrer external author"
+        target="_blank"
+        class="link"
+        >Available Here</a
+      >.
+    </p>
+    <p class="note">
+      Personally, I'm not sure that anyone should read this paper. It was from a
+      period of my life when I was naive about research, and it was published
+      long after it was written. Not only was I a naive young aspiring
+      researcher, but the study of adversarial examples was young at the time as
+      well. While I haven't studied this area for a while, if you are curious
+      about adversarial examples, then you might want to read the paper
+      <a
+        href="https://arxiv.org/abs/1905.02175"
+        rel="noreferrer external"
+        target="_blank"
+        class="link"
+        >"Adversarial Examples Are Not Bugs, They Are Features" by Ilyas et.
+        al.</a
+      >
+    </p>
+  </div>
+  <h2 id="resume">
+    <a
+      href="https://drive.google.com/file/d/11o0st1t7VJx8rg1RcgJzFW3q0JSlgz3C/view?usp=sharing"
+      rel="noreferrer external author"
+      class="link"
+      target="_blank"
+      >Resume/CV</a
+    >
+  </h2>
+  <h2 id="contact">Contact</h2>
+  <p>
+    You can reach me on any of the following social media platforms.
+    Additionally, you can find my email in my
+    <a href="#resume">resume</a>.
+  </p>
+  <ul id="links">
+    <li>
+      <a
+        href="https://www.linkedin.com/in/frederickmorlock"
+        rel="noreferrer me external author"
+        class="link"
+        target="_blank"
+        >LinkedIn</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://github.com/FrederickGeek8"
+        rel="noreferrer me external author"
+        class="link"
+        target="_blank"
+        >GitHub</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://social.nerd.net/@fooderick"
+        rel="noreferrer me external author"
+        class="link"
+        target="_blank"
+        >Mastodon</a
+      >
+    </li>
+    <!-- <li>
+      <a
+        href="https://twitter.com/FrederickGeek8"
+        rel="noreferrer me"
+        class="link"
+        target="_blank"
+        >Twitter</a
+      >
+    </li> -->
+    <li>
+      <a
+        href="https://letterboxd.com/frederickgeek8/"
+        rel="noreferrer me external author"
+        class="link"
+        target="_blank"
+        >Letterboxd</a
+      >
+    </li>
+  </ul>
+</div>
+<div id="footer">
+  <p id="copyright">
+    &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights reserved.
+  </p>
+</div>
