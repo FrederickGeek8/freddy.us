@@ -5,7 +5,10 @@ layout: blog.default
 {% include navigation.html %}
 
 <div class="container">
-  <h1 id="title">{{ site.title }}</h1>
+<main>
+  <header>
+    <h1 id="title">{{ site.title }}</h1>
+  </header>
   <img
     id="avatar"
     srcset="
@@ -347,5 +350,6 @@ layout: blog.default
       >
     </li>
   </ul>
+</main>
 </div>
 {% include footer.html %}

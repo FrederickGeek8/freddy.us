@@ -5,7 +5,10 @@ layout: blog.default
 {% include ext-navigation.html %}
 
 <div class="container tight">
-  <h1 id="title">Frederick's Blog</h1>
+<main>
+  <header>
+    <h1 id="title">Frederick's Blog</h1>
+  </header>
 
   <h2>Post by Category: "{{ page.category }}"</h2>
 
@@ -22,6 +25,7 @@ layout: blog.default
     </li>
     {% endfor %}
   </ul>
+</main>
 </div>
 
 {% include footer.html tight='true' %}

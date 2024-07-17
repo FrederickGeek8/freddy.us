@@ -3,10 +3,12 @@ layout: blog.default
 ---
 
 {% include ext-navigation.html %}
-
 <div class="container tight">
-  <h1 id="title">Frederick's Blog</h1>
-
+<main>
+  <header>
+    <h1 id="title">Frederick's Blog</h1>
+  </header>
+  
   <h2>Post by Tag: "{{ page.tag }}"</h2>
 
   <div class="spacer">
@@ -22,6 +24,7 @@ layout: blog.default
     </li>
     {% endfor %}
   </ul>
+</main>
 </div>
 
 {% include footer.html tight='true' %}

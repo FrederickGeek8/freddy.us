@@ -1,11 +1,15 @@
+<nav>
 <div id="navigation">
   <ul>
     {% for item in site.navigation %}
     {% assign class = 'link' %}
+    {% assign aria = '' %}
     {% if page.url == item.url %}
       {% assign class = 'current' %}
+      {% assign aria = 'aria-current="page"' %}
     {% endif %}
-    <li><a href="{{ item.url }}" class="{{ class }}">{{ item.title }}</a></li>
+    <li><a href="{{ item.url }}" class="{{ class }}" {{ aria }}>{{ item.title }}</a></li>
     {% endfor %}
   </ul>
 </div>
+</nav>

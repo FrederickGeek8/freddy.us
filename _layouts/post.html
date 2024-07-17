@@ -4,9 +4,14 @@ layout: blog.default
 
 {% include ext-navigation.html %}
 
-<div class="container tight">
-  <h1 id="title">Frederick's Blog</h1>
 
+<div class="container tight">
+<main>
+  <header>
+    <h1 id="title">Frederick's Blog</h1>
+  </header>
+
+  <article>
   <h2>{{ page.title }}</h2>
 
   {% if page.date %}
@@ -29,6 +34,7 @@ layout: blog.default
   </div>
 
   <div class="postcontent">{{ content }}</div>
+  </article>
 
   {% if page.tags %}
   <div id="tags">
@@ -38,5 +44,7 @@ layout: blog.default
     {% endfor %}
   </div>
   {% endif %}
+</main>
 </div>
+
 {% include footer.html tight='true' %}

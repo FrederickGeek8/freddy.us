@@ -10,9 +10,9 @@ description:
 {% include ext-navigation.html %}
 
 <div class="container tight">
-  <h1 id="title">{{ page.title }}
-  </h1>
-
+<main>
+  <header><h1 id="title">{{ page.title }}</h1></header>
+  
   <div class="spacer">
     <b>Abstract:</b>
     <p>{{ page.description }}</p>
@@ -166,6 +166,7 @@ description:
       </li>
     </ul>
   </div>
+</main>
 </div>
 
 {% capture footer_extra %}
