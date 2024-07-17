@@ -54,6 +54,14 @@ defaults:
       path: "assets/**"
     values:
       sitemap: false
+  - scope:
+      path: "blog/categories/*"
+    values:
+      sitemap: false
+  - scope:
+      path: "blog/tags/*"
+    values:
+      sitemap: false
 
 feed:
   excerpt_only: true
