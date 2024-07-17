@@ -1,0 +1,8 @@
+<div id="footer" {% if include.tight %}class="tight"{% endif %}>
+  {% if include.extra_content %}
+    {{ include.extra_content }}
+  {% endif %}
+  <p id="copyright">
+    &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights reserved.
+  </p>
+</div>

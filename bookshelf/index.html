@@ -167,21 +167,21 @@ description:
     </ul>
   </div>
 </div>
-<div id="footer" class="tight">
-  <p>
-    <sup>[1]</sup> Funnily enough, most of my favorite books I learned from
-    during my undergrad. Calculus by Spivak is a great book, even to look back
-    on!
-    <br />
-    <sup>[2]</sup> I read Baby Rudin in college and it was decent. For some
-    reason I had the urge recently to make my way through the "Rudin family",
-    tackling Principals, Real & Complex, and Functional Analysis.
-    <br />
-    <sup>[3]</sup> I'm not sure whether there is a better path through learning
-    Analysis other than the Rudin family of books. I'm always open to
-    suggestions for great books for learning high-level Math.
-  </p>
-  <p id="copyright">
-    &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights reserved.
-  </p>
-</div>
+
+{% capture footer_extra %}
+<p>
+  <sup>[1]</sup> Funnily enough, most of my favorite books I learned from
+  during my undergrad. Calculus by Spivak is a great book, even to look back
+  on!
+  <br />
+  <sup>[2]</sup> I read Baby Rudin in college and it was decent. For some
+  reason I had the urge recently to make my way through the "Rudin family",
+  tackling Principals, Real & Complex, and Functional Analysis.
+  <br />
+  <sup>[3]</sup> I'm not sure whether there is a better path through learning
+  Analysis other than the Rudin family of books. I'm always open to
+  suggestions for great books for learning high-level Math.
+</p>
+{% endcapture %}
+
+{% include footer.html tight='true' extra_content=footer_extra %}
