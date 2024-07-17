@@ -1,0 +1,11 @@
+{%- if site.feed -%}
+{% if page.category %}
+<link type="application/atom+xml" rel="alternate" href="{{ "/feed/" | absolute_url | append: page.category | append: ".xml" }}" title="{{ site.title }}" />
+{% endif %}
+<link type="application/atom+xml" rel="alternate" href="{{ "feed.xml" | absolute_url }}" title="{{ site.title }}" />
+{% for category in site.categories %}
+{%- unless category[0] == page.category %}
+<link type="application/atom+xml" rel="alternate" href="{{ "/feed/" | absolute_url | append: category[0] | append: ".xml" }}" title="{{ site.title }}" />
+{% endunless -%}
+{% endfor %}
+{%- endif -%}

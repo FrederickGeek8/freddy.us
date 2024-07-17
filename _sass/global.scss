@@ -2,35 +2,74 @@
 
 html,
 body {
-  -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
 }
 
 body {
   // box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
   // color: #545454;
-  background-color: white;
-  background: url(../../assets/img/dot-grid.png);
+  background: white url(/assets/img/dot-grid.png);
   font-family: "Fira Code", "Courier New", Courier, monospace;
   // font-size: 16px;
   // padding: 5px;
+  width: 100%;
+  height: 100%;
 }
 
 a[href] {
   color: $link-color;
-  // text-decoration: none;
-  text-decoration: underline dotted $link-color 0.1em;
-  // border-bottom: 0.1em dotted $link-color;
+  text-decoration: none;
+  border-bottom: dotted $link-color 0.1em;
+  // &:visited {
+  //   color: $link-color-visited;
+  //   text-decoration: underline dotted $link-color-visited 0.1em;
+  // }
+
+  &:hover {
+    color: $link-color-hover;
+    border-bottom: dotted $link-color-hover 0.1em;
+
+    &.taglink {
+      border: 1px solid $link-color-hover;
+    }
+  }
+
+  &:active {
+    color: $link-color-active;
+    border-bottom: dotted $link-color-active 0.1em;
+
+    &.taglink {
+      border: 1px solid $link-color-active;
+    }
+  }
+
+  &.default {
+    color: $text-color;
+    border-bottom: solid $link-color 0.1em;
+  }
+
+  &.current {
+    color: $text-color;
+    border-bottom: dotted $text-color 0.1em;
+
+    font-weight: 400;
+  }
+
+  &.taglink {
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: 1px solid $link-color;
+    // margin: 5px;
+    text-decoration: none;
+  }
 }
 
 .link::after {
   //   font-family: "Courier New", Courier, monospace;
   content: ">>";
-  vertical-align: middle;
-  display: inline-block;
+  vertical-align: baseline;
+  display: inline;
   margin: 0;
   margin-left: 3px;
   line-height: 1;
@@ -40,12 +79,26 @@ a[href] {
 #title {
   position: relative;
   text-align: center;
+  margin: 1em auto;
+
+  // .uplink::after {
+  //   content: "⇑";
+  //   vertical-align: middle;
+  //   display: inline;
+  //   margin: 0;
+  //   // margin-left: 3px;
+  //   line-height: 1;
+  //   font-size:2em;
+  // }
 }
 
-#title a {
-  font-size: 2em;
-  // border-bottom: 1px solid $link-color;
-  text-decoration: underline solid $link-color 1px;
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  // vertical-align: text-bottom;
+  vertical-align: middle;
 }
 
 #navigation {
@@ -78,8 +131,7 @@ a[href] {
 
 #footer {
   margin: 0 auto;
-  margin-top: 15px;
-  padding: 15px;
+  margin-top: 30px;
   border-top: black 1px solid;
   text-align: center;
   line-height: 1.5;
@@ -90,17 +142,27 @@ a[href] {
 
   #copyright {
     text-align: center;
+    margin: 20px 0;
   }
 }
 
 .container {
   margin: 0 auto;
+  line-height: 1.35;
+
+  li {
+    margin: 10px 0;
+
+    details {
+      margin: 10px 0;
+    }
+  }
 }
 
 .container,
 #footer {
   width: 75%;
-  max-width: 1440px;
+  max-width: 1280px;
   // background: white;
   // padding: 2em 2em 0;
 }

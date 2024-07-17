@@ -3,15 +3,15 @@ layout: post
 title: A Fun Complexity Analysis Problem
 date: 2023-10-18 19:00:00 -0400
 category: CS
+redirect_from: /cs/2023/10/18/fun-complexity-analysis.html
 description:
   Back in 2020 a question was posed to me about deriving a bound for the
   computational complexity of querying an O(1) oracle to determine the size of
   an unknown set of bounded non-negative integers. I thought perhaps the
   internet would get some enjoyment out of this exercise.
-usemathjax: true
+usemath: true
+tags: [cs, math]
 ---
-
-# {{ page.title }}
 
 A while ago a friend (although I do not know who) posed to me a time complexity
 analysis problem that I found very interesting. Back then I wrote up a LaTeX
@@ -22,7 +22,7 @@ interested in this sort of problem. As of right now, I have no idea where this
 exercise came from. I think there a couple fun spins you can put on this
 problem once you understand it too.
 
-## Problem Statement
+### Problem Statement
 
 Suppose you have a set of **unknown** size $n$ consisting of
 **unknown** non-negative integers less that $2^k$ for a **known** integer $k$.

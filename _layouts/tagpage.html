@@ -1,0 +1,30 @@
+---
+layout: blog.default
+---
+
+{% include ext-navigation.html %}
+<div class="container tight">
+<main>
+  <header>
+    <h1 id="title">Frederick's Blog</h1>
+  </header>
+  
+  <h2>Post by Tag: "{{ page.tag }}"</h2>
+
+  <div class="spacer">
+    <b>Abstract:</b>
+    <p>Posts marked with the "{{ page.tag }}" tag.</p>
+  </div>
+
+  <ul>
+    {% for post in site.tags[page.tag] %}
+    <li>
+      {{ post.date | date: "%B %d, %Y" }}:
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
+</div>
+
+{% include footer.html tight='true' %}

@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Commanding Paperspace Gradient
+redirect_from: /tutorials/2022/06/01/gradient-docker.html
 date: 2022-06-01 12:32:04 -0500
 category: Tutorials
 description: I recently switched from Google Colab to Paperspace Gradient. I had
   some trouble getting into the workflow, but here are some useful things I found.
+tags: [cs]
 ---
-
-# Updated: {{ page.title }}
 
 **UPDATE: Don't do this. My Paperspace account got terminated. Whoops.**
 
@@ -37,7 +37,7 @@ convenience, I posted my source code
 This is the first full Docker image I've created, so constructive criticism is
 welcome -- I'm always looking to up my game.
 
-## The Nitty Gritty
+### The Nitty Gritty
 
 My Dockerfile is pretty simple:
 
@@ -72,7 +72,7 @@ pip install -r /setup/requirements.txt
 jupyter lab --allow-root --ip=0.0.0.0 --no-browser --LabApp.trust_xheaders=True --LabApp.disable_check_xsrf=False --LabApp.allow_remote_access=True --LabApp.allow_origin='*'
 ```
 
-## The Future
+### The Future
 
 One thing that this could be expanded into is automatically mounting cloud
 storage using [`rclone`](https://rclone.org/). That is, if they don't follow

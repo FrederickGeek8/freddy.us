@@ -15,14 +15,16 @@
 # in the templates via {{ site.myvariable }}.
 title: Frederick Morlock
 email: me@freddy.us
-description: Frederick Morlock's website. CS & Math. Researching Deep Learning.
+description: Researching the boundaries of CS & Math 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://freddy.us" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: FrederickGeek8
 repository: FrederickGeek8/freddy.us
 author: Frederick Morlock
+resume: 'https://drive.google.com/file/d/11o0st1t7VJx8rg1RcgJzFW3q0JSlgz3C/view?usp=sharing'
 
 # Build settings
+highligher: rouge
 markdown: kramdown
 kramdown:
   input: GFM
@@ -32,11 +34,20 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+  - jekyll-redirect-from
   # - jekyll-github-metadata
 
 exclude:
   - Gemfile
   - Gemfile.lock
+  - TODO.md
+  - .prettierrc
+  - .gitignore
+  - .gitmodules
+  - .sass-cache
 
 defaults:
   - scope:
@@ -46,6 +57,27 @@ defaults:
 
 feed:
   excerpt_only: true
+  tags: true
+  categories:
+    - CS
+    - Personal
+    - Tutorials
+    - Libraries
 
 sass:
   style: compressed
+
+blog_root: '/blog'
+
+# Custom stuff
+navigation:
+  - title: Home
+    url: /
+  - title: My Bookshelf
+    url: /bookshelf/
+  - title: Blog
+    url: /blog/
+
+# Post permalink format
+# permalink: /blog/:categories/:year/:month/:day/:title/
+permalink: /blog/posts/:year/:month/:day/:title/

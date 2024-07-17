@@ -35,8 +35,7 @@
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
-    background-color: black;
-    background: url(../../assets/img/dot-grid_inv.png);
+    background: black url(/assets/img/dot-grid_inv.png);
   }
   img {
     border: 2px white solid;
@@ -44,20 +43,53 @@
 
   a[href] {
     color: $dark-link-color;
-    // border-bottom: 0.1em dotted $dark-link-color;
-    text-decoration: underline dotted $dark-link-color 0.1em;
-  }
+    text-decoration: none;
+    border-bottom: dotted $dark-link-color 0.1em;
 
-  #title a {
-    font-size: 2em;
-    color: $dark-link-color;
-    // border-bottom: 1px solid $dark-link-color;
-    text-decoration: underline solid $dark-link-color 1px;
+    // &:visited {
+    //   color: $dark-link-color-visited;
+    //   border-bottom: dotted $dark-link-color-visited 0.1em;
+    // }
+
+    &:hover {
+      color: $dark-link-color-hover;
+      border-bottom: dotted $dark-link-color-hover 0.1em;
+
+      &.taglink {
+        border: 1px solid $dark-link-color-hover;
+      }
+    }
+
+    &:active {
+      color: $dark-link-color-active;
+      border-bottom: dotted $dark-link-color-active 0.1em;
+
+      &.taglink {
+        border: 1px solid $dark-link-color-active;
+      }
+    }
+
+    &.default {
+      color: $text-color-dark;
+      border-bottom: solid $text-color-dark 0.1em;
+    }
+
+    &.current {
+      color: $text-color-dark;
+      border-bottom: dotted $text-color-dark 0.1em;
+
+      font-weight: 400;
+    }
+
+    &.taglink {
+      border: 1px solid $dark-link-color;
+      text-decoration: none;
+    }
   }
 
   .container .post a {
     color: $dark-link-color;
-    text-decoration: underline dotted $dark-link-color 0.1em;
+    border-bottom: dotted $dark-link-color 0.1em;
   }
 
   .container h1,

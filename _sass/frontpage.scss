@@ -1,6 +1,12 @@
 td {
-  padding-right: 0.5em;
+  padding: 5px 10px;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+table td + td, table th + th { border-left:1px dotted black; }
 
 h1,
 h2,
@@ -24,3 +30,4 @@ h3 {
 #links {
   line-height: 2;
 }
+

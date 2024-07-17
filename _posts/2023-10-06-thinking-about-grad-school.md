@@ -2,7 +2,11 @@
 layout: post
 title: Thinking About Grad School & Math (Help Wanted)
 date: 2023-10-06 17:15:04 -0400
-category: Thoughts
+last_modified_at: 2024-05-14
+category: Personal
+redirect_from: 
+  - /thoughts/2023/10/06/thinking-about-grad-school.html
+  - /personal/2023/10/06/thinking-about-grad-school.html
 description:
   I have been wanting to apply for grad school for a long time, but as the
   mathematically obsessed person I am feels frozen trying to find direction and
@@ -13,9 +17,8 @@ description:
   knowledge, I do not think that our research interests fully align and perhaps
   there are other mathematically-inclined people on the internet that may also
   have valuable insight.
+tags: [academia, personal, thoughts]
 ---
-
-# {{ page.title }}
 
 I have discovered that finding grad schools to apply to is an incredible hard
 and confusing process -- especially if you've been out of academia for several

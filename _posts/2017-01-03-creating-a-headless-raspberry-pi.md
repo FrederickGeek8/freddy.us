@@ -3,11 +3,11 @@ layout: post
 title: "Creating a Headless Raspberry Pi"
 date: 2017-01-03 12:32:04 -0500
 category: Tutorials
+redirect_from: /tutorials/2017/01/03/creating-a-headless-raspberry-pi.html
 description: After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. This guide aims to address and walk you through setting up your Raspberry Pi. All that is needed is a working internet connection and a microSD card reader!
 image: /assets/img/2017-01-03/2017-01-03-7.png
+tags: [cs, tutorial]
 ---
-
-# {{ page.title }}
 
 After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. **The Raspberry Pi Zero I am using has [this](http://a.co/j22ab4k) Wi-Fi dongle, though I highly recommend [this one](http://a.co/9D3edky)**. The assumption of this article is that you have some experience using macOS Terminal, though minimal knowledge is required.
 
@@ -20,13 +20,13 @@ This was a difficult process for myself because I lacked any of the tools necess
 - This will become a table of contents (this text will be scraped).
   {:toc} -->
 
-## Step Zero – Setting up
+### Step Zero – Setting up
 
 Firstly, it is advisable that you install [Homebrew](http://brew.sh/). Although you are welcome to use any package manager, such as Macports, assistance on my part will be minimal. After installing Homebrew, the only application we need to fetch is `nmap` which may be installed through the command `brew install nmap`. We will be using this tool later to locate our Raspberry Pi on the network. Depending on your network settings, that section might be of no use to yourself.
 
 Secondly, if you are running macOS and do not have a Linux VM or partition, then you should download [VirtualBox](https://www.virtualbox.org/wiki/Downloads) – a free VM engine. After downloading (I won't provide instructions for this part), you should create a Linux VM (Ubuntu is my choice) as macOS does not support the partition types found on a Raspberry Pi microSD.
 
-## Step One – Pick Your Poison
+### Step One – Pick Your Poison
 
 At the moment, the Raspberry Pi Foundation carries two flavors of their distribution – Raspbian Jessie with Pixel, and Raspbian Jessie Lite – both of which I will discuss in this article.
 
@@ -34,7 +34,7 @@ If you are planning on running VNC on your device, I would recommend investing R
 
 You can find both downloads [here](https://www.raspberrypi.org/downloads/raspbian/) as well as installation guides [here](https://www.raspberrypi.org/documentation/installation/installing-images/). Though I will cover installation on a macOS system in this article.
 
-## Step Two – Installing the Raspian Image.
+### Step Two – Installing the Raspian Image.
 
 #### Preparing the microSD
 
@@ -58,7 +58,7 @@ sudo dd bs=1m if=/path/to/raspbian.img of=/dev/rdisk2
 Replacing `/path/to/raspbian` with the path to your Raspbian Image, and `disk2` with the disk number you collected in Disk Utility – yielding a string similar to `rdisk2`.
 This command may take several minutes depending on the factors outlined in the _Preparing the microSD_ section. 3. After running the command, Raspbian should be installed! **You should now eject your microSD through Finder or Disk Utility, though do not remove it.**
 
-## Step 3 – Accessing Rasbian Filesystem
+### Step 3 – Accessing Rasbian Filesystem
 
 Assuming that your microSD card has been ejected and not removed, in VirtualBox you should be able to see your device under Devices ➔ USB. By clicking it, you should be able to mount it in your VM.<sup>2</sup>
 ![microSD card in VirtualBox Menu]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-2.png)
@@ -81,7 +81,7 @@ bin   dev home  lost+found  mnt proc  run   srv tmp var
 boot  etc lib   media       opt root  sbin  sys usr
 ```
 
-## Step 4 – Editing Network Settings
+### Step 4 – Editing Network Settings
 
 This section assumes that you are on a standard, non-enterprise internet connection. If you are, then I would recommend researching elsewhere for setting up your Wi-Fi, e.g. if you have WPA2-Enterprise, [this StackExchange question](https://raspberrypi.stackexchange.com/questions/22875/connecting-to-wpa2-enterprise-wifi-network) looks good.
 
@@ -135,7 +135,7 @@ network={
 
 Your Raspberry Pi should now be configured to connect to your network. Unfortunately, we do not yet have a way of communicating with it. This is where setting up `ssh` comes into play.
 
-## Step 5 – Configuring the SSH Server
+### Step 5 – Configuring the SSH Server
 
 Both Raspbian Jessie and Jessie Lite come preinstalled with an SSH server. Unfortunately this is not a service that starts by default, and instead must be initially configured to start on boot.
 
@@ -148,7 +148,7 @@ Both Raspbian Jessie and Jessie Lite come preinstalled with an SSH server. Unfor
 
 This should ensure that the SSH server launches on boot. After the completion of this step, you are free to eject and remove the microSD card from your computer and shut down your virtual machine. The rest of this tutorial will take place in the macOS. If you plug in your Raspberry Pi and wait a minute, you should be able to SSH into it! If you only had the IP address...
 
-## Step 6 – Finding our Lost Device
+### Step 6 – Finding our Lost Device
 
 **Note:** This step may not be necessary depending on your intranet connection. You might be able to just SSH into your Raspberry Pi by running `ssh pi@raspberrypi` or `ssh pi@raspberrypi.local`. Alternately, if you have access to the administration panel of your router, typically you can figure out on which IP your Raspberry Pi sits.
 
@@ -158,7 +158,7 @@ For this step, we will use the command `nmap` to discover which devices on the n
 2. Subsequently, plug the Raspberry Pi in again and run `sudo nmap -p22 -sV 192.168.0.0/24`. The set of devices from the first test minus the set of devices from the second test should yield the IP address for the Raspberry Pi. For me, using the HomeSpot WiFi USB, my device appeared as follows:<sup>3</sup>
    ![nmap scan report]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-5.png)
 
-## Step 7 – Enabling SSH
+### Step 7 – Enabling SSH
 
 Through the tool `raspi-config`, Raspbian has native functionality that allows for the SSH daemon to be started at system boot. This functionality was previously locked to us because we had not had a shell into the Raspberry Pi, however now that we do, we can enable it.
 
@@ -174,7 +174,7 @@ sudo nano /etc/rc.local
 
 4. Delete the line we created (`/etc/init.d/ssh start`) from `/etc/rc.local`, then save and exit.
 
-## (Optional) Step 8 – Enabling VNC
+### (Optional) Step 8 – Enabling VNC
 
 #### Note for Raspbian Jessie Lite
 
@@ -198,7 +198,7 @@ In a similar method to enabling SSH, enabling VNC is simple on Jessie. If you wa
 3. You can connect to your device by using [VNC® Viewer from RealVNC®](https://www.realvnc.com/download/viewer/), and entering the IP address when connecting.
    ![VNC Connection]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-7.png)
 
-# Troubleshooting
+### Troubleshooting
 
 <sup>1</sup> If erasing failed, check that the new device name is in all capital letters. Also check that the type is set
 <sup>2</sup> If the device appears grayed out, that means it is still in use by your system. You need to eject (but not remove) the microSD card before it can be mounted in your VM.

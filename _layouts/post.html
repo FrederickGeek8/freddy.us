@@ -1,48 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% seo %} {% feed_meta %}
+---
+layout: blog.default
+---
 
-    <link
-      rel="preload"
-      as="style"
-      href="{{ site.baseurl }}/assets/css/fira_code.css"
-    />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/fira_code.css" />
+{% include ext-navigation.html %}
 
-    <link
-      rel="preload"
-      as="style"
-      href="{{ site.baseurl }}/assets/css/main.css"
-    />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-    {% if page.usemathjax %} {% include mathjax.html %} {% endif %}
-  </head>
 
-  <body>
-    <div id="navigation">
-      <div id="title">
-        <a href="{{ page.backlink | default: '/blog' }}" rel="prev">
-          Frederick's Ramblings
-        </a>
-      </div>
-    </div>
-    <div class="container tight">
-      <div class="spacer">
-        <b>Abstract:</b>
-        <p>{{ page.description }}</p>
-      </div>
+<div class="container tight">
+<main>
+  <header>
+    <h1 id="title">Frederick's Blog</h1>
+  </header>
 
-      <div class="postcontent">{{ content }}</div>
-    </div>
-    <div id="footer" class="tight" style="text-align: center">
-      <p id="copyright">
-        &copy; {{ site.time | date: '%Y' }} Frederick Morlock. All rights
-        reserved.
-      </p>
-    </div>
-  </body>
-</html>
+  <article>
+  <h2>{{ page.title }}</h2>
+
+  {% if page.date %}
+  <div>
+    <p>
+      <b>Posted:</b> {{ page.date | date: "%B %e, %Y" }} in
+      <a href="/blog/categories/{{ page.category }}">{{ page.category }}</a>. {%
+      if page.last_modified_at %}
+      <i
+        ><b>Last Updated:</b> {{ page.last_modified_at | date: "%B %e, %Y" }}</i
+      >
+      {% endif %}
+    </p>
+  </div>
+  {% endif %}
+
+  <div class="spacer">
+    <b>Abstract:</b>
+    <p>{{ page.description }}</p>
+  </div>
+
+  <div class="postcontent">{{ content }}</div>
+  </article>
+
+  {% if page.tags %}
+  <div id="tags">
+    <b>Tags: </b>
+    {% for tag in page.tags %}
+    <a href="/blog/tags/{{ tag }}" class="taglink">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</main>
+</div>
+
+{% include footer.html tight='true' %}
