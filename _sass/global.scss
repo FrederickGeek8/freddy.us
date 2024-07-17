@@ -19,8 +19,8 @@ body {
 
 a[href] {
   color: $link-color;
-  text-decoration: underline dotted $link-color 0.1em;
-
+  text-decoration: none;
+  border-bottom: dotted $link-color 0.1em;
   // &:visited {
   //   color: $link-color-visited;
   //   text-decoration: underline dotted $link-color-visited 0.1em;
@@ -28,7 +28,7 @@ a[href] {
 
   &:hover {
     color: $link-color-hover;
-    text-decoration: underline dotted $link-color-hover 0.1em;
+    border-bottom: dotted $link-color-hover 0.1em;
 
     &.taglink {
       border: 1px solid $link-color-hover;
@@ -37,7 +37,7 @@ a[href] {
 
   &:active {
     color: $link-color-active;
-    text-decoration: underline dotted $link-color-active 0.1em;
+    border-bottom: dotted $link-color-active 0.1em;
 
     &.taglink {
       border: 1px solid $link-color-active;
@@ -46,12 +46,12 @@ a[href] {
 
   &.default {
     color: $text-color;
-    text-decoration: underline solid $text-color 0.1em;
+    border-bottom: solid $link-color 0.1em;
   }
 
   &.current {
     color: $text-color;
-    text-decoration: underline dotted $text-color 0.1em;
+    border-bottom: dotted $text-color 0.1em;
 
     font-weight: 400;
   }

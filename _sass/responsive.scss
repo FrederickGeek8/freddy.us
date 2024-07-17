@@ -43,16 +43,17 @@
 
   a[href] {
     color: $dark-link-color;
-    text-decoration: underline dotted $dark-link-color 0.1em;
+    text-decoration: none;
+    border-bottom: dotted $dark-link-color 0.1em;
 
     // &:visited {
     //   color: $dark-link-color-visited;
-    //   text-decoration: underline dotted $dark-link-color-visited 0.1em;
+    //   border-bottom: dotted $dark-link-color-visited 0.1em;
     // }
 
     &:hover {
       color: $dark-link-color-hover;
-      text-decoration: underline dotted $dark-link-color-hover 0.1em;
+      border-bottom: dotted $dark-link-color-hover 0.1em;
 
       &.taglink {
         border: 1px solid $dark-link-color-hover;
@@ -61,7 +62,7 @@
 
     &:active {
       color: $dark-link-color-active;
-      text-decoration: underline dotted $dark-link-color-active 0.1em;
+      border-bottom: dotted $dark-link-color-active 0.1em;
 
       &.taglink {
         border: 1px solid $dark-link-color-active;
@@ -70,12 +71,12 @@
 
     &.default {
       color: $text-color-dark;
-      text-decoration: underline solid $text-color-dark 0.1em;
+      border-bottom: solid $text-color-dark 0.1em;
     }
 
     &.current {
       color: $text-color-dark;
-      text-decoration: underline dotted $text-color-dark 0.1em;
+      border-bottom: dotted $text-color-dark 0.1em;
 
       font-weight: 400;
     }
@@ -88,7 +89,7 @@
 
   .container .post a {
     color: $dark-link-color;
-    text-decoration: underline dotted $dark-link-color 0.1em;
+    border-bottom: dotted $dark-link-color 0.1em;
   }
 
   .container h1,
