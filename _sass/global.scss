@@ -68,12 +68,11 @@ a[href] {
 .link::after {
   //   font-family: "Courier New", Courier, monospace;
   content: ">>";
-  vertical-align: middle;
-  display: inline-block;
+  vertical-align: baseline;
+  display: inline;
   margin: 0;
   margin-left: 3px;
   line-height: 1;
-  font-size: 0.9em;
   /* line-height: normal; */
 }
 
