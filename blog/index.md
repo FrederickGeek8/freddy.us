@@ -3,6 +3,7 @@ layout: blog.default
 title: "Posts"
 description: Frederick Morlock's personal blog.
 permalink: '/blog/'
+redirect_from: /blog.html
 ---
 
 {% include ext-navigation.html %}
