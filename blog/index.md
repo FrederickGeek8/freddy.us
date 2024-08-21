@@ -29,7 +29,7 @@ redirect_from: /blog.html
     </h3>
     <p>
       <b>Posted:</b> {{ post.date | date: "%B %e, %Y" }} in
-      <a href="/blog/categories/{{ post.category }}">{{ post.category }}</a>. {%
+      <a href="/blog/categories/{{ post.category }}/">{{ post.category }}</a>. {%
       if post.last_modified_at %}
       <i
         ><b>Last Updated:</b> {{ post.last_modified_at | date: "%B %e, %Y" }}</i
