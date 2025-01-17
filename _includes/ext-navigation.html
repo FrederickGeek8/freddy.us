@@ -1,7 +1,7 @@
 <nav>
 <div id="navigation">
   <ul>
-    {% for item in site.navigation %}
+    {%- for item in site.navigation -%}
     {% assign class = 'link' %}
     {% assign aria = '' %}
     {% if page.url == item.url %}
@@ -9,7 +9,7 @@
       {% assign aria = 'aria-current="page"' %}
     {% endif %}
     <li><a href="{{ item.url }}" class="{{ class }}" {{ aria }}>{{ item.title }}</a></li>
-    {% endfor %}
+    {%- endfor %}
   </ul>
 </div>
 </nav>
