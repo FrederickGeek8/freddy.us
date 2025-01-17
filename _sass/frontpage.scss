@@ -31,6 +31,21 @@ h3 {
   line-height: 2;
 }
 
+.pub {
+  border: 1px solid $text-color;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: $spoiler-color;
+
+  >details {
+    margin-top: 0.5em;
+  }
+
+  >p {
+    margin: 0;
+  }
+}
+
 .desc-container {
   display: flex;
   flex-flow: row wrap;
