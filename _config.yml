@@ -84,10 +84,10 @@ blog_root: "/blog"
 navigation:
   - title: Home
     url: /
-  - title: Research
-    url: /research/
-  - title: Projects
-    url: /projects/
+  - title: About
+    url: /about/
+  - title: Resume/CV
+    url: /resume/
   - title: My Bookshelf
     url: /bookshelf/
   - title: Blog
