@@ -14,13 +14,14 @@ redirect_from: /blog.html
     <h1 id="title">Frederick's Blog</h1>
   </header>
 
-  <h2>{{ page.title }}</h2>
-
   <div class="spacer">
     <b>Abstract:</b>
-    <p>{{ page.description }}</p>
+    <p>My personal blog, where the few posts that escape my drafts folder live. I like to write about mathematics, technology, and some opinions on technologies  place in socieity.</p>
+    <p>If you are only interested in a subset of my posts, you can check out the listing of <a href="tags/">tags</a> and <a href="categories/">categories</a>.</p>
   </div>
 
+  <h2>{{ page.title }}</h2>
+  
 {% for post in site.posts %}
 
   <div class="post">
