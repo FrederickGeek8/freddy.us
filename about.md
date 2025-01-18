@@ -29,9 +29,9 @@ The most notable causes on my mind are (in a non-exhaustive and unordered list):
   - I love to teach and tutor too! Hopefully I can make time for more of that in the future. 
 
 ## Research Interests
-Since leaving my undergraduate position and [working as a Machine Learning Scientist](#) my research interests in Applied Mathematics have crystallized over time from my more [naive days as an undergraduate researcher](#).
+Since leaving my undergraduate position and [working as a Machine Learning Scientist](/resume/#hinelea-imaging) my research interests in Applied Mathematics have crystallized over time from my more [naive days as an undergraduate researcher](/resume/#papers).
 
-I am generally interested in pursuing Applied Mathematics for it's versatile applications, an alignment with how my (mathematical?) thoughts operates, and such pursuits would support my diverse scientific interests. However, the primary application at this given time, especially given [my limited experience is academia](#) is in **Machine Learning Theory** (AKA "AI").
+I am generally interested in pursuing Applied Mathematics for it's versatile applications, an alignment with how my (mathematical?) thoughts operates, and such pursuits would support my diverse scientific interests. However, the primary application at this given time, especially given [my narrow research experience](/resume/#research-experience) is in **Machine Learning Theory** (AKA "AI").
 
 ### Interests in ML Theory
 - Interpretable and "provably intelligent" AI
@@ -57,4 +57,4 @@ The list of projects I've recently been working on constantly shifts, but here a
 - Learning Rust
   - I really should learn it eventually...
 
-**I also have a [bin of ideas](#) that you are free to use or collaborate with me on! You can also [schedule some time to chat with me](#) to have a coffee chat where you can pitch your ideas, ask for advice, or ask to collaborate.**
+**I also have a [bin of ideas](#) that you are free to use or collaborate with me on! You can also [schedule some time to chat with me](/contact/) to have a coffee chat where you can pitch your ideas, ask for advice, or ask to collaborate.**
