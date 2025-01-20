@@ -18,16 +18,7 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 <ul>
 <li>
     <a
-    href="https://www.linkedin.com/in/frederickmorlock"
-    rel="me external author"
-    class="link"
-    target="_blank"
-    >LinkedIn</a
-    >
-</li>
-<li>
-    <a
-    href="https://github.com/FrederickGeek8"
+    href="{{ site.author.socials.github }}"
     rel="me external author"
     class="link"
     target="_blank"
@@ -36,7 +27,25 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 </li>
 <li>
     <a
-    href="https://social.nerd.net/@fooderick"
+    href="{{ site.author.googlescholar }}"
+    rel="me external author"
+    class="link"
+    target="_blank"
+    >Google Scholar</a
+    >
+</li>
+<li>
+    <a
+    href="{{ site.author.socials.linkedin }}"
+    rel="me external author"
+    class="link"
+    target="_blank"
+    >LinkedIn</a
+    >
+</li>
+<li>
+    <a
+    href="{{ site.author.socials.mastodon }}"
     rel="me external author"
     class="link"
     target="_blank"
@@ -54,11 +63,20 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 </li> -->
 <li>
     <a
-    href="https://letterboxd.com/frederickgeek8/"
+    href="{{ site.author.socials.letterboxd }}"
     rel="me external author"
     class="link"
     target="_blank"
     >Letterboxd</a
+    >
+</li>
+<li>
+    <a
+    href="{{ site.author.socials.goodreads }}"
+    rel="me external author"
+    class="link"
+    target="_blank"
+    >Goodreads</a
     >
 </li>
 </ul>
