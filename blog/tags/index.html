@@ -9,11 +9,10 @@ title: "Post Tags"
 <div class="container tight">
   <h1 id="title">Frederick's Blog</h1>
 
-  <h2>Post by Tag:</h2>
+  <h2>Post Tags:</h2>
 
   <div class="spacer">
-    <b>Abstract:</b>
-    <p>All posts by all tags.</p>
+    <p>All of the tags used in blog posts.</p>
   </div>
 
   {% capture tags %}
@@ -23,14 +22,11 @@ title: "Post Tags"
   {% endcapture %}
   {% assign sortedtags = tags | split:' ' | sort %}
 
-{% for tag in sortedtags %}
-  <h3 id="{{ tag }}"><a href="{{page.dir}}{{ tag }}/">{{ tag }}</a></h3>
   <ul>
-  {% for post in site.tags[tag] %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-  </ul>
+{% for tag in sortedtags %}
+  <li id="{{ tag }}"><a href="{{page.dir}}{{ tag }}/">{{ tag }}</a></li>
 {% endfor %}
+  </ul>
 </div>
 
 {% include footer.html tight='true' %}
