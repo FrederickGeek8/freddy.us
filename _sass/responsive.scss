@@ -90,6 +90,12 @@
       border: 1px solid $dark-link-color;
       text-decoration: none;
     }
+
+    &.normal {
+      color: $text-color-dark;
+      text-decoration: none;
+      border: 0;
+    }
   }
 
   .container .post a {
