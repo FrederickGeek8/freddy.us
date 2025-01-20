@@ -12,6 +12,6 @@ end
 def generate_tag_file(tag)
     # generate tag file
     File.open("blog/tags/#{tag}.md", "wb") do |file|
-    file << "---\nlayout: tagpage\ntag: #{tag}\n---\n"
+    file << "---\nlayout: tagpage\ntag: #{tag}\ntitle: 'Posts by Tag: #{tag}'\n---\n"
     end
 end
