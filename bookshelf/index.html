@@ -15,7 +15,6 @@ redirect_from: /bookshelf.html
   <header><h1 id="title">{{ page.title }}</h1></header>
   
   <div class="spacer">
-    <b>Abstract:</b>
     <p>{{ page.description }}</p>
   </div>
 
@@ -136,10 +135,7 @@ redirect_from: /bookshelf.html
     </ul>
   </div>
 </main>
-</div>
-
-{% capture footer_extra %}
-<hr style="max-width: 250px" />
+<hr style="max-width: 250px; margin: 30px auto;" />
 <p>
   <sup>[1]</sup> This book has truly changed the way I think about intelligence
   <i>and</i> formal systems in a profound way. Along with the "Rememeberance of
@@ -151,6 +147,6 @@ redirect_from: /bookshelf.html
   during my undergrad. Calculus by Spivak is a great book, even to look back
   on!
 </p>
-{% endcapture %}
+</div>
 
-{% include footer.html tight='true' extra_content=footer_extra %}
+{% include footer.html tight='true' %}
