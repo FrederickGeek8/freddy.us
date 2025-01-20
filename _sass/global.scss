@@ -80,7 +80,7 @@ a[href] {
 #title {
   position: relative;
   text-align: center;
-  margin: 1em auto;
+  // margin: 1em auto;
 
   // .uplink::after {
   //   content: "⇑";
@@ -104,11 +104,11 @@ a[href] {
 
 #navigation {
   display: block;
-  width: 98%;
+  width: 95%;
   text-align: center;
   margin: 0 auto;
-  padding: 0;
-  margin-top: 20px;
+  padding: 1em 0;
+  // margin-top: 20px;
   font-weight: 600;
 
   ul {

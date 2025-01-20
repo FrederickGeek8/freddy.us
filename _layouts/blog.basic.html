@@ -3,9 +3,9 @@ layout: blog.default
 ---
 
 {% include ext-navigation.html %}
-<div class="container tight">
+<div class="container tight {%- if page.customclass %} {{  page.customclass }}{% endif -%}">
     <main>
         {{ content }}
     </main>
 </div>
-{% include footer.html %}
+{% include footer.html tight='true' %}

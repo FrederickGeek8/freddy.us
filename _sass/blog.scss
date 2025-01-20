@@ -2,15 +2,17 @@
   display: block;
   margin: 35px auto;
   max-width: 900px;
-  text-align: justify;
   // font-size: 2em;
   // font-weight: 200;
-  font-style: italic;
+  // font-style: italic;
   // height: 100px;
 
+  border: 1px solid $text-color;
+  padding: 5px;
+  background-color: $spoiler-color;
+
   p {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    margin: 15px 15px;
   }
 }
 
