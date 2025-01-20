@@ -10,7 +10,7 @@ My "[Blog](/blog/)" is... well... a blog. It supports RSS too!
 
 If you want to get in touch with me, you can check out my "[Get In Touch!](/contact/)" page. I am always open to having a quick "coffee chat" or collaborating on a project.
 
-## News
+## Recent News
 {% assign sortedRec = site.data.news | sort: "date" | reverse %}
 {% for item in sortedRec limit:3 %}
 - {{ item.date }} -- {{ item.text }}
