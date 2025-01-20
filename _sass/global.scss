@@ -64,6 +64,12 @@ a[href] {
     // margin: 5px;
     text-decoration: none;
   }
+
+  &.normal {
+    color: $text-color;
+    text-decoration: none;
+    border: 0;
+  }
 }
 
 .external::after {
@@ -94,8 +100,8 @@ a[href] {
 }
 
 .svg-icon {
-  width: 1em;
-  height: 1em;
+  width: 1.2em;
+  height: 1.2em;
   display: inline-block;
   fill: currentColor;
   // vertical-align: text-bottom;
@@ -212,4 +218,19 @@ a[href] {
 // this is used by bookshelf.html
 ul .note {
   font-size: 0.9em;
+}
+
+// https://kittygiraudel.com/snippets/sr-only-class/
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
