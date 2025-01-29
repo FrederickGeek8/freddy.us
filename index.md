@@ -4,7 +4,7 @@ title: ""
 ---
 
 ## Exploring My Website!
-You can find out more about my personal background, hobby & research passions, as well as my current tinkering over on my [About Me](/about/) page. For more of a focus on my professional background and experiences, you may check out the [Resume/CV](/resume/) tab. Over on "[My Bookshelf](/bookshelf/)" you can find my favorite books, blog posts, and papers that I've read recently.
+You can find out more about my personal background, research interests, and my current tinkering and hobbies over on my [About Me](/about/) page. For more of a focus on my professional background and experiences, you may check out the [Resume/CV](/resume/) tab. Over on "[My Bookshelf](/bookshelf/)" you can find my favorite books, blog posts, and papers that I've read recently.
 
 My "[Blog](/blog/)" is... well... a blog. It supports RSS too! 
 
