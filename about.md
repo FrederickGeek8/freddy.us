@@ -29,20 +29,20 @@ The most notable causes on my mind are (in a non-exhaustive and unordered list):
   - I love to teach and tutor too! Hopefully I can make time for more of that in the future. 
 
 ## Research Interests
-Since leaving my undergraduate position and [working as a Machine Learning Scientist](/resume/#hinelea-imaging), my research interests in Applied Mathematics have crystallized over time from my more [naive days as an undergraduate researcher](/resume/#papers).
+Since leaving my undergraduate university and [working as a Machine Learning Scientist](/resume/#hinelea-imaging), my research interests in Applied Mathematics have crystallized over time from my more [naive days as an undergraduate researcher](/resume/#papers).
 
 I am generally interested in pursuing Applied Mathematics for its versatile applications, an alignment with how my (mathematical?) thoughts operate, and such pursuits would support my diverse scientific interests. However, the primary application at this given time, especially given [my narrow research experience](/resume/#research-experience), is in **Machine Learning Theory** (aka "AI"). Below are some of the topics that I am interested in, but there are many others I can speak on.
 
 ### Interests in ML Theory
-The research that I find most compelling in machine learning and AI theory is that which is _mathematically rigorous_, _dataset independent_ and heavy utilizes _algebriac_ constructions and analysis. I can be convinced of properties like "intelligence" in a system if you can prove to me _in the math_ that this behaviour emerges.
+The research that I find most compelling in machine learning and AI theory is that which is _mathematically rigorous_, _dataset independent_ and heavy utilizes _algebraic_ constructions and analysis. I can be convinced of properties like "intelligence" in a system if you can prove to me _in the math_ that this behaviour emerges. Some specific topics I am interested in are:
 
-- Aligned & Equivariant ML (e.g. how can we align our models with our science?)
-- Constructive AI (e.g. how can we intentionally construct models for specific behaviour?)
-- Sparse Autoencoders and Neural Information Theory
-- Neural Collapse, Grokking, and Neural Circuits
-- Chain of Thought, Neural Computations, and Formal Languages
-- Interpretable and "provably intelligent" AI
-- Efficient AI (compute and data efficient)
+- **Aligned & Equivariant ML** (e.g. how can we align our models with our scientific knowledge?)
+- **Efficient AI/ML** (compute and data efficient)
+- **Constructive AI/ML** (e.g. how can we intentionally construct models for specific behaviour?)
+- **Sparse Autoencoders and Neural Information Theory**
+- **Neural Collapse, Grokking, and Neural Circuits**
+- **Chain of Thought, Neural Computations, and Formal Languages**
+- **_Interpretable_ and "_provably_ intelligent" AI**
 
 ### Broader Research Interests
 - Kolmogorov complexity (my favorite topic!) 
@@ -61,4 +61,4 @@ The list of projects I've recently been working on constantly shifts, but here a
 - Learning Rust
   - I really should learn it eventually...
 
-**I also have a [bin of ideas](#) that you are free to use or collaborate with me on! You can also [schedule some time to chat with me](/contact/) to pitch your ideas, ask for advice, or ask to collaborate.**
+**I also have a [bin of ideas](#i-need-to-make-thing-page) that you are free to use or collaborate with me on! You can also [schedule some time to chat with me](/contact/) to pitch your ideas, ask for advice, or ask to collaborate.**
