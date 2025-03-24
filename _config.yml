@@ -59,6 +59,7 @@ exclude:
   - .gitignore
   - .gitmodules
   - .sass-cache
+  - vendor
 
 defaults:
   - scope:
