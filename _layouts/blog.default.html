@@ -2,11 +2,14 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Welcome to my website source code. This is (mostly) handwritten with love :) -->
+<!-- Welcome to my website source code. This is (mostly) handwritten with love :) -->
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% seo %} {% include feed_meta_2.html %}
+    {% seo %}
+    <meta name="fediverse:creator" content="{{ site.socials.mastodon_handle }}" />
+    {% include feed_meta_2.html %}
 
     <link rel="me" href="{{ site.socials.mastodon }}">
 
@@ -21,6 +24,7 @@
       as="style"
       href="{{ site.baseurl }}/assets/css/main.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+
     {% if page.usemath %} {% include katex.html %} {% endif %}
   </head>
 
