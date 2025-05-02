@@ -2,4 +2,10 @@
 ---
 
 // @import "foundations/main2", "styles", "frontpage", "fire_code", "highlighter";
-@import "normalize", "global", "blog", "highlighter", "frontpage", "responsive", "exppage";
+@use "normalize";
+@use "global";
+@use "blog";
+@use "highlighter";
+@use "frontpage";
+@use "responsive";
+@use "exppage";

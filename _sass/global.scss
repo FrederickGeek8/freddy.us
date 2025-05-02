@@ -1,4 +1,4 @@
-@import "_colors";
+@use "_colors";
 
 html,
 body {
@@ -19,40 +19,40 @@ body {
 }
 
 a[href] {
-  color: $link-color;
+  color: colors.$link-color;
   text-decoration: none;
-  border-bottom: dotted $link-color 0.1em;
+  border-bottom: dotted colors.$link-color 0.1em;
   // &:visited {
   //   color: $link-color-visited;
   //   text-decoration: underline dotted $link-color-visited 0.1em;
   // }
 
   &:hover {
-    color: $link-color-hover;
-    border-bottom: dotted $link-color-hover 0.1em;
+    color: colors.$link-color-hover;
+    border-bottom: dotted colors.$link-color-hover 0.1em;
 
     &.taglink {
-      border: 1px solid $link-color-hover;
+      border: 1px solid colors.$link-color-hover;
     }
   }
 
   &:active {
-    color: $link-color-active;
-    border-bottom: dotted $link-color-active 0.1em;
+    color: colors.$link-color-active;
+    border-bottom: dotted colors.$link-color-active 0.1em;
 
     &.taglink {
-      border: 1px solid $link-color-active;
+      border: 1px solid colors.$link-color-active;
     }
   }
 
   &.default {
-    color: $text-color;
-    border-bottom: solid $link-color 0.1em;
+    color: colors.$text-color;
+    border-bottom: solid colors.$link-color 0.1em;
   }
 
   &.current {
-    color: $text-color;
-    border-bottom: dotted $text-color 0.1em;
+    color: colors.$text-color;
+    border-bottom: dotted colors.$text-color 0.1em;
 
     font-weight: 400;
   }
@@ -60,13 +60,13 @@ a[href] {
   &.taglink {
     padding: 5px 15px;
     border-radius: 4px;
-    border: 1px solid $link-color;
+    border: 1px solid colors.$link-color;
     // margin: 5px;
     text-decoration: none;
   }
 
   &.normal {
-    color: $text-color;
+    color: colors.$text-color;
     text-decoration: none;
     border: 0;
   }
@@ -206,7 +206,7 @@ a[href] {
 
 .note.grey {
   padding: 5px;
-  background-color: $spoiler-color;
+  background-color: colors.$spoiler-color;
 }
 
 .note.grey.tight {
