@@ -61,6 +61,7 @@ exclude:
   - .gitmodules
   - .sass-cache
   - vendor
+  - _plugins
 
 defaults:
   - scope:
