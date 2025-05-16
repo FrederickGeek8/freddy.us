@@ -30,4 +30,6 @@ group :jekyll_plugins do
 
     # from gh-pages
     gem 'kramdown-parser-gfm'
+
+    gem 'comment_generator', path: "_plugins/comment_generator"
 end

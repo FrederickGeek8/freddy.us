@@ -33,9 +33,8 @@ layout: blog.default
     <p>{{ page.description }}</p>
   </div>
 
-  <div class="postcontent">{{ content }}</div>
-  </article>
-
+<div class="postcontent">{{ content }}</div>
+</article>
   {% if page.tags %}
   <div id="tags">
     <b>Tags: </b>
@@ -44,6 +43,11 @@ layout: blog.default
     {% endfor %}
   </div>
   {% endif %}
+
+  {% if page.post_id %}
+  {% include comments.html comments=page.comments %}
+  {% endif %}
+
 </main>
 </div>
 

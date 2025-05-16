@@ -1,6 +1,6 @@
 @use "colors";
 
-.spacer {
+.spacer, .comment {
   display: block;
   margin: 35px auto;
   max-width: 900px;
@@ -15,6 +15,36 @@
 
   p {
     margin: 15px 15px;
+  }
+}
+
+#comment-box {
+  blockquote {
+    // normalize for rich browsers
+    margin: 0;
+  }
+
+  hr {
+    // normalize for rich browsers
+    display: none;
+  }
+}
+
+.comment {
+  display: block;
+  margin: 35px auto;
+  max-width: 900px;
+  // font-size: 2em;
+  // font-weight: 200;
+  // font-style: italic;
+  // height: 100px;
+
+  border: 1px solid colors.$text-color;
+  padding: 10px;
+  background-color: colors.$spoiler-color;
+
+  > .replies {
+    margin: 1em;
   }
 }
 
