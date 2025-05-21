@@ -35,6 +35,12 @@ socials:
   letterboxd: "https://letterboxd.com/frederickgeek8/"
   linkedin: "https://www.linkedin.com/in/frederickmorlock"
 
+# Comment system information
+comments:
+  backend: "rest" # must be rest or sqlite
+  fetch_api: "https://comments.freddy.us/api/get_comments.php"
+  post_api: "https://comments.freddy.us/post_comment.php"
+
 # Build settings
 highligher: rouge
 markdown: kramdown
@@ -50,6 +56,7 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-relative-links
   - jekyll-redirect-from
+  - comment_generator
   # - jekyll-github-metadata
 
 exclude:

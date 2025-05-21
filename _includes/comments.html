@@ -1,0 +1,8 @@
+<h2 id="comments">Comments (<a href="{{- site.comments.post_api -}}?post_id={{-page.post_id-}}" rel="external nofollow" target="_blank">Post a New Comment</a>)</h2>
+
+<div id="comment-box">
+{% for comment in include.comments %}
+{% include comment.html comment=comment %}
+<hr />
+{% endfor %}
+</div>
