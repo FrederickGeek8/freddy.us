@@ -20,7 +20,7 @@
     <div class='comment' id='comment-{{-include.comment["id"]-}}'>
         <p><b>From:</b> {{author}} on {{timestamp}} {{permalink}}</p>
         <p><b>Message:</b></p>
-        <p>{{include.comment["columns"]["text"]}}</p>
+        <p>{{include.comment["columns"]["html"]}}</p>
         <p><b>Replies:</b> <a href='{{ site.comments.post_api }}/post_comment.php?post_id={{-page.post_id-}}&replying_to={{include.comment["id"]}}#box' rel="nofollow" target="_blank">(Add Reply)</a></p>
         <div class="replies">
         {% for reply in include.comment["replies"] %}
