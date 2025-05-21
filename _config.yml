@@ -38,8 +38,8 @@ socials:
 # Comment system information
 comments:
   backend: "rest" # must be rest or sqlite
-  fetch_api: "https://comments.freddy.us/api/get_comments.php"
-  post_api: "https://comments.freddy.us/post_comment.php"
+  fetch_api: "https://comments.freddy.us/api/get_comments"
+  post_api: "https://comments.freddy.us/post_comment"
 
 # Build settings
 highligher: rouge
