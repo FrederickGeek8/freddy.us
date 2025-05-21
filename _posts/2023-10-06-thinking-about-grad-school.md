@@ -17,6 +17,7 @@ description:
   knowledge, I do not think that our research interests fully align and perhaps
   there are other mathematically-inclined people on the internet that may also
   have valuable insight.
+post_id: thinking-about-grad-school
 tags: [academia, personal, thoughts]
 ---
 

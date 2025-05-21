@@ -10,6 +10,7 @@ description:
   an unknown set of bounded non-negative integers. I thought perhaps the
   internet would get some enjoyment out of this exercise.
 usemath: true
+post_id: fun-complexity-analysis
 tags: [cs, math]
 ---
 
