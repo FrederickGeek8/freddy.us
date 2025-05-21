@@ -1,7 +1,7 @@
 {% capture author -%}
 <cite>
 {%- if include.comment["columns"]["website"] != "" -%}
-<a href="{{include.comment["columns"]["website"]}}" rel="external nofollow ugc">{{include.comment["columns"]["author"]}}</a>
+<a href="{{include.comment["columns"]["website"]}}" rel="external nofollow ugc" target="_blank">{{include.comment["columns"]["author"]}}</a>
 {%- else -%}
 {{include.comment["columns"]["author"]}}
 {%- endif -%}
