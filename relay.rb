@@ -6,6 +6,7 @@ loop do
   client.puts 'Hello !'
   cmd = 'bundle exec jekyll build'
   value = `#{cmd}`
+  puts value
   client.puts value
   client.close
 end
