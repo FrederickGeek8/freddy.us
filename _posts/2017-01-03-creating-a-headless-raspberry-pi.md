@@ -5,7 +5,7 @@ date: 2017-01-03 12:32:04 -0500
 category: Tutorials
 redirect_from: /tutorials/2017/01/03/creating-a-headless-raspberry-pi.html
 description: After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. This guide aims to address and walk you through setting up your Raspberry Pi. All that is needed is a working internet connection and a microSD card reader!
-image: /assets/img/2017-01-03/2017-01-03-7.png
+image: /assets/per-post/2017-01-03/2017-01-03-7.png
 post_id: creating-a-headless-raspberry-pi
 tags: [cs, tutorial]
 ---
@@ -41,7 +41,7 @@ You can find both downloads [here](https://www.raspberrypi.org/downloads/raspbia
 
 1. Open Disk Utility and find the microSD card you want to format.
 2. After selecting the microSD, click Erase in the toolbar, making sure the information is as follow:
-   ![Formatting the microSD]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-1.png)
+   ![Formatting the microSD]({{ site.baseurl }}/assets/per-post/2017-01-03/2017-01-03-1.png)
    It is important that the drive name is in all capitalized letters, has the format FAT, and the scheme is set to Master Boot Record, otherwise it will not format correctly.
 3. Click Erase. Know that depending on the size of the drive and the speed of your microSD and card reader, it may take a couple seconds to a couple minutes. <sup>1</sup>
 4. Make a note of the drive number (found in the _Device_ field in Disk Utility). In the image above, the _Device_ field contains "disk2".
@@ -62,11 +62,11 @@ This command may take several minutes depending on the factors outlined in the _
 ### Step 3 – Accessing Rasbian Filesystem
 
 Assuming that your microSD card has been ejected and not removed, in VirtualBox you should be able to see your device under Devices ➔ USB. By clicking it, you should be able to mount it in your VM.<sup>2</sup>
-![microSD card in VirtualBox Menu]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-2.png)
+![microSD card in VirtualBox Menu]({{ site.baseurl }}/assets/per-post/2017-01-03/2017-01-03-2.png)
 Once the microSD card has been mounted we can really get to work.
 
 1. Open a command line inside your VM. By running the command `df -h`, you should be able to the storage devices attached to your VM and their mount points.
-   ![Available storage devices]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-3.png)
+   ![Available storage devices]({{ site.baseurl }}/assets/per-post/2017-01-03/2017-01-03-3.png)
    Your microSD card should have to entries, which share the same device name e.g. `/dev/sdb`. We want to focus on the partition with the larger mount point address, `/media/fred/0aed834e-8c8f-412d-a276-a265dc676112`.
 2. Become the superuser by running `sudo su`
 3. `cd` to the directory described above i.e.
@@ -157,7 +157,7 @@ For this step, we will use the command `nmap` to discover which devices on the n
 
 1. Before plugging in your Raspberry Pi to a power source run `sudo nmap -p22 -sV 192.168.0.0/24` to see which devices on the network have the port 22 (ssh) open.
 2. Subsequently, plug the Raspberry Pi in again and run `sudo nmap -p22 -sV 192.168.0.0/24`. The set of devices from the first test minus the set of devices from the second test should yield the IP address for the Raspberry Pi. For me, using the HomeSpot WiFi USB, my device appeared as follows:<sup>3</sup>
-   ![nmap scan report]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-5.png)
+   ![nmap scan report]({{ site.baseurl }}/assets/per-post/2017-01-03/2017-01-03-5.png)
 
 ### Step 7 – Enabling SSH
 
@@ -165,7 +165,7 @@ Through the tool `raspi-config`, Raspbian has native functionality that allows f
 
 1. Start an ssh session with your Raspberry Pi.
 2. Enter the command `sudo raspi-config`. After the full-screen menu appears, select Advanced Options, using the arrow keys to navigate, and TAB to select "Select" and "Finish". You should be prompted with:
-   ![raspi-config dialog]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-6.png)
+   ![raspi-config dialog]({{ site.baseurl }}/assets/per-post/2017-01-03/2017-01-03-6.png)
    By selecting SSH you should be prompted with the option to enable/disable it – you want to enable it.
 3. Now we have to undo the changes we made to rc.local. Using `nano` or any other of your favorite command-line editors, open `/etc/rc.local` i.e.
 
@@ -197,7 +197,7 @@ In a similar method to enabling SSH, enabling VNC is simple on Jessie. If you wa
 2. Again, enter Advanced options and select VNC, selecting the option to enable the service.
    Now you should see upon reboot, the VNC server starts using the default ports.
 3. You can connect to your device by using [VNC® Viewer from RealVNC®](https://www.realvnc.com/download/viewer/), and entering the IP address when connecting.
-   ![VNC Connection]({{ site.baseurl }}/assets/img/2017-01-03/2017-01-03-7.png)
+   ![VNC Connection]({{ site.baseurl }}/assets/per-post/2017-01-03/2017-01-03-7.png)
 
 ### Troubleshooting
 
