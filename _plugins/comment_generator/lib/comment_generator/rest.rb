@@ -6,13 +6,19 @@ require 'comment_generator/comment'
 
 module CommentGenerator::Backends
   class RESTBackend
-    def initialize(fetch_endpoint)
+    def initialize(fetch_endpoint, api_token)
       @fetch_endpoint = URI.parse(fetch_endpoint)
+      @headers = if api_token.nil?
+                   {}
+                 else
+                   { 'COMMENT-API-KEY' => api_token }
+                 end
       @fetch_endpoint.query = 'post_id=hi'
     end
 
     def fetch_and_parse(uri)
-      response = Net::HTTP.get_response(uri)
+      response = Net::HTTP.get_response(uri, @headers)
+      Jekyll.logger.error "Error: Post #{uri} not found." if response.code != 200
       JSON.parse(response.body)
     end
 

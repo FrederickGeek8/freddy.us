@@ -11,7 +11,8 @@ module JekyllComments
       @backend = if site.config['comments']['backend'] == 'sqlite'
                    CommentGenerator::Backends::SqliteBackend.new(site.config['comments']['db_file'])
                  else
-                   CommentGenerator::Backends::RESTBackend.new(site.config['comments']['fetch_api'])
+                   api_token = ENV['COMMENTER_API_KEY'] || site.config['comments']['api_key'] || nil
+                   CommentGenerator::Backends::RESTBackend.new(site.config['comments']['fetch_api'], api_token)
                  end
 
       @site = site
