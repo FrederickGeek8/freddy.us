@@ -1,5 +1,9 @@
 @use "colors";
 
+:root {
+  color-scheme: light dark;
+}
+
 @media (max-width: 512px) {
   .container,
   #footer {
