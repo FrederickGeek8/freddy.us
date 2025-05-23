@@ -3,7 +3,9 @@ layout: post
 title: "Creating a Headless Raspberry Pi"
 date: 2017-01-03 12:32:04 -0500
 category: Tutorials
-redirect_from: /tutorials/2017/01/03/creating-a-headless-raspberry-pi.html
+redirect_from:
+    - /tutorials/2017/01/03/creating-a-headless-raspberry-pi.html
+    - /blog/posts/2017/01/03/creating-a-headless-raspberry-pi/
 description: After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. This guide aims to address and walk you through setting up your Raspberry Pi. All that is needed is a working internet connection and a microSD card reader!
 image: /assets/per-post/2017-01-03/2017-01-03-7.png
 post_id: creating-a-headless-raspberry-pi

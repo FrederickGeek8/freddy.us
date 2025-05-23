@@ -3,7 +3,9 @@ layout: post
 title:  "Linear Algebra in CSS"
 date:   2017-07-19 12:32:04 -0500
 category: Libraries
-redirect_from: /libraries/2017/07/19/linear-algebra-in-css.html
+redirect_from:
+    - /libraries/2017/07/19/linear-algebra-in-css.html
+    - /blog/posts/2017/07/19/linear-algebra-in-css/
 description: >
     "Complex" Linear Algebra
 post_id: linear-algebra-in-css

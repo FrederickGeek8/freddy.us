@@ -114,5 +114,6 @@ navigation:
     url: /contact/
 
 # Post permalink format
+permalink: /blog/posts/:title/
 # permalink: /blog/:categories/:year/:month/:day/:title/
-permalink: /blog/posts/:year/:month/:day/:title/
+# permalink: /blog/posts/:year/:month/:day/:title/
