@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="256" viewBox="0 0 505 211" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="#fff" fill-rule="evenodd" font-family="serif" font-size="14" text-anchor="middle">
+    <style>
+        <![CDATA[svg text{white-space:pre}.JlNJ{fill:#000}.HqCN{stroke:none}]]>
+    </style>
+    <defs>
+        <path d="M0 0l4 5h-8z" id="Uyyw" class="HqCN"/>
+    </defs>
+    <rect fill="#efc" height="65" rx="15" width="145" x="61.2604"/>
+    <text class="JlNJ HqCN">
+        <tspan x="133.7604" y="37.12">Jekyll Website</tspan>
+    </text>
+    <rect height="65" rx="15" width="165" x="311.2604" fill="#f99"/>
+    <text class="JlNJ HqCN">
+        <tspan x="393.7604" y="37.12">PHP Comment Frontend</tspan>
+    </text>
+    <rect height="40" rx="15" width="145" x="321.2604" y="157.5" fill="#9fe"/>
+    <text class="JlNJ HqCN">
+        <tspan x="393.7604" y="182.12">SQLite Database</tspan>
+    </text>
+    <rect fill="#f99" height="65" rx="15" width="165" x="51.2604" y="145"/>
+    <text class="JlNJ HqCN">
+        <tspan x="133.7604" y="182.12">PHP Comment API</tspan>
+    </text>
+    <g transform="translate(206.2604 32.5)">
+        <path d="M0 0h100.5" fill="none"/>
+        <use x="105" href="#Uyyw" transform="matrix(0 1 -1 0 105 -105)" class="JlNJ"/>
+        <text class="JlNJ HqCN">
+            <tspan x="52.5" y="-10.38">Links out to</tspan>
+        </text>
+    </g>
+    <g transform="translate(393.7604 65)">
+        <path fill="none" d="M0 0v32.5h0V88"/>
+        <use y="92.5" href="#Uyyw" transform="matrix(-1 0 0 -1 0 185)" class="JlNJ"/>
+        <text text-anchor="start" class="JlNJ HqCN">
+            <tspan x="7" y="41.845">Insert comment </tspan>
+            <tspan x="7" y="58.645">into DB</tspan>
+        </text>
+    </g>
+    <g transform="translate(133.7604 65)">
+        <path fill="none" d="M0 80V40h0V4.5"/>
+        <use href="#Uyyw" class="JlNJ"/>
+        <text class="JlNJ HqCN">
+            <tspan x="-73.75" y="36.22">Inserts Comments </tspan>
+            <tspan x="-73.75" y="53.02">Into Page</tspan>
+        </text>
+    </g>
+    <g transform="translate(216.2604 177.5)">
+        <path fill="none" d="M105 0H82.5h0-78"/>
+        <use href="#Uyyw" transform="matrix(0 -1 1 0 0 0)" class="JlNJ"/>
+        <text class="JlNJ HqCN">
+            <tspan x="52.5" y="-10.38">Exposed via API</tspan>
+        </text>
+    </g>
+</svg>
