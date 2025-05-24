@@ -18,10 +18,10 @@ A good guide for configuring a headless Raspberry Pi Zero is [this article](http
 
 This was a difficult process for myself because I lacked any of the tools necessary to normally set up a Raspberry Pi. I did not have any displays, cables, keyboard, mice, access to the router – the only items at my disposable were my _MacBook Pro_ and a _microSD card reader_.
 
-<!-- ## Table of Contents
-
-- This will become a table of contents (this text will be scraped).
-  {:toc} -->
+### Table of Contents
+{:.no_toc}
+* This will become a table of contents (this text will be scraped).
+{:toc}
 
 ### Step Zero – Setting up
 

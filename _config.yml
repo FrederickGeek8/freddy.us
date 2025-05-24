@@ -47,6 +47,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  toc_levels: [3, 4]
 
 plugins:
   - jekyll-sitemap
