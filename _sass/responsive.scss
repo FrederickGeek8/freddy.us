@@ -38,6 +38,10 @@
   }
 }
 
+@media print {
+  details::details-content { display: contents; }
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
@@ -46,6 +50,10 @@
 
   img {
     border: 2px white solid;
+  }
+
+  .invertable {
+    filter: invert(1);
   }
 
   table td + td, table th + th {

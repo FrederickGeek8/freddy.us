@@ -93,11 +93,41 @@
 }
 
 .container .postcontent {
+  /**
+   * h1 is    32px    (2em)
+   * h2 is    24px  (1.5em)
+   * h3 is 18.72px (1.17em)
+   * h4 is    16px    (1em)
+   * h5 is 13.28px (0.83em)
+   * h6 is 10.72px (0.67em)
+   *
+  */
   h2 {
     // personally I think that 2em (default) seems a bit large for the h1 tag
     // that isn't the #title
     font-size: 1.75em;
   }
+
+  h3 {
+    font-size: 1.35em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1.07em;
+  }
+
+  h6 {
+    font-size: 1em;
+  }
+
+  li > ol, li > ul {
+    padding-inline-start: 1em;
+  }
+
 }
 
 #tags {
@@ -118,6 +148,15 @@ details > div {
   margin-right: 1em;
   padding: 15px;
   background-color: colors.$spoiler-color;
+}
+
+figure {
+  figcaption {
+    max-width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: smaller;
+  }
 }
 
 @supports not (-ms-ime-align: auto) {
