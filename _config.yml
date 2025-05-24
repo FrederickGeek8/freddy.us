@@ -35,12 +35,19 @@ socials:
   letterboxd: "https://letterboxd.com/frederickgeek8/"
   linkedin: "https://www.linkedin.com/in/frederickmorlock"
 
+# Comment system information
+comments:
+  backend: "rest" # must be rest or sqlite
+  fetch_api: "https://comments.freddy.us/api/get_comments"
+  post_api: "https://comments.freddy.us/post_comment"
+
 # Build settings
 highligher: rouge
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  toc_levels: [3, 4]
 
 plugins:
   - jekyll-sitemap
@@ -50,6 +57,7 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-relative-links
   - jekyll-redirect-from
+  - comment_generator
   # - jekyll-github-metadata
 
 exclude:
@@ -61,6 +69,7 @@ exclude:
   - .gitmodules
   - .sass-cache
   - vendor
+  - _plugins
 
 defaults:
   - scope:
@@ -106,5 +115,6 @@ navigation:
     url: /contact/
 
 # Post permalink format
+permalink: /blog/posts/:title/
 # permalink: /blog/:categories/:year/:month/:day/:title/
-permalink: /blog/posts/:year/:month/:day/:title/
+# permalink: /blog/posts/:year/:month/:day/:title/

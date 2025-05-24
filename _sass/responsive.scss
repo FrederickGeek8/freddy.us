@@ -1,3 +1,9 @@
+@use "colors";
+
+:root {
+  color-scheme: light dark;
+}
+
 @media (max-width: 512px) {
   .container,
   #footer {
@@ -32,6 +38,10 @@
   }
 }
 
+@media print {
+  details::details-content { display: contents; }
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
@@ -42,14 +52,22 @@
     border: 2px white solid;
   }
 
+  .invertable {
+    filter: invert(1);
+  }
+
   table td + td, table th + th {
     border-left: 1px dotted white;
   }
 
+  #footer {
+    border-color: colors.$border-color-dark;
+  }
+
   a[href] {
-    color: $dark-link-color;
+    color: colors.$dark-link-color;
     text-decoration: none;
-    border-bottom: dotted $dark-link-color 0.1em;
+    border-bottom: dotted colors.$dark-link-color 0.1em;
 
     // &:visited {
     //   color: $dark-link-color-visited;
@@ -57,50 +75,50 @@
     // }
 
     &:hover {
-      color: $dark-link-color-hover;
-      border-bottom: dotted $dark-link-color-hover 0.1em;
+      color: colors.$dark-link-color-hover;
+      border-bottom: dotted colors.$dark-link-color-hover 0.1em;
 
       &.taglink {
-        border: 1px solid $dark-link-color-hover;
+        border: 1px solid colors.$dark-link-color-hover;
       }
     }
 
     &:active {
-      color: $dark-link-color-active;
-      border-bottom: dotted $dark-link-color-active 0.1em;
+      color: colors.$dark-link-color-active;
+      border-bottom: dotted colors.$dark-link-color-active 0.1em;
 
       &.taglink {
-        border: 1px solid $dark-link-color-active;
+        border: 1px solid colors.$dark-link-color-active;
       }
     }
 
     &.default {
-      color: $text-color-dark;
-      border-bottom: solid $text-color-dark 0.1em;
+      color: colors.$text-color-dark;
+      border-bottom: solid colors.$text-color-dark 0.1em;
     }
 
     &.current {
-      color: $text-color-dark;
-      border-bottom: dotted $text-color-dark 0.1em;
+      color: colors.$text-color-dark;
+      border-bottom: dotted colors.$text-color-dark 0.1em;
 
       font-weight: 400;
     }
 
     &.taglink {
-      border: 1px solid $dark-link-color;
+      border: 1px solid colors.$dark-link-color;
       text-decoration: none;
     }
 
     &.normal {
-      color: $text-color-dark;
+      color: colors.$text-color-dark;
       text-decoration: none;
       border: 0;
     }
   }
 
   .container .post a {
-    color: $dark-link-color;
-    border-bottom: dotted $dark-link-color 0.1em;
+    color: colors.$dark-link-color;
+    border-bottom: dotted colors.$dark-link-color 0.1em;
   }
 
   .container h1,
@@ -114,13 +132,14 @@
 
   details > div,
   .note.grey {
-    background-color: $dark-spoiler-color;
+    background-color: colors.$dark-spoiler-color;
   }
 
   .box,
   .spacer,
+  .comment,
   .pub {
-    background-color: $dark-spoiler-color;
-    border: 1px solid $text-color-dark;
+    background-color: colors.$dark-spoiler-color;
+    border: 1px solid colors.$border-color-dark;
   }
 }

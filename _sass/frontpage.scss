@@ -1,3 +1,5 @@
+@use "colors";
+
 td {
   padding: 5px 10px;
 }
@@ -34,10 +36,10 @@ h3 {
 }
 
 .box, .pub {
-  border: 1px solid $text-color;
+  border: 1px solid colors.$text-color;
   padding: 15px;
   margin: 15px auto;
-  background-color: $spoiler-color;
+  background-color: colors.$spoiler-color;
 
   >details {
     margin-top: 0.5em;

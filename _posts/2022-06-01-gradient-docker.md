@@ -1,11 +1,14 @@
 ---
 layout: post
 title: Commanding Paperspace Gradient
-redirect_from: /tutorials/2022/06/01/gradient-docker.html
+redirect_from:
+    - /tutorials/2022/06/01/gradient-docker.html
+    - /blog/posts/2022/06/01/gradient-docker/
 date: 2022-06-01 12:32:04 -0500
 category: Tutorials
 description: I recently switched from Google Colab to Paperspace Gradient. I had
   some trouble getting into the workflow, but here are some useful things I found.
+post_id: gradient-docker
 tags: [cs]
 ---
 

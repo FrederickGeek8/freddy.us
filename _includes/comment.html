@@ -1,0 +1,31 @@
+{% capture author -%}
+<cite>
+{%- if include.comment["columns"]["website"] != "" -%}
+<a href="{{include.comment["columns"]["website"]}}" rel="external nofollow ugc" target="_blank">{{include.comment["columns"]["author"]}}</a>
+{%- else -%}
+{{include.comment["columns"]["author"]}}
+{%- endif -%}
+</cite>
+{%- endcapture %}
+
+{% capture timestamp -%}
+    <time>{{include.comment["timestamp"] | date_to_string}}</time>
+{%- endcapture %}
+
+{% capture permalink -%}
+    <small><a class="noprint" href="{{post.url}}#comment-{{-include.comment["id"]-}}">(Permalink)</a></small>
+{%- endcapture %}
+
+<blockquote>
+    <div class='comment' id='comment-{{-include.comment["id"]-}}'>
+        <p><b>From:</b> {{author}} on {{timestamp}} {{permalink}}</p>
+        <p><b>Message:</b></p>
+        <p>{{include.comment["columns"]["html"]}}</p>
+        <p><b>Replies:</b> <a href='{{ site.comments.post_api }}?post_id={{-page.post_id-}}&replying_to={{include.comment["id"]}}#box' rel="nofollow" target="_blank">(Add Reply)</a></p>
+        <div class="replies">
+        {% for reply in include.comment["replies"] %}
+        {%- include comment.html comment=reply -%}
+        {% endfor %}
+        </div>
+    </div>
+</blockquote>

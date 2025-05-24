@@ -7,6 +7,7 @@ category: Personal
 redirect_from: 
   - /thoughts/2023/10/06/thinking-about-grad-school.html
   - /personal/2023/10/06/thinking-about-grad-school.html
+  - /blog/posts/2023/10/06/thinking-about-grad-school/
 description:
   I have been wanting to apply for grad school for a long time, but as the
   mathematically obsessed person I feel frozen trying to find direction and
@@ -17,6 +18,7 @@ description:
   knowledge, I do not think that our research interests fully align and perhaps
   there are other mathematically-inclined people on the internet that may also
   have valuable insight.
+post_id: thinking-about-grad-school
 tags: [academia, personal, thoughts]
 ---
 
