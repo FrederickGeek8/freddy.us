@@ -1,54 +1,167 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="256" viewBox="0 0 505 211" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="#fff" fill-rule="evenodd" font-family="serif" font-size="14" text-anchor="middle">
-    <style>
-        <![CDATA[svg text{white-space:pre}.JlNJ{fill:#000}.HqCN{stroke:none}]]>
-    </style>
-    <defs>
-        <path d="M0 0l4 5h-8z" id="Uyyw" class="HqCN"/>
-    </defs>
-    <rect fill="#efc" height="65" rx="15" width="145" x="61.2604"/>
-    <text class="JlNJ HqCN">
-        <tspan x="133.7604" y="37.12">Jekyll Website</tspan>
-    </text>
-    <rect height="65" rx="15" width="165" x="311.2604" fill="#f99"/>
-    <text class="JlNJ HqCN">
-        <tspan x="393.7604" y="37.12">PHP Comment Frontend</tspan>
-    </text>
-    <rect height="40" rx="15" width="145" x="321.2604" y="157.5" fill="#9fe"/>
-    <text class="JlNJ HqCN">
-        <tspan x="393.7604" y="182.12">SQLite Database</tspan>
-    </text>
-    <rect fill="#f99" height="65" rx="15" width="165" x="51.2604" y="145"/>
-    <text class="JlNJ HqCN">
-        <tspan x="133.7604" y="182.12">PHP Comment API</tspan>
-    </text>
-    <g transform="translate(206.2604 32.5)">
-        <path d="M0 0h100.5" fill="none"/>
-        <use x="105" href="#Uyyw" transform="matrix(0 1 -1 0 105 -105)" class="JlNJ"/>
-        <text class="JlNJ HqCN">
-            <tspan x="52.5" y="-10.38">Links out to</tspan>
-        </text>
-    </g>
-    <g transform="translate(393.7604 65)">
-        <path fill="none" d="M0 0v32.5h0V88"/>
-        <use y="92.5" href="#Uyyw" transform="matrix(-1 0 0 -1 0 185)" class="JlNJ"/>
-        <text text-anchor="start" class="JlNJ HqCN">
-            <tspan x="7" y="41.845">Insert comment </tspan>
-            <tspan x="7" y="58.645">into DB</tspan>
-        </text>
-    </g>
-    <g transform="translate(133.7604 65)">
-        <path fill="none" d="M0 80V40h0V4.5"/>
-        <use href="#Uyyw" class="JlNJ"/>
-        <text class="JlNJ HqCN">
-            <tspan x="-73.75" y="36.22">Inserts Comments </tspan>
-            <tspan x="-73.75" y="53.02">Into Page</tspan>
-        </text>
-    </g>
-    <g transform="translate(216.2604 177.5)">
-        <path fill="none" d="M105 0H82.5h0-78"/>
-        <use href="#Uyyw" transform="matrix(0 -1 1 0 0 0)" class="JlNJ"/>
-        <text class="JlNJ HqCN">
-            <tspan x="52.5" y="-10.38">Exposed via API</tspan>
-        </text>
-    </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="256"
+   viewBox="0 0 505 211"
+   stroke="#000000"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   fill="#ffffff"
+   fill-rule="evenodd"
+   font-family="serif"
+   font-size="14px"
+   text-anchor="middle"
+   version="1.1"
+   id="svg10"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     id="style1"><![CDATA[svg text{white-space:pre}.JlNJ{fill:#000}.HqCN{stroke:none}]]></style>
+  <defs
+     id="defs1">
+    <path
+       d="M 0,0 4,5 H -4 Z"
+       id="Uyyw"
+       class="HqCN" />
+  </defs>
+  <rect
+     fill="#eeffcc"
+     height="65"
+     rx="15"
+     width="145"
+     x="61.260399"
+     id="rect1"
+     y="0" />
+  <text
+     class="JlNJ HqCN"
+     id="text1"><tspan
+       x="133.76041"
+       y="37.119999"
+       id="tspan1">Jekyll Website</tspan></text>
+  <rect
+     height="65"
+     rx="15"
+     width="165"
+     x="311.26041"
+     fill="#ff9999"
+     id="rect2"
+     y="0" />
+  <text
+     class="JlNJ HqCN"
+     id="text2"><tspan
+       x="393.76041"
+       y="37.119999"
+       id="tspan2">PHP Comment Frontend</tspan></text>
+  <rect
+     height="40"
+     rx="15"
+     width="145"
+     x="321.26041"
+     y="157.5"
+     fill="#99ffee"
+     id="rect3" />
+  <text
+     class="JlNJ HqCN"
+     id="text3"><tspan
+       x="393.76041"
+       y="182.12"
+       id="tspan3">SQLite Database</tspan></text>
+  <rect
+     fill="#ff9999"
+     height="65"
+     rx="15"
+     width="165"
+     x="51.260399"
+     y="145"
+     id="rect4" />
+  <text
+     class="JlNJ HqCN"
+     id="text4"><tspan
+       x="133.76041"
+       y="182.12"
+       id="tspan4">PHP Comment API</tspan></text>
+  <g
+     transform="translate(206.2604,32.5)"
+     id="g5">
+    <path
+       d="M 0,0 H 100.5"
+       fill="none"
+       id="path4" />
+    <use
+       x="105"
+       href="#Uyyw"
+       transform="rotate(90,105,0)"
+       class="JlNJ"
+       id="use4" />
+    <text
+       class="JlNJ HqCN"
+       id="text5"><tspan
+         x="52.5"
+         y="-10.38"
+         id="tspan5">Links out to</tspan></text>
+  </g>
+  <g
+     transform="translate(393.7604,65)"
+     id="g7">
+    <path
+       fill="none"
+       d="m 0,0 v 32.5 0 55.5"
+       id="path5" />
+    <use
+       y="92.5"
+       href="#Uyyw"
+       transform="rotate(180,0,92.5)"
+       class="JlNJ"
+       id="use5" />
+    <text
+       text-anchor="start"
+       class="JlNJ HqCN"
+       id="text7"><tspan
+         x="7"
+         y="41.845001"
+         id="tspan6">Insert comment </tspan><tspan
+         x="7"
+         y="58.645"
+         id="tspan7">into DB</tspan></text>
+  </g>
+  <g
+     transform="translate(133.7604,65)"
+     id="g9">
+    <path
+       fill="none"
+       d="M 0,80 V 40 40 4.5"
+       id="path7" />
+    <use
+       href="#Uyyw"
+       class="JlNJ"
+       id="use7" />
+    <text
+       class="JlNJ HqCN"
+       id="text9"><tspan
+         x="-73.75"
+         y="36.220001"
+         id="tspan8">Inserts Comments </tspan><tspan
+         x="-73.75"
+         y="53.02"
+         id="tspan9">Into Page</tspan></text>
+  </g>
+  <g
+     transform="translate(216.2604,177.5)"
+     id="g10">
+    <path
+       fill="none"
+       d="M 105,0 H 82.5 v 0 h -78"
+       id="path9" />
+    <use
+       href="#Uyyw"
+       transform="rotate(-90)"
+       class="JlNJ"
+       id="use9" />
+    <text
+       class="JlNJ HqCN"
+       id="text10"><tspan
+         x="52.5"
+         y="-10.38"
+         id="tspan10">Exposed via API</tspan></text>
+  </g>
 </svg>
