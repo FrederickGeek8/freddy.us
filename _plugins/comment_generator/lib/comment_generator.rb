@@ -8,6 +8,8 @@ module JekyllComments
     ##
     # Entrpoint to the generator, called by Jekyll
     def generate(site)
+      return unless site.config.key?('comments')
+
       @backend = if site.config['comments']['backend'] == 'sqlite'
                    CommentGenerator::Backends::SqliteBackend.new(site.config['comments']['db_file'])
                  else
