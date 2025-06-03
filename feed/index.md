@@ -9,7 +9,7 @@ redirect_from: "/feed/"
 
 There are multiple RSS/Atom<sup><a href="#note-1">[1]</a></sup> feeds available on freddy.us, depending on what content you want to subscribe to.
 
-The most important feed is the [**Primary Blog RSS Feed**]({{ "feed.xml" | absolute_url }}) at [**{{ "feed.xml" | absolute_url }}**]({{ "feed.xml" | absolute_url }}).
+The most important feed is the [**Primary Blog RSS Feed**]({{ "feed.xml" | absolute_url }}) located at [**{{ "feed.xml" | absolute_url }}**]({{ "feed.xml" | absolute_url }}).
 
 There are other RSS feeds available if you do not want to subscribe to all posts.
 
