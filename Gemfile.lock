@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/FrederickGeek8/jekyll-feed.git
+  revision: b11f67380a21fa1363d3ba4afd4485cd05ef807f
+  branch: custom
+  specs:
+    jekyll-feed (0.17.0)
+      jekyll (>= 3.7, < 5.0)
+
 PATH
   remote: _plugins/comment_generator
   specs:
@@ -54,8 +62,6 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-feed (0.17.0)
-      jekyll (>= 3.7, < 5.0)
     jekyll-optional-front-matter (0.3.2)
       jekyll (>= 3.0, < 5.0)
     jekyll-redirect-from (0.16.0)
@@ -114,7 +120,7 @@ PLATFORMS
 DEPENDENCIES
   comment_generator!
   jekyll (~> 4.0)
-  jekyll-feed
+  jekyll-feed!
   jekyll-optional-front-matter
   jekyll-redirect-from
   jekyll-relative-links
