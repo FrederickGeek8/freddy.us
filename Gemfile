@@ -22,7 +22,7 @@ group :jekyll_plugins do
     # gem "jekyll-github-metadata", "~> 2.13.0"
     gem 'jekyll-sitemap'
     gem 'jekyll-seo-tag'
-    gem 'jekyll-feed'
+    gem 'jekyll-feed', :git => 'https://github.com/FrederickGeek8/jekyll-feed.git', :branch => 'custom'
     gem 'jekyll-optional-front-matter'
     gem 'jekyll-titles-from-headings'
     gem 'jekyll-relative-links'

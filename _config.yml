@@ -87,6 +87,7 @@ defaults:
 
 feed:
   excerpt_only: true
+  read_more_text: 'Read the full blog post &#x2192;'
   tags: true
   categories:
     - CS
