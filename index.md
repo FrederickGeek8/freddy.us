@@ -8,16 +8,16 @@ You can find out more about my personal background, [research interests](/about/
 
 My "[Blog](/blog/)" is... well... a blog. It supports [RSS](/feeds/) too!
 
-If you want to get in touch with me, you can check out my "[Get In Touch!](/contact/)" page. I am always open to having a quick "coffee chat" or collaborating on a project.
+If you want to get in touch with me, or find the other platforms I'm on, you can check out my "[Contact Me](/contact/)" page. I am always open to having a quick "coffee chat" or collaborating on a project.
 
 ## Recent News
 {% assign sortedRec = site.data.news | sort: "date" | reverse %}
 {% for item in sortedRec limit:3 %}
-- {{ item.date }} -- {{ item.text }}
+- <time>{{ item.date }}</time> -- {{ item.text }}
 {% endfor %}
 
 ## Recent Blog Posts
 {% assign sortedRec = site.posts | sort: "date" | reverse %}
 {% for item in sortedRec limit:3 %}
-- {{ item.date | date: "%Y-%m-%d" }} -- [{{ item.title }}]({{ item.url }})
+- <time>{{ item.date | date: "%Y-%m-%d" }}</time> -- **[{{ item.title }}]({{ item.url }})**
 {% endfor %}
