@@ -85,6 +85,12 @@ defaults:
     values:
       sitemap: false
 
+collections:
+  microposts:
+    category: microposts
+    permalink: /blog/micros/:title/
+    output: true
+
 feed:
   excerpt_only: true
   read_more_text: 'Read the full blog post &#x2192;'
@@ -94,6 +100,11 @@ feed:
     - Personal
     - Tutorials
     - Libraries
+    - meta
+  collections:
+    microposts:
+      # Create a feed with and without
+      xinclude: true
 
 sass:
   style: compressed

@@ -1,11 +1,10 @@
 ---
 layout: blog.default
-title: "Posts"
+title: "Microposts"
 description: Frederick Morlock's personal blog.
-permalink: '/blog/'
+permalink: '/blog/micros/'
 redirect_from:
-- /blog.html
-- /blog/posts/
+- /blog/categories/microposts/
 ---
 
 {% include ext-navigation.html %}
@@ -22,9 +21,9 @@ redirect_from:
             <p>You can be notified of new posts by subscribing to my <a href="/feeds/">RSS feed</a>.</p>
         </div>
 
-        <h2>{{ page.title }} <small>(<a href="/blog/all">Show micros</a>)</small></h2>
+        <h2>{{ page.title }} <small>(<a href="/blog/">Back to Main Blog</a>)</small></h2>
 
-        {% for post in site.posts %}
+        {% for post in site.microposts %}
 
         <div class="post">
             <h3>
@@ -32,7 +31,7 @@ redirect_from:
             </h3>
             <p>
                 <b>Posted:</b> {{ post.date | date: "%B %e, %Y" }} in
-                <a href="/blog/categories/{{ post.category }}/">{{ post.category }}</a>. {%
+                <a href="/blog/micros/">microposts</a>. {%
                 if post.last_modified_at %}
                 <i><b>Last Updated:</b> {{ post.last_modified_at | date: "%B %e, %Y" }}</i>
                 {% endif %}
