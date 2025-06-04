@@ -15,3 +15,9 @@ If you want to get in touch with me, you can check out my "[Get In Touch!](/cont
 {% for item in sortedRec limit:3 %}
 - {{ item.date }} -- {{ item.text }}
 {% endfor %}
+
+## Recent Blog Posts
+{% assign sortedRec = site.posts | sort: "date" | reverse %}
+{% for item in sortedRec limit:3 %}
+- {{ item.date | date: "%Y-%m-%d" }} -- [{{ item.title }}]({{ item.url }})
+{% endfor %}
