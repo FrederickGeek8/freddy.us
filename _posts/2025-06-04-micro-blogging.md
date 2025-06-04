@@ -7,7 +7,7 @@ description: >-
     A number of blogs that I read have inspired me to try my hand at "microblogging".
     I've now added this feature to my blog, so here we go!
 tags: [meta-update]
-post_id: microblogging
+post_id: micro-blogging
 ---
 
 I follow a number of blogs that either explicitly have a feed for "micro-posts" (like [aliquote.org](https://aliquote.org/)), or more generally have short-form, "off the dome"-style content in addition to their longer posts. I think there is something pretty empowering about that, especially when disconnected from social media, and as I discussed in my [recent "A New Era for My Blog" post]({% post_url 2025-05-23-a-new-era %}):
