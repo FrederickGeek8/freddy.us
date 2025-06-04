@@ -18,7 +18,7 @@ module CommentGenerator::Backends
 
     def fetch_and_parse(uri)
       response = Net::HTTP.get_response(uri, @headers)
-      Jekyll.logger.error "Error: Post #{uri} not found." if response.code != 200
+      Jekyll.logger.error "Error: Post #{uri} not found. Got code #{response.code}" if response.code != '200'
       JSON.parse(response.body)
     end
 
