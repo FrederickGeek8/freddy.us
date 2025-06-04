@@ -1,11 +1,8 @@
 ---
 layout: blog.default
-title: "Posts"
+title: "All Posts"
 description: Frederick Morlock's personal blog.
-permalink: '/blog/'
-redirect_from:
-- /blog.html
-- /blog/posts/
+permalink: '/blog/all/'
 ---
 
 {% include ext-navigation.html %}
@@ -22,9 +19,10 @@ redirect_from:
             <p>You can be notified of new posts by subscribing to my <a href="/feeds/">RSS feed</a>.</p>
         </div>
 
-        <h2>{{ page.title }}</h2>
+        <h2>{{ page.title }} (<small><a href="{{ site.baseurl }}/blog/">Hide micro-posts</a></small>)</h2>
 
-        {% for post in site.posts %}
+        {% assign posts = site.posts | concat: site.micros | sort: "date" | reverse %}
+        {% for post in posts %}
 
         <div class="post">
             <h3>
