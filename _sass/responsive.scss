@@ -19,6 +19,13 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  .container .postcontent {
+    ol, ul {
+      padding-inline-start: 2em;
+    }
+  }
+
 }
 
 @media (max-width: 400px) {
@@ -131,6 +138,7 @@
   }
 
   details > div,
+  .postcontent blockquote,
   .note.grey {
     background-color: colors.$dark-spoiler-color;
   }

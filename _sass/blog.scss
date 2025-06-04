@@ -80,8 +80,8 @@
 
 .container img {
   background: transparent;
-  border: 10px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  border: 5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
   display: block;
   margin: 1.3em auto;
   max-width: 95%;
@@ -90,6 +90,14 @@
 .container .post {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.postcontent blockquote {
+  background: colors.$spoiler-color;
+  padding: 5px 15px;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  font-style: italic;
 }
 
 .container .postcontent {
@@ -127,7 +135,6 @@
   li > ol, li > ul {
     padding-inline-start: 1em;
   }
-
 }
 
 #tags {

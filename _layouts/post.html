@@ -42,7 +42,7 @@ layout: blog.default
 
 <div class="postcontent">{{ content }}</div>
 </article>
-  {% if page.tags -%}
+  {% if page.tags != empty -%}
   <div id="tags">
     <b>Tags: </b>
     {% for tag in page.tags %}
