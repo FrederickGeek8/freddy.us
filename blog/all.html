@@ -19,9 +19,9 @@ permalink: '/blog/all/'
             <p>You can be notified of new posts by subscribing to my <a href="/feeds/">RSS feed</a>.</p>
         </div>
 
-        <h2>{{ page.title }} (<small><a href="{{ site.baseurl }}/blog/">Hide micro-posts</a></small>)</h2>
+        <h2>{{ page.title }} <small>(<a href="{{ site.baseurl }}/blog/">Hide micros</a>)</small></h2>
 
-        {% assign posts = site.posts | concat: site.micros | sort: "date" | reverse %}
+        {% assign posts = site.posts | concat: site.microposts | sort: "date" | reverse %}
         {% for post in posts %}
 
         <div class="post">

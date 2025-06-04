@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/FrederickGeek8/jekyll-feed.git
-  revision: b11f67380a21fa1363d3ba4afd4485cd05ef807f
+  revision: 2436427236d3d0df9ac3dfce7690d7c6bcbed8cf
   branch: custom
   specs:
     jekyll-feed (0.17.0)

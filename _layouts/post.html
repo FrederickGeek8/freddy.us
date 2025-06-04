@@ -14,11 +14,18 @@ layout: blog.default
   <article>
   <h2>{{ page.title }}</h2>
 
+  {%- capture category_link -%}
+     {% if page.category == 'microposts' -%}
+        <a href="/blog/micros/">microposts</a>
+     {%- else -%}
+        <a href="/blog/categories/{{ page.category }}/">{{ page.category }}</a>
+     {%- endif %}
+  {%- endcapture -%}
+
   {% if page.date %}
   <div>
     <p>
-      <b>Posted:</b> {{ page.date | date: "%B %e, %Y" }} in
-      <a href="/blog/categories/{{ page.category }}/">{{ page.category }}</a>. {%
+      <b>Posted:</b> {{ page.date | date: "%B %e, %Y" }} in {{ category_link }}. {%
       if page.last_modified_at %}
       <i
         ><b>Last Updated:</b> {{ page.last_modified_at | date: "%B %e, %Y" }}</i
@@ -35,14 +42,14 @@ layout: blog.default
 
 <div class="postcontent">{{ content }}</div>
 </article>
-  {% if page.tags %}
+  {% if page.tags -%}
   <div id="tags">
     <b>Tags: </b>
     {% for tag in page.tags %}
     <a href="/blog/tags/{{ tag }}/" class="taglink">{{ tag }}</a>
     {% endfor %}
   </div>
-  {% endif %}
+  {%- endif -%}
 
   {% if page.post_id %}
   {% include comments.html comments=page.comments %}
