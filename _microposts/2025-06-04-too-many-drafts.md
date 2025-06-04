@@ -2,7 +2,7 @@
 layout: post
 title: Too Many Dang Drafts
 date: 2025-06-04 14:50:00 -0400
-category: micropost
+category: microposts
 description: I've been working on writing a few blog posts... Here's a quick recap.
 post_id: too-many-drafts
 ---
