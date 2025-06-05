@@ -12,7 +12,7 @@ post_id: creating-a-headless-raspberry-pi
 tags: [cs, tutorial]
 ---
 
-After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. **The Raspberry Pi Zero I am using has [this](http://a.co/j22ab4k) Wi-Fi dongle, though I highly recommend [this one](http://a.co/9D3edky)**. The assumption of this article is that you have some experience using macOS Terminal, though minimal knowledge is required.
+After attempting to get my brand-new Raspberry Pi up and running, I encountered some issues that others may face along the road. **The Raspberry Pi Zero I am using has [this](https://a.co/j22ab4k) Wi-Fi dongle, though I highly recommend [this one](https://a.co/9D3edky)**. The assumption of this article is that you have some experience using macOS Terminal, though minimal knowledge is required.
 
 A good guide for configuring a headless Raspberry Pi Zero is [this article](https://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/) written by David Maitland. Unfortunately, his method did not work for me, something I hope to amend through this article. I will be building off much of what David said so that others running macOS may see greater successes.
 
@@ -25,7 +25,7 @@ This was a difficult process for myself because I lacked any of the tools necess
 
 ### Step Zero – Setting up
 
-Firstly, it is advisable that you install [Homebrew](http://brew.sh/). Although you are welcome to use any package manager, such as Macports, assistance on my part will be minimal. After installing Homebrew, the only application we need to fetch is `nmap` which may be installed through the command `brew install nmap`. We will be using this tool later to locate our Raspberry Pi on the network. Depending on your network settings, that section might be of no use to yourself.
+Firstly, it is advisable that you install [Homebrew](https://brew.sh/). Although you are welcome to use any package manager, such as Macports, assistance on my part will be minimal. After installing Homebrew, the only application we need to fetch is `nmap` which may be installed through the command `brew install nmap`. We will be using this tool later to locate our Raspberry Pi on the network. Depending on your network settings, that section might be of no use to yourself.
 
 Secondly, if you are running macOS and do not have a Linux VM or partition, then you should download [VirtualBox](https://www.virtualbox.org/wiki/Downloads) – a free VM engine. After downloading (I won't provide instructions for this part), you should create a Linux VM (Ubuntu is my choice) as macOS does not support the partition types found on a Raspberry Pi microSD.
 
