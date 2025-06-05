@@ -130,3 +130,28 @@ navigation:
 permalink: /blog/posts/:title/
 # permalink: /blog/:categories/:year/:month/:day/:title/
 # permalink: /blog/posts/:year/:month/:day/:title/
+
+webmentions:
+  username: freddy.us
+  collections:
+    - microposts
+  js: false
+  bad_uri_policy:
+    blacklist:
+      - "^https://github.com/"
+      - "^https://hub.docker.com/"
+      - "^https://a.co/"
+      - "^https://freddy.us/"
+      - "^https://en.wikipedia.org/"
+      - "^https://developer.mozilla.org/"
+      - "^https://rclone.org/"
+      - "^https://www.realvnc.com/"
+      - "^https://brew.sh/"
+      - "^https://creativecommons.org/"
+      - "^https://social.nerd.net/"
+      - "^https://noscript.net/"
+      - "^https://www.11ty.dev/"
+      - "^https://opensource.org/"
+      - "^https://hinaleaimaging.com"
+      - "^https://git.gammaspectra.live/"
+      - "^https://www.raspberrypi.org"

@@ -28,6 +28,8 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-titles-from-headings'
 
+  gem 'jekyll-webmention_io'
+
   # from gh-pages
   gem 'kramdown-parser-gfm'
 
