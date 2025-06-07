@@ -21,10 +21,12 @@ permalink: '/blog/all/'
 
         <h2>{{ page.title }} <small>(<a href="{{ site.baseurl }}/blog/">Hide micros</a>)</small></h2>
 
-        {% assign posts = site.posts | concat: site.microposts | sort: "date" | reverse %}
+        <div class="h-feed">
+        {%- assign posts = site.posts | concat: site.microposts | sort: "date" | reverse -%}
         {% for post in posts %}
             {%- include post_entry.html post=post -%}
         {% endfor %}
+        </div>
     </main>
 </div>
 

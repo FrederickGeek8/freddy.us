@@ -24,9 +24,11 @@ redirect_from:
 
         <h2>{{ page.title }} <small>(<a href="/blog/all">Show micros</a>)</small></h2>
 
+        <div class="h-feed">
         {% for post in site.posts %}
             {%- include post_entry.html post=post -%}
         {% endfor %}
+        </div>
     </main>
 </div>
 
