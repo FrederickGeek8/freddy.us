@@ -25,7 +25,8 @@ layout: blog.default
   {% if page.date %}
   <div>
     <p>
-        <b>Posted:</b> <time class="dt-published">{{ page.date | date: "%B %e, %Y" }}</time> in {{ category_link }}.
+        <b>Posted:</b> <time class="dt-published">{{ page.date | date: "%B %e, %Y" }}</time> in
+        {{ category_link }}<span class="hidden"> by <a class="p-author h-card hidden" rel="author" href="/">Frederick Morlock</a></span>.
         {% if page.last_modified_at %}
       <i
       ><b>Last Updated:</b> <time class="dt-updated">{{ page.last_modified_at | date: "%B %e, %Y" }}</time></i

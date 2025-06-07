@@ -26,6 +26,7 @@ permalink: '/blog/all/'
         {% for post in posts %}
             {%- include post_entry.html post=post -%}
         {% endfor %}
+        <span class="hidden">by <a class="p-author h-card hidden" rel="author" href="/">Frederick Morlock</a></span>
         </div>
     </main>
 </div>
