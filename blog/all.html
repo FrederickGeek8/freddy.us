@@ -23,29 +23,7 @@ permalink: '/blog/all/'
 
         {% assign posts = site.posts | concat: site.microposts | sort: "date" | reverse %}
         {% for post in posts %}
-
-        {%- capture category_link -%}
-           {% if post.category == 'microposts' -%}
-              <a href="/blog/micros/">microposts</a>
-           {%- else -%}
-              <a href="/blog/categories/{{ post.category }}/">{{ post.category }}</a>
-           {%- endif %}
-        {%- endcapture -%}
-        <div class="post">
-            <h3>
-                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </h3>
-            <p>
-                <b>Posted:</b> {{ post.date | date: "%B %e, %Y" }} in {{ category_link }}. {%
-                if post.last_modified_at %}
-                <i><b>Last Updated:</b> {{ post.last_modified_at | date: "%B %e, %Y" }}</i>
-                {% endif %}
-            </p>
-            <p>
-                {{ post.description }}
-            </p>
-        </div>
-
+            {%- include post_entry.html post=post -%}
         {% endfor %}
     </main>
 </div>
