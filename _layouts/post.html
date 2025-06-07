@@ -11,24 +11,25 @@ layout: blog.default
     <h1 id="title">Frederick's Blog</h1>
   </header>
 
-  <article>
-  <h2>{{ page.title }}</h2>
+  <article class="h-entry">
+  <h2 class="p-name">{{ page.title }}</h2>
 
   {%- capture category_link -%}
      {% if page.category == 'microposts' -%}
-        <a href="/blog/micros/">microposts</a>
+        <a href="/blog/micros/" class="p-category">microposts</a>
      {%- else -%}
-        <a href="/blog/categories/{{ page.category }}/">{{ page.category }}</a>
+        <a href="/blog/categories/{{ page.category }}/" class="p-category">{{ page.category }}</a>
      {%- endif %}
   {%- endcapture -%}
 
   {% if page.date %}
   <div>
     <p>
-      <b>Posted:</b> {{ page.date | date: "%B %e, %Y" }} in {{ category_link }}. {%
-      if page.last_modified_at %}
+        <b>Posted:</b> <time class="dt-published">{{ page.date | date: "%B %e, %Y" }}</time> in
+        {{ category_link }}<span class="hidden"> by <a class="p-author h-card hidden" rel="author" href="/">Frederick Morlock</a></span>.
+        {% if page.last_modified_at %}
       <i
-        ><b>Last Updated:</b> {{ page.last_modified_at | date: "%B %e, %Y" }}</i
+      ><b>Last Updated:</b> <time class="dt-updated">{{ page.last_modified_at | date: "%B %e, %Y" }}</time></i
       >
       {% endif %}
     </p>
@@ -37,10 +38,10 @@ layout: blog.default
 
   <div class="spacer">
     <p><b>Abstract:</b></p>
-    <p>{{ page.description }}</p>
-  </div>
+    <p class="p-summary">{{ page.description }}</p>
+    </div>
 
-<div class="postcontent">{{ content }}</div>
+    <div class="postcontent e-content">{{ content }}</div>
 </article>
   {% if page.tags != empty -%}
   <div id="tags">

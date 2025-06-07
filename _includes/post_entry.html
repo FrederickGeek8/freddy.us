@@ -1,0 +1,22 @@
+{%- capture category_link -%}
+{% if include.post.category == 'microposts' -%}
+<a href="/blog/micros/" class="p-category">microposts</a>
+{%- else -%}
+<a href="/blog/categories/{{ include.post.category }}/" class="p-category">{{ include.post.category }}</a>
+{%- endif %}
+{%- endcapture -%}
+<div class="post h-entry">
+    <h3>
+        <a href="{{ site.baseurl }}{{ include.post.url }}" class="p-name u-url">{{ include.post.title }}</a>
+    </h3>
+    <p>
+        <b>Posted:</b> <time class="dt-published">{{ include.post.date | date: "%B %e, %Y" }}</time> in
+        {{ category_link }}.
+        {% if include.post.last_modified_at %}
+        <i><b>Last Updated:</b> <time class="dt-updated">{{ include.post.last_modified_at | date: "%B %e, %Y" }}</time></i>
+        {% endif %}
+    </p>
+    <p class="p-summary">
+        {{ include.post.description }}
+    </p>
+</div>

@@ -234,3 +234,12 @@ ul .note {
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+.hidden {
+  display: none;
+}
+
+.no-link {
+  pointer-events: none;
+  cursor: default;
+}
