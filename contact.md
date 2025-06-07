@@ -14,7 +14,7 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 <li>
     <a
     href="{{ site.socials.github }}"
-    rel="me external author"
+    rel="me external"
     class="link"
     target="_blank"
     >GitHub</a
@@ -23,7 +23,7 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 <li>
     <a
     href="{{ site.socials.googlescholar }}"
-    rel="me external author"
+    rel="me external"
     class="link"
     target="_blank"
     >Google Scholar</a
@@ -32,7 +32,7 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 <li>
     <a
     href="{{ site.socials.linkedin }}"
-    rel="me external author"
+    rel="me external"
     class="link"
     target="_blank"
     >LinkedIn</a
@@ -41,10 +41,19 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 <li>
     <a
     href="{{ site.socials.mastodon }}"
-    rel="me external author"
+    rel="me external"
     class="link"
     target="_blank"
     >Mastodon</a
+    >
+</li>
+<li>
+    <a
+    href="{{ site.socials.bluesky }}"
+    rel="me external"
+    class="link"
+    target="_blank"
+    >Bluesky</a
     >
 </li>
 <!-- <li>
@@ -59,7 +68,7 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 <li>
     <a
     href="{{ site.socials.letterboxd }}"
-    rel="me external author"
+    rel="me external"
     class="link"
     target="_blank"
     >Letterboxd</a
@@ -68,7 +77,7 @@ You may email me at `me<at>freddy.us`, or find me on some of these other platfor
 <li>
     <a
     href="{{ site.socials.goodreads }}"
-    rel="me external author"
+    rel="me external"
     class="link"
     target="_blank"
     >Goodreads</a
