@@ -3,8 +3,9 @@
   {{- include.extra_content -}}
 {% endif %}
 <div id="footer" {% if include.tight %}class="tight"{% endif %}>
-  <p id="copyright">
-    &copy; 2017-{{ site.time | date: '%Y' }} Frederick Morlock. All rights reserved.
+<p id="copyright">
+    &copy; 2017-{{ site.time | date: '%Y' }} <a class="p-author h-card normal no-link" rel="author" href="/">Frederick Morlock</a></span>
+    . All rights reserved.
   </p>
 </div>
 </footer>
