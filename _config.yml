@@ -91,6 +91,8 @@ collections:
     category: microposts
     permalink: /blog/micros/:title/
     output: true
+  redirects:
+    output: true
 
 feed:
   excerpt_only: true
