@@ -58,7 +58,7 @@ This iterative refinement is one of the best tools that we currently have in our
 
 <figure>
     <img src="/assets/per-post/fuzzy-dynamics/gradient_descent.svg" alt="A tiny architecture diagram" class="invertable" width="420" height="450" style="background: #eee; height: auto;" />
-    <figcaption>A small illustration of gradient descent, courtesy of <a href="https://commons.wikimedia.org/wiki/Category:Gradient_descent#/media/File:Gradient_descent.svg">Wikimedia</a>.</figcaption>
+    <figcaption>A small illustration of gradient descent, courtesy of <a href="https://commons.wikimedia.org/wiki/Category:Gradient_descent#/media/File:Gradient_descent.svg" rel="external nofollow ugc" target="_blank">Wikimedia</a>.</figcaption>
 </figure>
 
 The refinement dialog is like a user, or an LLM, following a compass in concept space towards the "correct" (or acceptable) answer. We can actually describe this compass mathematically! And extract a representation of it from our learned models.
