@@ -50,14 +50,14 @@ Here is a basic visual diagram to show this flow:
 https://www.mermaidchart.com/play?utm_source=mermaid_live_editor&utm_medium=toggle#pako:eNptzb0KAjEMwPFXCV2lL3BIJxehgihut8RLlMI1rf2YxHe3RzlQNFNCfvB_qikQq0FlflSWiXcO7wn9KNDmkjlpYzbWHgbY7sUVhzMcU_CxmE7aSzeiF9rMuV5zQSFMBKGWWFc3hxDhxDcn7FkK2OXur99SdwTxs_SntrqvEgv1Rb3e6UpFNQ
 -->
 <figure>
-    <img src="/assets/per-post/fuzzy-dynamics/llm_user_interaction.svg" alt="A tiny architecture diagram" class="invertable" height="420" style="background: #eee;" />
+    <img src="/assets/per-post/fuzzy-dynamics/llm_user_interaction.svg" alt="A tiny architecture diagram" class="invertable" width="480" style="background: #eee;" />
     <figcaption>A tiny diagram showing the prompt refinement flow between a user and a LLM.</figcaption>
 </figure>
 
 This iterative refinement is one of the best tools that we currently have in our arsenal to deal with these error-prone systems. But it reminds my machine learning-inclined mind of something else: a form of gradient descent. A form of manual, multi-party, gradient descent where we iteratively refine our generated output to align it with our expectations.
 
 <figure>
-    <img src="/assets/per-post/fuzzy-dynamics/gradient_descent.svg" alt="A tiny architecture diagram" class="invertable" height="420" style="background: #eee;" />
+    <img src="/assets/per-post/fuzzy-dynamics/gradient_descent.svg" alt="A tiny architecture diagram" class="invertable" width="420" style="background: #eee;" />
     <figcaption>A small illustration of gradient descent, courtesy of <a href="https://commons.wikimedia.org/wiki/Category:Gradient_descent#/media/File:Gradient_descent.svg">Wikimedia</a>.</figcaption>
 </figure>
 
