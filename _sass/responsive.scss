@@ -27,7 +27,7 @@
   }
 
   article {
-    padding: 5px;
+    padding: 10px;
   }
 }
 
@@ -46,6 +46,10 @@
     margin-left: 5px;
     margin-right: 5px;
   }
+
+  article {
+  padding: 5px;
+  }
 }
 
 @media print {
@@ -63,6 +67,8 @@
   }
 
   .invertable {
+    // we need to set the color to light-mode theme (since invert)
+    color: colors.$text-color;
     filter: invert(1);
   }
 
