@@ -3,7 +3,7 @@ layout: post
 title: Fuzzy Finding, LLMs, and Langevin Dynamics
 category: CS
 description: Recently I have been trying to categorize the productive patterns I've seen in the use of AI tools. Along the way, the convergence of a few of my favorite mathematical concepts have led me to see an interesting path forward -- fuzzy finding.
-tags: [cs, math]
+tags: [cs, math, ML]
 usemath: true
 date: 2025-09-22
 post_id: fuzzy-dynamics
