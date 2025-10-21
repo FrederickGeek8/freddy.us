@@ -316,13 +316,66 @@ This is very similar to the theorem proven by [(Balestriero & Baraniuk, 2018)](h
 
 #### A Strange Kind of (Stochastic) Gradient Descent
 
-Outer products may sneak into gradient descent when you least expect it. I can even give some hand-wavy explanations of why gradietn descent seems biased towards low-rank optimizations. For this section, I am only working with _ordinary least square_, that is, _linear regression_. I'd welcome other analysis in the same vein, especially if someone can describe how the outer product construction of ReLU networks changes in this setting.
+Outer products may sneak into gradient descent when you least expect it. I can even give some hand-wavy explanations of why gradietn descent seems biased towards low-rank optimizations. 
 
-As a refresher on least squares, this is a setting where the solution weights can be solved in closed form. The goal is to learn some _weight vector_ $\bm{\beta}$ such that an observed input vector $\bm{x}\_i$ is mapped to an observed output _scalar_ $y_i$.
 
-When we stack $n$ sample inputs $x_i \in \mathbb{R}^p$, in a "training matrix" $\mathbf{X} \in \mathbb{R}^{n \times p}$.
+For this section, I am only working with _ordinary least square_, that is, _linear regression_. I'd welcome other analysis in the same vein, especially if someone can describe how the outer product construction of ReLU networks changes in this setting.
+
+**As a refresher on least squares**, in particular Ridge Regression, this is a setting where the solution weights can be solved in closed form. The goal is to learn some _weight vector_ $\bm{\beta}$ such that an observed input vector $\bm{x}\_i$ is mapped to an observed output _scalar_ $y_i$.
+
+When we stack $n$ sample inputs $\bm{x}\_i \in \mathbb{R}^p$, in a "training matrix" $\mathbf{X} \in \mathbb{R}^{n \times p}$. These training examples are **stacked row-wise**, so that is we have $n = 1$ training samples, $\mathbf{X}$ is a _row vector_ (or a transposed column vector).
+
+$$
+\mathbf{X} \bm{\beta} = y
+$$
+
+Minimizing the our loss
+
+$$
+\begin{aligned}
+\ell(\beta) &= \frac{1}{2} \Vert \mathbf{X}\beta - y \Vert_2^2 + \frac{1}{2} \alpha\Vert \beta \Vert_2^2 \\
+\downarrow \\
+\nabla \ell(\beta) &= - \mathbf{X}^\top (y - \mathbf{X} \beta) + \alpha \beta
+\end{aligned}
+$$
+
+we $\alpha$ is the strength of our regularization we have that the minimum of this optimization is:
+
+$$
+\beta = (\mathbf{X}^\top \mathbf{X} + \alpha I)^{-1} \mathbf{X}^\top y
+$$
+
+this can also be expressed in term of gradient descent, where we get that
+
+$$
+\beta_1 \leftarrow \beta_0 - \eta \nabla \ell(\beta_0)
+$$
 
 First, let's begin with the case of "pure" stochastic gradient descent -- we run gradient descent with respect to a **batch size of 1**.
+
+In this case, the problem is simplified to simply learning $\bm{\beta}$ for an inner product.
+
+$$
+\bm{x}^\top \bm{\beta} = y
+$$
+
+Our gradient $\nabla \ell(\beta)$ from above then becomes
+
+$$
+\begin{aligned}
+\nabla \ell(\beta) &= - \bm{x} (y - \bm{x}^\top \beta_0) + \alpha \beta_0 \\
+&= -y \bm{x} + \bm{x}\bm{x}^\top \beta_0 - \alpha \beta_0
+\end{aligned}
+$$
+
+Looking above, we see the outer product hiding in plain sight there. But this isn't constrained to a "batch size of 1". If we don't constrain ourselves in that way we have that 
+
+$$
+\begin{aligned}
+\nabla \ell(\beta) &= - \mathbf{X}^\top y + \mathbf{X}^\top \mathbf{X} \beta + \alpha \beta \\
+&= -\mathbf{X}^\top y + \left(\sum_{i = 1}^{\text{batch size}} x_i \otimes x_i \right) \beta - \alpha \beta
+\end{aligned}
+$$
 
 ### Conclusion
 
