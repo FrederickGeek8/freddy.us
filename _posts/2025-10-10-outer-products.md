@@ -9,11 +9,19 @@ date: 2025-10-09
 post_id: outer-products
 ---
 
-I cannot speak for the Linear Algebra education of other's in university, merely my own. However, despite getting what I thought was a good upbringing in Linear Algebra, there was one topic that was missing: **outer products**.
+I cannot speak to other's Linear Algebra education in university, merely my own. However, despite getting what I thought was a good upbringing in Linear Algebra, there was one topic that was missing: **_outer products_**.
 
-Perhaps this is a casual mention, as it was in my classes, or perhaps they just don't get the same sort of appreciation that inner products to. But as I've grown to know them more, and integrate their "dual view" into more of my analysis, I believe that they have become a fundemental piece of my knowledge of Linear Algebra.
+Frankly, I rarely hear about outer products in the (machine learning) research I read, and I barely remember them being taught in the classroom. Perhaps for other people outer products were a casual mention in class. Alternatively, maybe there a inadvertent research bias that diminishes their impact. Or maybe outer products are just flat-out not useful for people's work. My goal with this blog post is to try and reverse this bias.
 
-These days, I think it's almost always worth considering the meaning of the outer product dual for any LA problem. Perhaps, if I get the opportunity to teach some undergraduates Linear Algebra in the future, I will design my course to have outer products on similar footing as inner products. For now, I have to resign myself to motivating _you_ through _this blog post_ why outer products are worth thinking about.
+Despite the relationship (or lack-there-of) society has to the inner product's strange cousin, outer products have been increasingly on my mind. As I've grown to know them more and integrate their "dual view" into more of my analysis, they have increasingly become a fundamental piece of my thought processes and intuition surrounding Linear Algebra (and Deep Learning, as a result).
+
+These days, I think it's almost always worth considering the meaning of the outer product dual for any Linear Algebra problem or theorem. Perhaps, if I get the opportunity to teach an undergraduate course in Linear Algebra in the future, I will design my course to have outer products on similar footing as inner products. For now, I have to resign myself to motivating _you_ through _this blog post_ why outer products are worth thinking about.
+
+
+**In this blog post, I hope to:**
+1. Give you an introduction to **outer products** (and a small refresher on inner products)
+2. Reframe some of your existing Linear Algebra knowledge in the context of outer products
+3. Prove a tiny Deep Learning theorem leveraging outer products
 
 ### Table of Contents
 {:.no_toc}
@@ -22,25 +30,34 @@ These days, I think it's almost always worth considering the meaning of the oute
 
 ### A Brief Refresher of _Inner_ Products
 
-Before explaining the outer product, let me first remind you of the basic definition of an inner product -- which we refer to as the "dot product" is Euclidean space.
+Before explaining the outer product, let me first remind you of the basic definition of the dot product -- which I will interchangably refer to as the "inner product" at times [^1].
 
-Given two vector $u, v \in \mathbb{R}^n$, the dot product between $u$ and $v$, denoted as $u \cdot v$ or $\langle u , v\rangle$ is defined as:
+#### Vector Dot Products
+
+Given two n-dimensional vectors $u, v \in \mathbb{R}^n$, the **dot product** between $u$ and $v$, denoted as $u \cdot v$ or $\langle u , v\rangle$ is defined as:
 
 $$
 u \cdot v = \langle u , v \rangle = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n \in \mathbb{R}
 $$
 
-There are several useful properties of the inner/dot product, [for which Wikipedia is helpful](https://en.wikipedia.org/wiki/Inner_product_space#Basic_properties), but for now it is also useful to introduce the notation of the norm, which measures the _length_ of a vector: $ \Vert u \Vert = \langle u , u \rangle$.
+There are several useful properties of the inner/dot product, [for which Wikipedia is helpful](https://en.wikipedia.org/wiki/Inner_product_space#Basic_properties){:target='blank'}, but for now it is also useful to introduce the notation of the norm, which measures the _length_ of a vector: $ \Vert u \Vert = \sqrt{\langle u , u \rangle}$. As an example: in the setting where we select a point in the 2D-plane $u = (x, y)$ and want to compute it's distance from the origin $(0,0)$, we recover the Pythagorean theorem with the length of $u$ as the hypotenuse of a triangle: $\Vert u \Vert = \sqrt{x^2 + y^2}$.
 
-One way of viewing this operation, although it's not entirely clearly immediately, is performing a comparison of the _angle_ between $u$ and $v$. In fact, we can rewrite the dot product as:
+One way of viewing this operation, although may not not entirely clear immediately, is computing the _similarity_ between $u$ and $v$. In fact, we can rearrange the dot product to show that it is computing (a scaled version of) the _angle_ between the vectors $u$ and $v$:
 
 $$
-\langle u , v \rangle =  \Vert u \Vert \Vert v \Vert  \cos(\theta) \iff \theta = \arccos \left( \frac{\langle u , v \rangle}{\Vert u \Vert \Vert v \Vert} \right)
+\begin{aligned}
+\langle u , v \rangle &=  \Vert u \Vert \Vert v \Vert  \cos(\theta) \\ 
+\iff \theta &= \arccos \left( \frac{\langle u , v \rangle}{\Vert u \Vert \Vert v \Vert} \right)
+\end{aligned}
 $$
 
-One simple consequence is that when $u$ and $v$ are perpencicular (also known as "**orthgonal**", with $\theta = 90 \degree$), then $\langle u , v \rangle = 0$.
+One simple consequence is that when $u$ and $v$ are perpendicular (also known as "**orthogonal**"; a.k.a. $\theta = 90 \degree$), then $\langle u , v \rangle = 0$.
 
-**Matrix multiplication** is a generalization of the inner product. For matrix-vector products, you take the dot product of the vector with reach row of the matrix -- assuming we are representing the vector as a "column vector".
+It may be worth noting the trivial example of the "axes" of n-dimensional space. In two dimension space, a vector laying along the x-axis is $\bm{x} = (x, y) = (1, 0)$, and whereas the y-axis is $\bm{y} = (x, y) = (0, 1)$. In three dimensions, we have $\bm{x} = (x, y, z) = (1, 0, 0)$, $\bm{y} = (x, y, z) = (0, 1, 0)$, $\bm{z} = (x, y, z) = (0, 0, 1)$. In both dimensions (and beyond), each of those "axis" defined by vectors are mutually orthogonal -- $90 \degree$ apart -- and have a dot product of 0.
+
+#### Matrix Multiplication
+
+**Matrix multiplication** is a generalization of the dot (inner) product. For matrix-vector products, you may compute the result by taking the dot product of the vector with each _row_ of the matrix -- assuming we are representing the vector as a "column vector".
 
 $$
 \begin{bmatrix}
@@ -98,11 +115,25 @@ x_n & \color{red} y_n
 \end{bmatrix}
 $$
 
-Looking this back to (vector) inner product, we see that we can represent the inner product as a special case of matrix multiplication! Namely
+Looking this back to (vector) inner product, we see that we can represent the inner product as a special case of matrix multiplication! Namely the matrix multiplication between a transposed column vector (a.k.a. row vector) and a column vector:
 
 $$
 \langle x , y \rangle = x^\top y = 
 
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}^\top
+
+\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix}
+=
 \begin{bmatrix}
 x_1 & x_2 & \cdots & x_n
 \end{bmatrix}
@@ -161,36 +192,44 @@ $$
 
 There are some particularly interesting properties that are worth mentioning about the outer product:
 
-### Some Interesting Properties
+### Some Interesting Properties of the Outer Product
 
 #### The outer product of two vectors is a _rank one matrix_
 
-If you forget the definition of [rank](https://en.wikipedia.org/wiki/Rank_(linear_algebra)) in Linear Algebra, that's okay. Even if I "knew the defintion" of rank, I didn't really _understand_ it until I learned about the outer product.
+If you forget the definition of [rank](https://en.wikipedia.org/wiki/Rank_(linear_algebra)){:target='blank'} in Linear Algebra, that's okay. Even if I "knew the defintion" of rank, I didn't really _understand_ it until I learned about the outer product.
 
 The Wikipedia definition of rank is useful, but also not entirely helpful in it's intuition:
-> The **rank** of a matrix $A$ is the dimension of the vector space generation (or spanned) by its columns.
+> The **rank** of a matrix $A$ is the dimension of the vector space generated (or spanned) by its columns.
 
-Although I have ommited the proof of the fact "the outer product of two vectors is a rank one matrix", knowing this fact can give us some intuition as to what it means.
+Although I have omitted the proof of the fact "the outer product of two vectors is a rank one matrix", knowing this fact can give us some intuition as to what it means.
 
-Let's choose some two vectors $(u, v) \in \mathbb{R}^n$ to be those which we construct our outer product matrix $M$.
-
-$$
-M = u \otimes v = u v^\top \in \mathbb{R}^{n \times n}
-$$
-
-One thing that we notice is that for vectors $x$ does not contain some scalar multiple of $v$ (i.e., it is orthogonal to $v$), we have that
+Let's choose some two vectors $(u, v) \in \mathbb{R}^n$ to be those which we construct our outer product matrix $\mathbf{M}$.
 
 $$
-M x = u (v^\top x) = 0 * u
+\mathbf{M} = u \otimes v = u v^\top \in \mathbb{R}^{n \times n}
 $$
 
-This has connection to the [Rank-nullity theorem](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem), namely that the dimension of the _image_ of $M$ is $1$, and the dimension of the _null-space_ (vectors that map to 0) is $(n - 1)$.
+One thing that we notice is that the result multiplying $\mathbf{M}$ by any vector $x$ is a _scalar multiple_ of $u$. That is, for any vector $x$
 
-We can also notice that **this implies that $Mx$ will output _a scalar multiple_ of $u$ based on the _inner product_ of $v$ and $x$.** I personally think that's pretty cool!
+$$
+\mathbf{M} x = u(v^\top x) = \langle v , x \rangle u
+$$
+
+
+In other words, **$Mx$ will output a scaled version of $u$ based on the _inner product_ (similarly) of $v$ and $x$.**
+
+We can also notice that for vectors $x$ does not contain some scalar multiple of $v$ (i.e., it is orthogonal to $v$), we have that
+
+$$
+\mathbf{M} x = u (v^\top x) = 0 * u
+$$
+
+This has connection to the [Rank-nullity theorem](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem), namely that the dimension of the _image_ of $\mathbf{M}$ is $1$, and the dimension of the _null-space_ (vectors that map to 0) is $(n - 1)$. Saying that the "rank of $\mathbf{M}$ is 1" is equivalent to counting the number of $x$'s orthogonal to $v$ (the number of zeros in $\mathbf{M}$) and observing the output space is spanned only by $u$ (with an effective dimension of 1).
+
 
 #### Matrix multiplication is a summation over outer products
 
-One of the most interesting results (taken from [Wikipedia](https://en.wikipedia.org/wiki/Outer_product#Connection_with_the_matrix_product)) is that _any matrix multiplication can be written as a **sum over outer products**_. More specifically, a sum over column-by-row outer products of the two matricies:
+One of the most interesting results (inspired by [Wikipedia](https://en.wikipedia.org/wiki/Outer_product#Connection_with_the_matrix_product){:target='blank'}) is that **any matrix multiplication can be written as a _sum over outer products_**. More specifically, a sum over the outer product of the columns of the left matrix with the rows of the right matrix:
 
 $$
 \mathbf{C} = \mathbf{AB} = 
@@ -206,18 +245,20 @@ $$
 \sum_{k = 1}^p \bm{a}_k^{\text{col}} \otimes [\bm{b}_k^{\text{row}}]^\top
 $$
 
-Where we take $[\bm{b}\_k^{\text{row}}]^\top$ to translate the _row vector_ from $B$ to a _column vector_. 
+Where we take $[\bm{b}\_k^{\text{row}}]^\top$ to translate the _row vector_ from $B$ to a _column vector_ for clarity [^2].
 
 
-You may say: **Hey, isn't this just SVD?**
+You may say: **Hey, this looks _strangely_ like the [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition){:target="blank"}...**
 
-It is! For a matrix $\mathbf{A}$, we can rewrite it as
+It does! Or at least the above representation of matrix multiplication services a similar purpose. It turns out that we can rewrite our "canonical" SVD formulation for a matric $\mathbf{A}$ as:
 
 $$
 \mathbf{A} = \mathbf{U \Sigma V^\top} = \sum_{k = 1}^{\text{rank}(A)} (\bm{u}_k \otimes \bm{v}_k) \sigma_k
 $$
 
-Where $\bm{u}\_k$ is the k-th left and $\bm{v}\_k$ is the k-th right singular vector, and $\sigma\_k$ is the k-th singular value. There is the interesting corollary of this that **_every matrix can be rewritten as the sum of rank-one matricies_**, although we also could have derived this result from the matrix-multiplication theorem above.
+Where $\bm{u}\_k$ is the k-th left and $\bm{v}\_k$ is the k-th right singular vector, and $\sigma\_k$ is the k-th singular value. If you don't remember what a "singular vector" is or "singular value", that's fine. Like "rank", I feel like I didn't _truly_ understand until I had the outer product in my toolbelt. I will give this intution in the next section.
+
+There is the interesting corollary of the above SVD result: **_every matrix can be rewritten as the sum of rank-one matricies_**. We didn't actually need the SVD for this result -- we could have derived this from the matrix-multiplication theorem above, using the identity matrix as a surrogate for the $\mathbf{A}$ or $\mathbf{B}$ matricies.
 
 #### Matrix-vector multiplication is a weighted sum of vectors
 
@@ -231,25 +272,23 @@ $$
 
 where $c_k = \langle \bm{v}_k , \bm{x} \rangle$.
 
-This is another property that adds to my _personal intuition_ of how matricies work. An input vector is compared against each "right singular vector" to determine a scalar to multiple the "left singular vector by". Although I say "singular vector" here, this is not specific to SVD -- rather just the correponsdence between matricies and sums of outer products.
+This is another property that adds to my _personal intuition_ of how matricies work. **An input vector is compared against each "right singular vector" to determine a scalar to multiple the "left singular vector by".** Although I say "singular vector" here, this is not specific to SVD -- rather just the correspondence between matricies and sums of outer products.
 
 
 
-Although I won't expand on it here, the outer product expansion _may_ give you more of an intuition as to how we may define [the pseudoinverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse) in terms of SVD (or a similar outer-product construction). For me, it also gave me a good motivating argument as to why there should exist an inverse outside of the nullspace!
+Although I won't expand on it here, the outer product expansion _may_ give you more of an intuition as to how we may define [the pseudoinverse](https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse){:target='blank'} in terms of SVD (or a similar outer-product construction). For me, it also gave me a good motivating argument as to why there should exist an inverse outside of the nullspace!
 
 We can actually simplify the above "$\mathbf{M}\bm{x}$" statement, bypassed the SVD inituion. In the case where we represent a matrix as product $\mathbf{C} = \mathbf{AB}$, then we have that the output _is a weighted sum of the columns of $\mathbf{A}$_. Nifty! Furthermore, if we let matrix $\mathbf{B}$ be a (column) _vector_ $\bm{x}$, then we have that 
 
 $$
-\mathbf{AB} = \mathbf{A} \bm{x} = \sum_{k = 1}^n \bm{a}_k^{\text{col}} \otimes x_k^{\text{row}}
+\mathbf{AB} = \mathbf{A} \bm{x} = \sum_{k = 1}^n \bm{a}_k^{\text{col}} \otimes x_k^{\text{row}} = \sum_{k = 1}^n x_k \bm{a}_k^{\text{col}}
 $$
 
-And realize, the $k$-th row of column vector $\bm{x}$ is a scalar! **Thus, matrix-vector product is a weighted sum over the columns of the matrix.**
+And remember, the $k$-th row of column vector $\bm{x}$ is a scalar! **Thus, matrix-vector product is a weighted sum over the columns of the matrix** [^3].
 
-### The Dual View of Machine Learning
+### The Curious Case of the ReLU Network
 
-#### The Curious Case of the ReLU Network
-
-ReLU Neural Networks are one of my favorite types of networks to analyze. Not only are they easy to analyze, but they admit elegant theories of their operation. For a further discussion on what I believe to be one of the most interesting properties of neural networks, please read [Mad Max: Affine Spline Insights into Deep Learning (Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576).
+ReLU Neural Networks are one of my favorite types of networks to analyze. Not only are they easy to analyze, but they admit elegant theories of their operation. For a deeper discussion on what I believe to be one of the most interesting properties of neural networks, please read [Mad Max: Affine Spline Insights into Deep Learning (Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576){:target='blank'}.
 
 For now, I will work with a simplified model: a "two layer" ReLU network, meaning two matrix multiplications.
 
@@ -260,7 +299,7 @@ y &= \mathbf{W}^{(2)} h^{(1)}
 \end{aligned}
 $$
 
-Where $\text{ReLU}(x) = x$ when $x \geq 0$ and $=0$ when $x < 0$, or $\text{ReLU}(x) = x \cdot 𝟙(x > 0)$. It may also be convient to store in your mind that this can be represented more compactly as:
+Where $\text{ReLU}(x) = x$ when $x \geq 0$ and $=0$ when $x < 0$, or equivalently $\text{ReLU}(x) = x \cdot 𝟙(x > 0)$. It may also be convenient to store in your mind that the above two layer network can be represented more compactly as:
 
 $$
 y = \mathbf{W}^{(2)} (\sigma(\mathbf{W}^{(1)} x) )
@@ -268,7 +307,7 @@ $$
 
 with $\sigma(x) = \text{ReLU}(x)$ for brevity.
 
-Let's combine both ingredients of out inner- and outer-product perspectives.
+Let's combine both ingredients of the inner- and outer-product perspectives to cook up an interesting insight.
 
 **Ingredient 1:** Matrix-vector multiplication in the _inner product_ view tells us that we can represent the first layer output $h_1$ as:
 
@@ -310,73 +349,38 @@ y &= \sum_{m \in \Omega_x} w_m^{(2)} \left[w_m^{(1)}\right]^\top x \\
 \end{aligned}
 $$
 
-Using those two ingredients from above, we discovered that **ReLU networks implicitly define input-specific matrix transformations**. Furthermote, **the primary method of matrix generation is through rank modulation**. By applying an argument by [mathematical induction](https://en.wikipedia.org/wiki/Mathematical_induction), we realize that this is true _regardless of the depth of the network_, and we can explicitly give the resulting transofmration matrix given any input.
+Using those two ingredients from above, we discovered that **ReLU networks implicitly define input-specific _matrix_ (linear!!) transformations**. Furthermore, **the primary method of matrix generation is through _dynamic rank modulation_**. By applying an argument by simple [mathematical induction](https://en.wikipedia.org/wiki/Mathematical_induction){:target='blank'}, we realize that this is true _regardless of the depth of the network_, and we can _explicitly_ give the resulting transformation matrix given any input.
 
-This is very similar to the theorem proven by [(Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576), although we took a different approach to computing the resulting matrix transformation. It is worth noting, as is a core tenant of that paper, that this is _partition based_. That is, input vectors map to "matrix transformations" in a fuzzy manner such that two distinct output vectors may share the same set $\Omega$.
+This is very similar to the theorem proven by [(Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576){:target='blank'}, although we took a different approach to computing the resulting matrix transformation. It is worth noting, as is a core tenant of that paper, that this is _partition based_. That is, input vectors map to "matrix transformations" in a fuzzy manner such that two distinct output vectors may share the same set $\Omega$.
 
-#### A Strange Kind of (Stochastic) Gradient Descent
-
-Outer products may sneak into gradient descent when you least expect it. I can even give some hand-wavy explanations of why gradietn descent seems biased towards low-rank optimizations. 
-
-
-For this section, I am only working with _ordinary least square_, that is, _linear regression_. I'd welcome other analysis in the same vein, especially if someone can describe how the outer product construction of ReLU networks changes in this setting.
-
-**As a refresher on least squares**, in particular Ridge Regression, this is a setting where the solution weights can be solved in closed form. The goal is to learn some _weight vector_ $\bm{\beta}$ such that an observed input vector $\bm{x}\_i$ is mapped to an observed output _scalar_ $y_i$.
-
-When we stack $n$ sample inputs $\bm{x}\_i \in \mathbb{R}^p$, in a "training matrix" $\mathbf{X} \in \mathbb{R}^{n \times p}$. These training examples are **stacked row-wise**, so that is we have $n = 1$ training samples, $\mathbf{X}$ is a _row vector_ (or a transposed column vector).
-
-$$
-\mathbf{X} \bm{\beta} = y
-$$
-
-Minimizing the our loss
-
-$$
-\begin{aligned}
-\ell(\beta) &= \frac{1}{2} \Vert \mathbf{X}\beta - y \Vert_2^2 + \frac{1}{2} \alpha\Vert \beta \Vert_2^2 \\
-\downarrow \\
-\nabla \ell(\beta) &= - \mathbf{X}^\top (y - \mathbf{X} \beta) + \alpha \beta
-\end{aligned}
-$$
-
-we $\alpha$ is the strength of our regularization we have that the minimum of this optimization is:
-
-$$
-\beta = (\mathbf{X}^\top \mathbf{X} + \alpha I)^{-1} \mathbf{X}^\top y
-$$
-
-this can also be expressed in term of gradient descent, where we get that
-
-$$
-\beta_1 \leftarrow \beta_0 - \eta \nabla \ell(\beta_0)
-$$
-
-First, let's begin with the case of "pure" stochastic gradient descent -- we run gradient descent with respect to a **batch size of 1**.
-
-In this case, the problem is simplified to simply learning $\bm{\beta}$ for an inner product.
-
-$$
-\bm{x}^\top \bm{\beta} = y
-$$
-
-Our gradient $\nabla \ell(\beta)$ from above then becomes
-
-$$
-\begin{aligned}
-\nabla \ell(\beta) &= - \bm{x} (y - \bm{x}^\top \beta_0) + \alpha \beta_0 \\
-&= -y \bm{x} + \bm{x}\bm{x}^\top \beta_0 - \alpha \beta_0
-\end{aligned}
-$$
-
-Looking above, we see the outer product hiding in plain sight there. But this isn't constrained to a "batch size of 1". If we don't constrain ourselves in that way we have that 
-
-$$
-\begin{aligned}
-\nabla \ell(\beta) &= - \mathbf{X}^\top y + \mathbf{X}^\top \mathbf{X} \beta + \alpha \beta \\
-&= -\mathbf{X}^\top y + \left(\sum_{i = 1}^{\text{batch size}} x_i \otimes x_i \right) \beta - \alpha \beta
-\end{aligned}
-$$
 
 ### Conclusion
 
-When I originally planned this post, I wanted to create a section on how we can interpret Self-Attention and Linear Self-Attention through the lens of outer products. [Schlag et al, 2021](https://arxiv.org/abs/2102.11174) is a very interesting paper speaking on linear self-attention, but I hoped to add more to the discussion. Unfortunately, while writing this blog post, I discovered a "bug" in my Math such that I will exclude that section.
+**A core aspect of my believe is that outer products are interesting is because outer products express _the computations themselves_ rather than just the _result_ of the computation.** By viewing Linear Algebra through the lens of computation captures an intuition for the mechanisms of _operation_, not just the human mechanisms employed to compute a result. For example, in the setting of neural networks, outer products allow us to say "this is the _exact_ circuit that was used to compute the result" rather than just giving the result.
+
+Hopefully I was able to plant a seed in your mind with minimal pain through this article and you understand a bit more of why I find outer products not only facinating, but a necessary piece of the intution of Linear Algebra. If you have any feedback or questions, I'd love to hear about them in the comments below.
+
+Thanks for reading!
+
+### Meta-Notes
+{:.no_toc}
+
+While writing this post, there were couple sections that I had written that were cut or ideas I had but hesitated to add here. Instead of overburdening the post with more "motivating examples" in the form of reframing more aspects of Deep Learning, I decided to try and keep the post more isolated to "I think outer products are interesting and I hope to plant a seed in your mind as to why".
+
+I intend to make a few more posts on the topic of reframing concepts through the lens of outer products. Beyond reframing well-known concepts that in Linear Algebra, or results that Deep Learning Theory researchers might know, I think that there are a lot of novel (and relatively simple) corollaries of the above observation with ReLU networks. On the other hand, perhaps it's worth pursuing writing short manuscripts to post on arXiV. Having some extra Google Scholar entries will hopefully help me in PhD applications. We'll see what my time (outside of my full-time job) affords me!
+
+### Footnotes
+{:.no_toc}
+
+[^1]: If I were to be accurate, then the "dot product" and "inner product" cannot be used interchangably. The dot product is just one inner product defined on Euclidean space. The main reason I might tend to use inner product in this post is because it constrasts nicely with the term "outer product".
+
+[^2]: 
+    This is one difference with the Wikipedia article referenced. On Wikipedia, they represent this sum as:
+    
+    $$
+    \sum_{k = 1}^p \bm{a}_k^{\text{col}} \bm{b}_k^{\text{row}}
+    $$
+
+    This is technically correct! Since this post is about "the magic of outer products", and I really like the $\otimes$ symbol, I had to manipulate the equation slightly to fit it in. That required me to take the transpose because technically(!) $\bm{b}$ is a row vector, meaning $\bm{a}\_k^{\text{col}} \bm{b}\_k^{\text{row}}$ is an outer product, even if it doesn't use the fancy symbol. _In order to remain correct and keep my $\otimes$ symbol, I had to take the transpose of $\bm{b}$._
+
+[^3]: This sounds eerily similar to another topic reframed earlier in this article...
