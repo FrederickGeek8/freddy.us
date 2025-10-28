@@ -2,26 +2,27 @@
 layout: post
 title: "Outer Products: The Dual View of Linear Algebra"
 category: Math
-description: 
+description: >-
+    Walk by my whiteboard, or look in my notebooks, and you'll often see a canvas covered in outer product-based equations. But why should I be so obsessed with a concept barely worth mentioning in a Linear Algebra class? In this post I will introduce you to outer products and hopefully convince you that they are worth more than a footnote.
 tags: [math, tutorial, ML]
 usemath: true
 date: 2025-10-09
 post_id: outer-products
 ---
 
-I cannot speak to other's Linear Algebra education in university, merely my own. However, despite getting what I thought was a good upbringing in Linear Algebra, there was one topic that was missing: **_outer products_**.
+I cannot speak to others' Linear Algebra education in university, merely my own. However, despite getting what I thought was a good upbringing in Linear Algebra, there was one topic that was missing: **_outer products_**.
 
-Frankly, I rarely hear about outer products in the (machine learning) research I read, and I barely remember them being taught in the classroom. Perhaps for other people outer products were a casual mention in class. Alternatively, maybe there a inadvertent research bias that diminishes their impact. Or maybe outer products are just flat-out not useful for people's work. My goal with this blog post is to try and reverse this bias.
+Frankly, I rarely hear about outer products in the (machine learning) research I read, and I barely remember them being taught in the classroom [^note-1]. Perhaps for other people outer products were also just a casual mention in class, or perhaps there an inadvertent research bias that diminishes their impact. It's also possible I'm just out of touch and maybe outer products are not anything noteworthy or the wrong way to frame problems. Regardless, the journey from ignorance to obsession has certainly changed me.
 
 Despite the relationship (or lack-there-of) society has to the inner product's strange cousin, outer products have been increasingly on my mind. As I've grown to know them more and integrate their "dual view" into more of my analysis, they have increasingly become a fundamental piece of my thought processes and intuition surrounding Linear Algebra (and Deep Learning, as a result).
 
-These days, I think it's almost always worth considering the meaning of the outer product dual for any Linear Algebra problem or theorem. Perhaps, if I get the opportunity to teach an undergraduate course in Linear Algebra in the future, I will design my course to have outer products on similar footing as inner products. For now, I have to resign myself to motivating _you_ through _this blog post_ why outer products are worth thinking about.
+These days, I think it's almost always worth considering the meaning of the outer product "dual" for any Linear Algebra problem or theorem. Perhaps, if I get the opportunity to teach an undergraduate course in Linear Algebra in the future, I will design my course to have outer products on similar footing as inner products. For now, I have to resign myself to motivating _you_ through _this blog post_ why outer products are worth thinking about.
 
 
 **In this blog post, I hope to:**
-1. Give you an introduction to **outer products** (and a small refresher on inner products)
-2. Reframe some of your existing Linear Algebra knowledge in the context of outer products
-3. Prove a tiny Deep Learning theorem leveraging outer products
+1. Give you an introduction to **outer products** (and a small refresher on inner products).
+2. Reframe some of your existing Linear Algebra knowledge in the context of outer products.
+3. Prove a tiny Deep Learning theorem leveraging outer products.
 
 ### Table of Contents
 {:.no_toc}
@@ -30,7 +31,7 @@ These days, I think it's almost always worth considering the meaning of the oute
 
 ### A Brief Refresher of _Inner_ Products
 
-Before explaining the outer product, let me first remind you of the basic definition of the dot product -- which I will interchangably refer to as the "inner product" at times [^1].
+Before introducing the outer product, let me first remind you of the basic definition of the dot product -- which I will interchangeably refer to as the "inner product" at times [^1].
 
 #### Vector Dot Products
 
@@ -40,9 +41,18 @@ $$
 u \cdot v = \langle u , v \rangle = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n \in \mathbb{R}
 $$
 
-There are several useful properties of the inner/dot product, [for which Wikipedia is helpful](https://en.wikipedia.org/wiki/Inner_product_space#Basic_properties){:target='blank'}, but for now it is also useful to introduce the notation of the norm, which measures the _length_ of a vector: $ \Vert u \Vert = \sqrt{\langle u , u \rangle}$. As an example: in the setting where we select a point in the 2D-plane $u = (x, y)$ and want to compute it's distance from the origin $(0,0)$, we recover the Pythagorean theorem with the length of $u$ as the hypotenuse of a triangle: $\Vert u \Vert = \sqrt{x^2 + y^2}$.
+There are several useful properties of the inner/dot product, [for which Wikipedia can be a easy reference](https://en.wikipedia.org/wiki/Inner_product_space#Basic_properties){:target='blank'}, but for now it's important to introduce the notation of the norm, which measures the _length_ of a vector: $ \Vert u \Vert = \sqrt{\langle u , u \rangle}$. 
 
-One way of viewing this operation, although may not not entirely clear immediately, is computing the _similarity_ between $u$ and $v$. In fact, we can rearrange the dot product to show that it is computing (a scaled version of) the _angle_ between the vectors $u$ and $v$:
+<details>
+<summary><em>If you're asking: "Wait, why is the 'norm' equivalent to measuring the length?"</em></summary>
+<div markdown="1">
+As an example to try and convince you that these two concepts are equivalent:
+
+In the setting where we select a point in the 2D-plane $u = (x, y)$ and imagine it as the hypotenuse of a triangle, then by computing the norm as defined above, we recover the Pythagorean theorem: $\Vert u \Vert = \sqrt{x^2 + y^2}$.
+</div>
+</details>
+
+One way of viewing this operation, although might not be entirely clear immediately, is computing the _similarity_ between $u$ and $v$. In fact, we can rearrange the dot product to show that it is computing (a scaled version of) the _angle_ between the vectors $u$ and $v$:
 
 $$
 \begin{aligned}
@@ -86,7 +96,7 @@ z_1 & z_2 & \cdots & z_n
 \end{bmatrix}
 $$
 
-Extending this to matrix-matrix products by creating one or more columns in our "vector" is intuitive -- it creates one or more columns in the output:
+Extending this to matrix-matrix products by creating one or more columns in our "vector" is intuitive -- every new column added our "vector" adds a new column to the output matrix:
 
 $$
 \begin{bmatrix}
@@ -115,7 +125,7 @@ x_n & \color{red} y_n
 \end{bmatrix}
 $$
 
-Looking this back to (vector) inner product, we see that we can represent the inner product as a special case of matrix multiplication! Namely the matrix multiplication between a transposed column vector (a.k.a. row vector) and a column vector:
+Looking this back the (vector) inner product defined [above](#vector-dot-products), we see that we can represent the inner product as a special case of matrix multiplication! Namely the matrix multiplication between a transposed column vector (a.k.a. row vector) and a column vector is equivalent to the vector dot product:
 
 $$
 \langle x , y \rangle = x^\top y = 
@@ -148,21 +158,21 @@ $$
 
 ### So What Is An "Outer Product"?
 
-An **outer product** is a small tweak to the equation of the inner (dot) product between two vectors. Instead of writing the inner product as
+An **outer product** is a small tweak to the equation of the inner (dot) product between two vectors. Instead of writing the inner product as:
 
 $$
 x \cdot y = x^\top y
 $$
 
-the **outer product** of two vectors is
+the **outer product** of two vectors is defined as:
 
 $$
 x \otimes y = x y^\top
 $$
 
-While relocating the position of the matrix transpose to $y$ seems like a small modification, it has profound implication. One of the immediate ones is: **the outer product between two vectors gives _a matrix_ output.**
+While relocating the position of the matrix transpose to $y$ seems like a trivially small modification, it has profound implication. One of the immediate implication is: **the outer product between two vectors yields _a matrix_ output.**
 
-Follow the pattern from above
+Follow the pattern from above we can see this in action:
 
 <div class="invertable">
 $$
@@ -172,7 +182,7 @@ x \otimes y =
 \color{green} x_1 \\
 \color{red} x_2 \\
 \vdots \\
-\color{orange} x_n
+\color{blue} x_n
 \end{bmatrix}
 
 \begin{bmatrix}
@@ -185,7 +195,7 @@ y_1 & y_2 & \cdots & y_n
 {\color{green} x_1} y_1 & {\color{green} x_1} y_2 & \cdots & {\color{green} x_1} y_n \\
 {\color{red} x_2} y_1 & {\color{red} x_2} y_2 & \cdots &  {\color{red} x_2} y_2 \\
 \vdots & \vdots & \ddots & \vdots \\
-{\color{orange} x_n} y_1 & {\color{orange} x_n} y_2 & \cdots & {\color{orange} x_n} y_n
+{\color{blue} x_n} y_1 & {\color{blue} x_n} y_2 & \cdots & {\color{blue} x_n} y_n
 \end{bmatrix}
 $$
 </div>
@@ -196,12 +206,12 @@ There are some particularly interesting properties that are worth mentioning abo
 
 #### The outer product of two vectors is a _rank one matrix_
 
-If you forget the definition of [rank](https://en.wikipedia.org/wiki/Rank_(linear_algebra)){:target='blank'} in Linear Algebra, that's okay. Even if I "knew the defintion" of rank, I didn't really _understand_ it until I learned about the outer product.
+If you forget the definition of [rank](https://en.wikipedia.org/wiki/Rank_(linear_algebra)){:target='blank'} from Linear Algebra class, that's okay. Even if I "knew the definition" of rank, I didn't really _understand_ it until I learned about the outer product.
 
-The Wikipedia definition of rank is useful, but also not entirely helpful in it's intuition:
+The Wikipedia definition of rank is useful, but also not entirely helpful in its intuition:
 > The **rank** of a matrix $A$ is the dimension of the vector space generated (or spanned) by its columns.
 
-Although I have omitted the proof of the fact "the outer product of two vectors is a rank one matrix", knowing this fact can give us some intuition as to what it means.
+Although I have omitted the proof of the fact "the outer product of two vectors is a rank one matrix", knowing this fact can give us some intuition as to what "rank" means.
 
 Let's choose some two vectors $(u, v) \in \mathbb{R}^n$ to be those which we construct our outer product matrix $\mathbf{M}$.
 
@@ -221,15 +231,15 @@ In other words, **$Mx$ will output a scaled version of $u$ based on the _inner p
 We can also notice that for vectors $x$ does not contain some scalar multiple of $v$ (i.e., it is orthogonal to $v$), we have that
 
 $$
-\mathbf{M} x = u (v^\top x) = 0 * u
+\mathbf{M} x = u (v^\top x) = 0 * u = \bm{0}
 $$
 
-This has connection to the [Rank-nullity theorem](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem), namely that the dimension of the _image_ of $\mathbf{M}$ is $1$, and the dimension of the _null-space_ (vectors that map to 0) is $(n - 1)$. Saying that the "rank of $\mathbf{M}$ is 1" is equivalent to counting the number of $x$'s orthogonal to $v$ (the number of zeros in $\mathbf{M}$) and observing the output space is spanned only by $u$ (with an effective dimension of 1).
+This has connection to the [Rank-nullity theorem](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem), namely that the dimension of the _image_ of $\mathbf{M}$ is $1$, and the dimension of the _null-space_ (vectors that map to 0) is $(n - 1)$. Saying that the "rank of $\mathbf{M}$ is 1" is equivalent to the observation the output space of $\mathbf{M}$ is _only_ contains scalar multiples of $u$.
 
 
 #### Matrix multiplication is a summation over outer products
 
-One of the most interesting results (inspired by [Wikipedia](https://en.wikipedia.org/wiki/Outer_product#Connection_with_the_matrix_product){:target='blank'}) is that **any matrix multiplication can be written as a _sum over outer products_**. More specifically, a sum over the outer product of the columns of the left matrix with the rows of the right matrix:
+One of the most interesting results, in my opinion, is that **any matrix multiplication can be rewritten as a _sum over outer products_**. More specifically, a matrix multiplication $\mathbf{C} = \mathbf{AB}$ can be rewritten as a sum over the outer product of the columns of the left matrix (denoted $\bm{a}\_i^{\text{col}}$) with the rows of the right matrix (denoted $\bm{b}\_i^{\text{col}}$):
 
 $$
 \mathbf{C} = \mathbf{AB} = 
@@ -245,10 +255,9 @@ $$
 \sum_{k = 1}^p \bm{a}_k^{\text{col}} \otimes [\bm{b}_k^{\text{row}}]^\top
 $$
 
-Where we take $[\bm{b}\_k^{\text{row}}]^\top$ to translate the _row vector_ from $B$ to a _column vector_ for clarity [^2].
+Where we take $[\bm{b}\_k^{\text{row}}]^\top$ to translate the _row vector_ from $\mathbf{B}$ to a _column vector_ for clarity [^2].
 
-
-You may say: **Hey, this looks _strangely_ like the [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition){:target="blank"}...**
+You may say: **Hey, this looks _strangely_ like the equation for [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition){:target="blank"}...**
 
 It does! Or at least the above representation of matrix multiplication services a similar purpose. It turns out that we can rewrite our "canonical" SVD formulation for a matric $\mathbf{A}$ as:
 
@@ -258,7 +267,7 @@ $$
 
 Where $\bm{u}\_k$ is the k-th left and $\bm{v}\_k$ is the k-th right singular vector, and $\sigma\_k$ is the k-th singular value. If you don't remember what a "singular vector" is or "singular value", that's fine. Like "rank", I feel like I didn't _truly_ understand until I had the outer product in my toolbelt. I will give this intution in the next section.
 
-There is the interesting corollary of the above SVD result: **_every matrix can be rewritten as the sum of rank-one matricies_**. We didn't actually need the SVD for this result -- we could have derived this from the matrix-multiplication theorem above, using the identity matrix as a surrogate for the $\mathbf{A}$ or $\mathbf{B}$ matricies.
+There is the interesting corollary of the above SVD result: **_every matrix can be rewritten as the sum of rank-one matricies_**. We didn't actually need the SVD for this result -- we could have derived this from the matrix-multiplication theorem above, using the identity matrix as a surrogate for the $\mathbf{A}$ or $\mathbf{B}$ matrices.
 
 #### Matrix-vector multiplication is a weighted sum of vectors
 
@@ -272,7 +281,7 @@ $$
 
 where $c_k = \langle \bm{v}_k , \bm{x} \rangle$.
 
-This is another property that adds to my _personal intuition_ of how matricies work. **An input vector is compared against each "right singular vector" to determine a scalar to multiple the "left singular vector by".** Although I say "singular vector" here, this is not specific to SVD -- rather just the correspondence between matricies and sums of outer products.
+This is another property that adds to my _personal intuition_ of how matrices work. **An input vector is compared against each "right singular vector" to determine a scalar to multiple the "left singular vector by".** Although I say "singular vector" here, this is not specific to SVD -- rather just the correspondence between matrices and sums of outer products.
 
 
 
@@ -288,9 +297,20 @@ And remember, the $k$-th row of column vector $\bm{x}$ is a scalar! **Thus, matr
 
 ### The Curious Case of the ReLU Network
 
-ReLU Neural Networks are one of my favorite types of networks to analyze. Not only are they easy to analyze, but they admit elegant theories of their operation. For a deeper discussion on what I believe to be one of the most interesting properties of neural networks, please read [Mad Max: Affine Spline Insights into Deep Learning (Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576){:target='blank'}.
+ReLU neural networks are one of my favorite types of networks to analyze. Not only are they easy to dissect mathematically, but the theory and structures that they admit are quite elegant.[^4] To our benefit, ReLU neural networks are likely the most common form of neural networks, so anything we can prove in these settings can have quite an impact.
 
-For now, I will work with a simplified model: a "two layer" ReLU network, meaning two matrix multiplications.
+I want to walk you through proving something very interesting about these ubiqiotus neural networks using the toolkit we learned above. First, let's refresh our knowledge of _what a ReLU network actually is_.
+
+#### A Small Neural Network Refresher
+
+For those who don't already have a background in machine learning, there are two ingredients of a ReLU neural network: matrix multiplication and the $\text{ReLU}$ function. Luckily for us, the ReLU function is quite simply: $\text{ReLU}(x) = \max(0, x)$ -- meaning that when $x \geq 0$, then $\text{ReLU}(x) = x$, otherwise $\text{ReLU(x)} = 0$. Below is a plot that shows this function:
+
+<figure>
+    <img src="/assets/per-post/outer-products/desmos-graph.svg" alt="A tiny architecture diagram" class="invertable" width="300" height="300" style="background: #eee; height:auto;" />
+    <figcaption>Plot of the function $\text{ReLU(x)} = \max(0, x)$</figcaption>
+</figure>
+
+In the example application of our outer product toolkit above, I will work with a simplified model neural network: a "two layer" ReLU network, meaning two matrix multiplications ($\mathbf{W}^{(1)}$ and $\mathbf{W}^{(2)}$) and one ReLU activation function that is applied element-wise to a vector. For a given input vector $x$, we compute the neural network output $y$ as:
 
 $$
 \begin{aligned}
@@ -299,20 +319,28 @@ y &= \mathbf{W}^{(2)} h^{(1)}
 \end{aligned}
 $$
 
-Where $\text{ReLU}(x) = x$ when $x \geq 0$ and $=0$ when $x < 0$, or equivalently $\text{ReLU}(x) = x \cdot 𝟙(x > 0)$. It may also be convenient to store in your mind that the above two layer network can be represented more compactly as:
+$$
+\begin{aligned}
+
+\end{aligned}
+$$
+
+We can also rewrite the above two layer network more compactly as:
 
 $$
 y = \mathbf{W}^{(2)} (\sigma(\mathbf{W}^{(1)} x) )
 $$
 
-with $\sigma(x) = \text{ReLU}(x)$ for brevity.
+where we write $\sigma(x) = \text{ReLU}(x)$ for brevity.
 
-Let's combine both ingredients of the inner- and outer-product perspectives to cook up an interesting insight.
+#### The Curious Insight
 
-**Ingredient 1:** Matrix-vector multiplication in the _inner product_ view tells us that we can represent the first layer output $h_1$ as:
+Now that we remember that background, let's combine both ingredients of the inner- and outer-product perspectives to cook up our interesting mini-theorem.
+
+**Ingredient 1:** Matrix-vector multiplication from the _inner product_ view tells us that we can represent the first layer output $h^{(1)}$ as:
 
 $$
-h_1 =
+h^{(1)} =
 \sigma(\mathbf{W}^{(1)} x)
 = 
 \begin{bmatrix}
@@ -325,15 +353,15 @@ $$
 
 where $w_k^{(1)}$ is the $k$-th row of $\mathbf{W}^{(1)}$.
 
-**Ingredient 2:** Matrix-vector multiplication is a weighted sum of the columns of the matrix.
+**Ingredient 2:** Matrix-vector multiplication is a weighted sum of the columns of the matrix tells us that we can rewrite the merged equation as:
 
 $$
 y = \mathbf{W}^{(2)} (\sigma (\mathbf{W}^{(1)} x)) = \sum_{k = 1}^n w_k^{(2)} \cdot \sigma(\langle w_k^{(1)}, x \rangle)
 $$
 
-Let's play with this a bit more. We can define a set $\Omega_x$ to denote the indicies $k$ where the $\text{ReLU}$ is "activated" (conditioned on the input $x$). That is, $\Omega_x = \left\\{ k : \langle w_k^{(1)}, x \rangle > 0 \right\\}$.
+_Let's play with this a bit more._ We can define a set $\Omega_x$ to denote the indicies $k$ where the $\text{ReLU}$ is "activated" (conditioned on the input $x$). That is, $\Omega_x = \left\\{ k : \langle w_k^{(1)}, x \rangle > 0 \right\\}$.
 
-We can rewrite the above equation as:
+With this set $\Omega_x$ can rewrite the above equation as:
 
 $$
 y = \sum_{m \in \Omega_x} w_m^{(2)} \cdot \langle w_m^{(1)}, x \rangle
@@ -351,31 +379,39 @@ $$
 
 Using those two ingredients from above, we discovered that **ReLU networks implicitly define input-specific _matrix_ (linear!!) transformations**. Furthermore, **the primary method of matrix generation is through _dynamic rank modulation_**. By applying an argument by simple [mathematical induction](https://en.wikipedia.org/wiki/Mathematical_induction){:target='blank'}, we realize that this is true _regardless of the depth of the network_, and we can _explicitly_ give the resulting transformation matrix given any input.
 
-This is very similar to the theorem proven by [(Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576){:target='blank'}, although we took a different approach to computing the resulting matrix transformation. It is worth noting, as is a core tenant of that paper, that this is _partition based_. That is, input vectors map to "matrix transformations" in a fuzzy manner such that two distinct output vectors may share the same set $\Omega$.
+This is very similar to the theorem proven by [(Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576){:target='blank'}, although we took a different approach to computing the resulting matrix transformation. It is worth noting, as is a core tenant of that paper, that matrix generation process is _partition based_. That is, input vectors map to "matrix transformations" in a fuzzy manner such that two distinct output vectors may share the same set $\Omega$ and thus the same generated matrix transformation.
 
 
 ### Conclusion
 
-**A core aspect of my believe is that outer products are interesting is because outer products express _the computations themselves_ rather than just the _result_ of the computation.** By viewing Linear Algebra through the lens of computation captures an intuition for the mechanisms of _operation_, not just the human mechanisms employed to compute a result. For example, in the setting of neural networks, outer products allow us to say "this is the _exact_ circuit that was used to compute the result" rather than just giving the result.
+**A core aspect of my believe is that outer products are interesting is because outer products express _the computations themselves_ rather than just the _result_ of the computation.** By viewing Linear Algebra through the lens of computation we can capture an intuition for the mechanisms of _operation_, instead of just the human mechanisms employed to compute a result. For example, in the setting of neural networks, outer products allow us to say "this is the _exact_ circuit that was used to compute the result" rather than just giving the result of a computation.
 
-Hopefully I was able to plant a seed in your mind with minimal pain through this article and you understand a bit more of why I find outer products not only facinating, but a necessary piece of the intution of Linear Algebra. If you have any feedback or questions, I'd love to hear about them in the comments below.
+Hopefully, and without much pain, I was able to plant the seed in your mind of why outer products are more interesting and useful than the casual in-class mention may suggest. If you are someone that leverages linear algebra in your work, I'd encourage you to ponder if your problem can be reframed in the language of outer products. Perhaps it cannot be, or perhaps it's not useful, but I most of the settings I've transformed in my mind gave given me a deeper intution as to what the computations I perform do. 
+
+I'd love to know: For those of you who have a background in Linear Algebra, did you get taught much about outer products? Are outer products something that come up often in your work? Tell me in the comments below!
 
 Thanks for reading!
 
 ### Meta-Notes
 {:.no_toc}
 
-While writing this post, there were couple sections that I had written that were cut or ideas I had but hesitated to add here. Instead of overburdening the post with more "motivating examples" in the form of reframing more aspects of Deep Learning, I decided to try and keep the post more isolated to "I think outer products are interesting and I hope to plant a seed in your mind as to why".
+I started writing this article back in early October and it took a _bit_ longer than I originally hoped. On one hand, I want this to be an article trying to motivate the argument that outer products are cool! On the other hand, I was desperate to share some of the cool things I had discovered by reframing problems in this light. After a bit of back-and-forth, with a few drafts written, I decided on the former -- to try and keep the post more isolated to "I think outer products are interesting and I hope to plant a seed in your mind as to why".
 
-I intend to make a few more posts on the topic of reframing concepts through the lens of outer products. Beyond reframing well-known concepts that in Linear Algebra, or results that Deep Learning Theory researchers might know, I think that there are a lot of novel (and relatively simple) corollaries of the above observation with ReLU networks. On the other hand, perhaps it's worth pursuing writing short manuscripts to post on arXiV. Having some extra Google Scholar entries will hopefully help me in PhD applications. We'll see what my time (outside of my full-time job) affords me!
+I do now intend to make a few more posts on the topic of reframing concepts through the lens of outer products. I think there is a lot to say on the topic, and I am quite passionate about some of the interesting things I've found. Beyond reframing well-known concepts that in Linear Algebra, or results that Deep Learning Theory researchers might know, I think that there are a lot of novel (and relatively simple) corollaries of the above observation with ReLU networks. On the other hand, perhaps it's worth pursuing writing short manuscripts to post on arXiV. Having some extra Google Scholar entries will hopefully help me in PhD applications. We'll see what my time (outside of my full-time job) affords me!
+
+**From anyone reading this, I would love some feedback on how you felt about this post!** It can be tough to know who I want to write to, and this post definitely fell more of the side of my mathematical interests than my computer science interests. Hopefully, even if you just had a basic background in Linear Algebra, this post was relatively comprehensible.
+
+Thanks again!
 
 ### Footnotes
 {:.no_toc}
 
 [^1]: If I were to be accurate, then the "dot product" and "inner product" cannot be used interchangably. The dot product is just one inner product defined on Euclidean space. The main reason I might tend to use inner product in this post is because it constrasts nicely with the term "outer product".
 
+[^5]:
+
 [^2]: 
-    This is one difference with the Wikipedia article referenced. On Wikipedia, they represent this sum as:
+    This equation is a derivative of [the one used in the Wikipedia article for "outer products"](https://en.wikipedia.org/wiki/Outer_product#Connection_with_the_matrix_product){:target='blank'}. There is one major difference between the equations -- a stylistic one. On Wikipedia, they represent this sum as:
     
     $$
     \sum_{k = 1}^p \bm{a}_k^{\text{col}} \bm{b}_k^{\text{row}}
@@ -384,3 +420,7 @@ I intend to make a few more posts on the topic of reframing concepts through the
     This is technically correct! Since this post is about "the magic of outer products", and I really like the $\otimes$ symbol, I had to manipulate the equation slightly to fit it in. That required me to take the transpose because technically(!) $\bm{b}$ is a row vector, meaning $\bm{a}\_k^{\text{col}} \bm{b}\_k^{\text{row}}$ is an outer product, even if it doesn't use the fancy symbol. _In order to remain correct and keep my $\otimes$ symbol, I had to take the transpose of $\bm{b}$._
 
 [^3]: This sounds eerily similar to another topic reframed earlier in this article...
+
+[^4]: For a deeper discussion on what I believe to be some of the most interesting properties of neural networks, please read [Mad Max: Affine Spline Insights into Deep Learning (Balestriero & Baraniuk, 2018)](https://arxiv.org/abs/1805.06576){:target='blank'}.
+
+[^note-1]: If you are curious, my LA courses in college were taught from the legendary book ["Linear Algebra Done Right" by Sheldon Axler](https://linear.axler.net/){:target='blank'}. It's a great reference, but it does not cover outer products. In fact the word "outer" does not appear even once in the text!
