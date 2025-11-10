@@ -104,6 +104,7 @@ feed:
     - Tutorials
     - Libraries
     - meta
+    - Math
   collections:
     microposts:
       # Create a feed with and without
