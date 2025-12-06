@@ -85,6 +85,10 @@ defaults:
       path: "blog/tags/*"
     values:
       sitemap: false
+  - scope:
+      path: "_redirects/*"
+    values:
+      sitemap: false
 
 collections:
   microposts:
