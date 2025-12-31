@@ -8,9 +8,14 @@ title: "About Me"
 
 ## A Bit About Me
 
-I’m a small town earthy-crunchy hacker, passionate about coding, machine learning, teaching, and tinkering. For me, programming is more than just a career: Programming is my art, and computer are my canvas. Computers are a space for play, an endless area for exploration, and a medium to sculpt to my personal tastes. If there is one thing I have found I love most in life, it is _learning_ and the constant pursuit of curiosity and knowledge.
+I’m a small-town earthy-crunchy hacker, passionate about coding, machine learning, teaching, and tinkering. For me, programming is more than just a career: Programming is my art, and computers are my canvas. Computers are a space for play, an endless area for exploration, and a medium to sculpt to my personal tastes. If there is one thing I have found I love most in life, it is _learning_ and the constant pursuit of curiosity and knowledge.
 
-Nearly everything I've tinkered with, hacked on, coded, and created has been a labor of love, passion, and a deep expression of my endless curiosity. At this point I believe it's safe to say that programming has been, and hopefully will remain, **my _life-long_ passion**.
+Nearly everything I've tinkered with, hacked on, coded, and created has been a labor of love, passion, and a deep expression of my endless curiosity. At this point I believe it's safe to say that programming has been, and hopefully will remain, **my _lifelong_ passion**.
+
+### _Aside:_ My "AI" Use Policy
+I take great pride in my craftsmanship, with learning through my work as a cornerstone of that. As such, **I _do not_ use LLMs or "AI" to ghost-write my work or assist in any meaningful way.** I extremely rarely, if ever, use LLMs when coding, writing, or researching, and when I do the use is very limited in scope. I have many moral, technical, privacy-related, and artistic qualms with the use of LLMs' in society. Even if I overlook my moral objections and hesitancy based on my ML Theory Research (e.g., adversarial attacks, interpretability), I think using these tools would cheapen my craft and rob me of many opportunities to learn.
+
+All that said, I know that LLMs role in society cannot be overlooked, and I firmly believe that it's _responsible use_ is an important topic to research and disseminate. I have written a bit about this in the ["The Trade Offs Users Face" section on my "Fuzzy Finding" blog post](/blog/posts/fuzzy-dynamics/#the-trade-offs-users-face) already, but I fully intend to publish dedicated, non-technical material on this topic.
 
 ## Short Bio
 
