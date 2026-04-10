@@ -24,7 +24,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://freddy.us" # the base hostname & protocol for your site, e.g. http://example.com
 repository: FrederickGeek8/freddy.us
 author: Frederick Morlock
-resume: "https://drive.google.com/file/d/1HzjAHz-tAhtnKY6W8HlDY5yY7MtzGNK6/view?usp=sharing"
+resume: "https://drive.google.com/file/d/1l9VKO37-7co5hnvBsZ1SueVV1E4vsLR5/view?usp=sharing"
 
 socials:
   googlescholar: "https://scholar.google.com/citations?hl=en&user=7qxBxa4AAAAJ&view_op=list_works&sortby=pubdate"
