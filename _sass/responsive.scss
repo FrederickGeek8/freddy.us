@@ -66,6 +66,10 @@
     border: 2px white solid;
   }
 
+  .desc-container #avatar img {
+      background: rgba(0, 0, 0, 0.25);
+  }
+
   .invertable {
     // we need to set the color to light-mode theme (since invert)
     color: colors.$text-color;
