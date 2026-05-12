@@ -2,6 +2,7 @@
 layout: post
 title: "Life Hack: A Trivial Outer Product Expansion"
 date: 2026-04-13 23:00:00 -0400
+last_modified_at: 2026-05-11 20:00:00 -0400
 category: microposts
 description: If you're in a pinch, this one simple trick can give you two trivial outer product expansions for any given matrix.
 usemath: true
@@ -12,7 +13,7 @@ _Note:_ This is a follow-up to my previous post ["Outer Products: The Dual View 
 
 ---
 
-Let's say you're under pressure to do some quick math -- maybe about to save the world from some doomsday plot or villain -- and in order to defeat this villain you need to decompose some matrix you are handed into a sum of outer products. Luckily for you, you read this blog post just last week, and you know that there are two trivial decomposition of _any_ matrix into a sum of outer products.
+Let's say you're under pressure to do some quick math -- maybe to save the world from some doomsday plot or villain -- and in order to defeat this villain you need to decompose some arbitrary matrix $\mathbf{W}$ you are handed into a sum of outer products. Luckily for you, you read this blog post just last week, and you know that there are two trivial decomposition of _any_ matrix into a sum of outer products.
 
 You already know that any matrix multiplication between two matrices can be rewritten as a sum over the outer product of the columns of the left matrix (denoted $\bm{a}\_i^{\text{col}}$) with the rows of the right matrix (denoted $\bm{b}\_i^{\text{row}}$):
 
@@ -30,7 +31,7 @@ $$
 \sum_{k = 1}^p \bm{a}_k^{\text{col}} \otimes [\bm{b}_k^{\text{row}}]^\top
 $$
 
-While this doesn't immediately tell you how to decompose a _single_ matrix into outer products, there is one simple trick we can use to apply that result. The trick is multiplying (on either side) the _identity matrix_. So, two answers to whatever weird riddle you've been given in this scenario are:
+While this doesn't immediately tell you how to decompose a _single_ matrix into outer products, there is one simple trick we can use to apply that result. The trick is multiplying (on either side) the _identity matrix_. So, for any $n$ by $m$ matrix $\mathbf{W}$, two answers to whatever weird riddle you've been given in this scenario are:
 
 $$
 \mathbf{W}\mathcal{I} = 
@@ -64,7 +65,7 @@ $$
 
 Where $\bm{e}_i$ is the $i$th row or column of the identity matrix $\mathcal{I}$.
 
-One way of framing what this trivial decomposition does is it "paints in" the matrix $\mathbf{M}$ row-wise or column wise. Recalling the following visual from my previous post (pasted below), taking the outer product with the identity matrix row/column "paints in" whatever the other vector is into the resulting matrix.
+One way of framing what this trivial decomposition does is it "paints in" the matrix $\mathbf{W}$ row-wise or column wise. Recalling the following visual from my previous post (pasted below), taking the outer product with the identity matrix row/column "paints in" whatever the other vector is into the resulting matrix.
 
 <div class="invertable">
 $$
@@ -92,6 +93,6 @@ y_1 & y_2 & \cdots & y_n
 $$
 </div>
 
-If $x$ (above) is replaced with the vector from the identity matrix, then each term of the summation is adding one _row_ to our matrix $\mathbf{M}$. If $y$ is replaced with the vector from the identity matrix instead, then each term of the summation is adding one _column_ to our matrix.
+If $x$ (above) is replaced with the vector from the identity matrix, then each term of the summation is adding one _row_ to our matrix $\mathbf{W}$. If $y$ is replaced with the vector from the identity matrix instead, then each term of the summation is adding one _column_ to our matrix.
 
 Neat!
