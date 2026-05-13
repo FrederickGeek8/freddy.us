@@ -164,3 +164,7 @@ webmentions:
       - "^https://hinaleaimaging.com"
       - "^https://git.gammaspectra.live/"
       - "^https://www.raspberrypi.org"
+
+liquid:
+  error_mode: strict
+  strict_filters: true
