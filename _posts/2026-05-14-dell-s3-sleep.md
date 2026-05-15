@@ -8,7 +8,7 @@ tags: [tutorial, linux]
 post_id: dell-s3-sleep
 ---
 
-<u markdown="1"><strong>Warning:</strong></u> These instructions should not be followed blindly and misconfiguration <u>could leave your system in a broken state</u>. The method used for enabling S3 Sleep on my Dell laptop was achieved through patching the stock [DSDT ACPI Table](https://wiki.archlinux.org/title/DSDT) provided by my system. DSDT tables are hardware-specific, so yours may very well be different than mine. You will also need to fix DSDT again after each BIOS update and repeat these steps! <u>Use these methods at your own risk. I bear no liability for anything that goes wrong.</u>
+<u markdown="1"><strong>Warning:</strong></u> These instructions should not be followed blindly since misconfiguration <u>could leave your system in a broken state</u>. The method used for enabling S3 Sleep on my Dell laptop was achieved through patching the stock [DSDT ACPI Table](https://wiki.archlinux.org/title/DSDT) provided by my system. DSDT tables are hardware-specific, so yours may very well be different from mine. You will also need to fix DSDT again after each BIOS update and repeat these steps! <u>Use these methods at your own risk. I bear no liability for anything that goes wrong.</u>
 
 As a sneak peek, the "real" change is quite simple, at least on my model. Just change a `Zero` to a `One` in a "`SS3`" variable and Linux will recognize the system as supporting S3 (deep) sleep.
 
@@ -62,7 +62,7 @@ iasl -tc dsdt.dsl
 
 If there are errors in the compilation, you will see an error at the bottom reading "No AML files were generated due to compiler error(s)". "Warnings" and "Remarks" are fine, but Errors are fatal.
 
-To find any errors, you can redirect the large output for a file by running `iasl -tc dsdt.dsl &> output.txt` and open it in `less`, and search for lines beginning with "Error". **In my case, I had the following 3 Errors:**
+To find any errors, you can redirect the large output to a file by running `iasl -tc dsdt.dsl &> output.txt` and open it in `less`, and search for lines beginning with "Error". **In my case, I had the following 3 Errors:**
 
 ```
 dsdt.dsl     85:     External (_SB_.PC00.LPCB.ECDV.CMFC.DLPN, UnknownObj)
@@ -75,7 +75,7 @@ dsdt.dsl     87:     External (_SB_.PC00.LPCB.ECDV.CMFC.IDPC, UnknownObj)
 Error    6163 -                                           ^ Object is created temporarily in another method and cannot be accessed (_SB_.PC00.LPCB.ECDV.CMFC.IDPC)
 ```
 
-You will need to fix all issues in the `dsdt.dsl` file to proceed. To fix **my** errors, the following 3 lines problematic lines were deleted:
+You will need to fix all issues in the `dsdt.dsl` file to proceed. To fix **my** errors, I deleted the following 3 lines problematic lines:
 
 ```diff
 @@ -82,9 +82,6 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "Dell Inc", 0x00000002)
@@ -112,7 +112,7 @@ which now activates the block later in the `dsl` file:
     }
 ```
 
-If your `.dat` hash did not match mine, but your `.dsl` file contains the `SS3` variable definition and `if` block above, then you may be in luck! It might be worth making that single-line change in your `.dsl` too.
+If your `.dat` hash did not match mine, but your `.dsl` file contains the `SS3` variable definition and a similar `if` block to the above, then you may be in luck! It might be worth making that single-line change in your `.dsl` too.
 
 **One more patch is necessary** -- incrementing the version number in the "DefinitionBlock" near the top of the file, so that the patched version is preferred over the OEM. My OEM version is "2" and I have now incremented it to "3":
 
@@ -177,7 +177,7 @@ iasl -tc dsdt.dsl
 
 I will largely leave the installation of the DSL file up to you. The Arch Wiki has a good guide on how to do this: [https://wiki.archlinux.org/title/DSDT#Using_modified_code](https://wiki.archlinux.org/title/DSDT#Using_modified_code). I personally followed their ["Using a CPIO archive"](https://wiki.archlinux.org/title/DSDT#Using_a_CPIO_archive) instructions to get the modified table installed on my Ubuntu 24.04 system.
 
-When you boot back into Linux after install the patched `.aml` file, `cat /sys/power/mem_sleep` should now show `[s2idle] deep`. Meaning that `deep` sleep is _supported_ but not _enabled_ (the `[]` brackets indicate the enabled option). There are a few ways to enable S3 sleep by default, but if you are a GRUB user, adding `mem_sleep_default=deep` to your `/etc/default/grub` should enable S3 sleep!
+When you boot back into Linux after install the patched `.aml` file, `cat /sys/power/mem_sleep` should now show `[s2idle] deep`. Meaning that `deep` sleep is _supported_ but not _enabled_ (the `[]` brackets indicate the enabled option). There are a few ways to enable S3 sleep by default, but if you are a GRUB user, adding `mem_sleep_default=deep` to your `/etc/default/grub` and running `sudo update-grub` should enable S3 sleep!
 
 You should now be done! If you added `mem_sleep_default=deep` to your GRUB config, then S3 sleep should be enabled on your next reboot. You can temporarily enable deep sleep without rebooting via the command `echo deep > /sys/power/mem_sleep` in a `su` prompt. When cycling between suspend and resume, you can test that you are entering S3 sleep by running `journalctl -k -b -0 | grep "S3\|deep"`. If all goes well, you should see something like this.
 
