@@ -1,0 +1,30 @@
+--- dsdt.dsl
++++ dsdt.dsl	2026-05-14 20:45:53.215975289 -0400
+@@ -18,7 +18,7 @@
+  *     Compiler ID      "    "
+  *     Compiler Version 0x01000013 (16777235)
+  */
+-DefinitionBlock ("", "DSDT", 2, "DELL  ", "Dell Inc", 0x00000002)
++DefinitionBlock ("", "DSDT", 2, "DELL  ", "Dell Inc", 0x00000003)
+ {
+     External (_GPE.AL6F, MethodObj)    // 0 Arguments
+     External (_GPE.HLVT, MethodObj)    // 0 Arguments
+@@ -82,9 +82,6 @@
+     External (_SB_.PC00.ITSP, UnknownObj)
+     External (_SB_.PC00.LPCB.ECDV.ACOS, DeviceObj)
+     External (_SB_.PC00.LPCB.ECDV.ACSE, DeviceObj)
+-    External (_SB_.PC00.LPCB.ECDV.CMFC.DLPN, UnknownObj)
+-    External (_SB_.PC00.LPCB.ECDV.CMFC.IDMN, UnknownObj)
+-    External (_SB_.PC00.LPCB.ECDV.CMFC.IDPC, UnknownObj)
+     External (_SB_.PC00.LPCB.ECDV.DPNT, MethodObj)    // 0 Arguments
+     External (_SB_.PC00.LPCB.ECDV.ECS2, MethodObj)    // 2 Arguments
+     External (_SB_.PC00.LPCB.ECDV.ECS3, MethodObj)    // 0 Arguments
+@@ -601,7 +598,7 @@
+ 
+     Name (SS1, Zero)
+     Name (SS2, Zero)
+-    Name (SS3, Zero)
++    Name (SS3, One)
+     Name (SS4, One)
+     OperationRegion (GNVS, SystemMemory, 0x63904000, 0x0A95)
+     Field (GNVS, AnyAcc, Lock, Preserve)
